@@ -1,5 +1,5 @@
 @extends('layouts/admin/master')
-@section('title', '后台管理系统-修改角色')
+@section('title', '后台管理系统-新增权限')
 <style>
     .power_title{
         width: 100%;
@@ -37,37 +37,29 @@
         <ul>
             <li class="li_power"><a href="{{url('admin/index')}}">首页=></a></li>
             <li class="li_power"><a href="{{url('admin/permission-list')}}">权限管理=></a></li>
-            <li class="li_power">修改角色</li>
+            <li class="li_power">新增分类</li>
         </ul>
     </div>
     <div class="power_title">
-        <ul>
-            <li class="li_power2"><a href="{{url('admin/role-list')}}">角色列表</a></li>
-            <li class="li_power2"><a href="">批量删除</a></li>
-            <li class="li_power2"><a href="">跟新排序</a></li>
-        </ul>
+        {{--<ul>--}}
+            {{--<li class="li_power2"><a href="{{url('admin/permission-add')}}">新增文章</a></li>--}}
+            {{--<li class="li_power2"><a href="">批量删除</a></li>--}}
+            {{--<li class="li_power2"><a href="">跟新排序</a></li>--}}
+        {{--</ul>--}}
     </div>
     <div class="permissionadd_table">
         <table class="table-bordered">
             <form action="" method="post">
                 {{csrf_field()}}
                 <tr>
-                    <td><b>角色名称</b>:   </td>
-                    <td><input type="text" name="name" class="form-control" placeholder="Privilege routing" value="{{$role->name}}"></td>
-                </tr>
-                <tr>
-                    <td><b>角色描述</b>:   </td>
-                    <td><input type="text" name="display_name" class="form-control" placeholder="Authority description" value="{{$role->display_name}}"></td>
-                </tr>
-                <tr>
-                    <td><b>描述</b>:   </td>
-                    <td><textarea name="description" class="form-control" rows="3">{{$role->description}}</textarea></td>
+                    <td><b>类别</b>:   </td>
+                    <td><input type="text" class="form-control" placeholder="Type" name="name"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
                         <input type="submit" class="btn btn-success" value="提交" style="width: 100px;">
-                        <a href="{{url('admin/role-list')}}" class="btn btn-primary">返回</a>
+                        <a href="{{url('admin/permission-list')}}" class="btn btn-primary">返回</a>
                     </td>
                 </tr>
             </form>

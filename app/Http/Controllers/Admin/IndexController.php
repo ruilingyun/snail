@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\AdminLoginRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 //use App\Http\Controllers\Admin\PermissoionController;
 
 class IndexController extends Controller
@@ -16,21 +19,17 @@ class IndexController extends Controller
     public function rolelist()
     {
         return view('admin/rolelist');
+    }
 
-    }
-//    后台相册
-    public function image()
+    public function showLogin()
     {
-        return view('admin/image');
+        return view('admin/login');
     }
-//    后台评论
-    public function comment()
+
+    public function doLogin(AdminLoginRequest $request)
     {
-        return view('admin/comment');
+        Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
+        return view('admin/index');
     }
-//    状态管理
-    public function status()
-    {
-        return view('admin/status');
-    }
+
 }

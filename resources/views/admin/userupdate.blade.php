@@ -42,7 +42,7 @@
     </div>
     <div class="power_title">
         <ul>
-            <li class="li_power2"><a href="{{url('admin/permission-add')}}">新增文章</a></li>
+            <li class="li_power2"><a href="{{url('admin/user-list')}}">用户列表</a></li>
             <li class="li_power2"><a href="">批量删除</a></li>
             <li class="li_power2"><a href="">更新排序</a></li>
         </ul>

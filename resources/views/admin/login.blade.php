@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -9,8 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
+    <link rel="shortcut icon"type="image/x-icon" href="{{url('admin/image/favicon.ico')}}"media="screen" />
 
-    <title>Signin Template for Bootstrap</title>
+
+    <title>新浪微博后台登录</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +35,8 @@
         body {
             padding-top: 40px;
             padding-bottom: 40px;
-            background-color: #eee;
+            background-image: url('image/tim3.jpg');
+            background-repeat: no-repeat;
         }
 
         .form-signin {
@@ -71,6 +73,9 @@
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
+        .form-control{
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -78,7 +83,7 @@
 
 <div class="container">
 
-    <form class="form-signin" action="{{url('/admin/doLogin')}}" method="post">
+    <form class="form-signin" action="{{url('admin/doLogin')}}" method="post">
         {{csrf_field()}}
         <h2 class="form-signin-heading">请登录...</h2>
         <label for="inputEmail" class="sr-only">Email address</label>

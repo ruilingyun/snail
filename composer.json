@@ -6,16 +6,14 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-<<<<<<< HEAD
+
         "laravel/framework": "5.3.*",
-        "zizaco/entrust": "5.2.x-dev"
-=======
-<<<<<<< HEAD
-=======
+        "zizaco/entrust": "5.2.x-dev",
+
         "guzzlehttp/guzzle": "^6.2",
->>>>>>> 04d99018575fc5e276180c620415ad34e609915a
+
         "laravel/framework": "5.3.*"
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -166,9 +166,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right" id="ulul">
                 <span  id="navlist" style="width: 180px;height: 50px;float: right">
-                    <span style="float: left;margin-top: 7px; margin-left:10px; border-right: 1px solid #D9D9D9;width: 1px;height:25px; font-size: 25px" class="iconfont">&#xe612;</span>
+                    <span style="float: left;margin-top: 7px; margin-left:10px; border-right: 1px solid #D9D9D9;width: 1px;height:25px; font-size: 25px" class="iconfont">&#xe618;</span>
                     <li class="lia">
-                    <a href=""><span id="fonta" class="iconfont" style="margin-top: 12px; margin-left:50px;float:left;color: #686D77; font-size: 17px;">&#x3434;</span></a>
+                    <a href=""><span id="fonta" class="iconfont" style="margin-top: 12px; margin-left:55px;float:left;color: #686D77; font-size: 17px;">&#x3434;</span></a>
                         <ul style="width:130px;margin-left: -100px;" class="ulul1">
                             <a href=""><li> @我的</li></a>
                             <a href=""><li> 评论</li></a>

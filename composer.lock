@@ -4,15 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "83484111e2241e954ba2b5895282020f",
-=======
-<<<<<<< HEAD
-    "content-hash": "76036da3b5b55b91dbe1e1affa01bf9e",
-=======
-    "content-hash": "9a388dee5f0b8580183e7f23178c5fe8",
->>>>>>> 04d99018575fc5e276180c620415ad34e609915a
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+    "content-hash": "63b97a2ddebdde836cd5228044e3a407",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -169,10 +161,6 @@
             "time": "2015-11-06T14:35:42+00:00"
         },
         {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
             "name": "guzzlehttp/guzzle",
             "version": "6.2.3",
             "source": {
@@ -351,8 +339,6 @@
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
->>>>>>> 04d99018575fc5e276180c620415ad34e609915a
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -983,10 +969,6 @@
             "time": "2017-03-13T16:27:32+00:00"
         },
         {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -1037,8 +1019,6 @@
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
->>>>>>> 04d99018575fc5e276180c620415ad34e609915a
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
             "name": "psr/log",
             "version": "1.0.2",
             "source": {
@@ -2123,7 +2103,6 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
-<<<<<<< HEAD
         },
         {
             "name": "zizaco/entrust",
@@ -2192,8 +2171,6 @@
                 "roles"
             ],
             "time": "2016-12-29T06:25:06+00:00"
-=======
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
         }
     ],
     "packages-dev": [
@@ -2349,28 +2326,12 @@
             "version": "0.9.9",
             "source": {
                 "type": "git",
-<<<<<<< HEAD
                 "url": "https://github.com/padraic/mockery.git",
-=======
-<<<<<<< HEAD
-                "url": "https://github.com/mockery/mockery.git",
-=======
-                "url": "https://github.com/padraic/mockery.git",
->>>>>>> 04d99018575fc5e276180c620415ad34e609915a
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
                 "url": "https://files.phpcomposer.com/files/padraic/mockery/6fdb61243844dc924071d3404bb23994ea0b6856.zip",
-=======
-<<<<<<< HEAD
-                "url": "https://files.phpcomposer.com/files/mockery/mockery/6fdb61243844dc924071d3404bb23994ea0b6856.zip",
-=======
-                "url": "https://files.phpcomposer.com/files/padraic/mockery/6fdb61243844dc924071d3404bb23994ea0b6856.zip",
->>>>>>> 04d99018575fc5e276180c620415ad34e609915a
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
                 "shasum": ""
             },
@@ -2427,9 +2388,6 @@
         },
         {
             "name": "myclabs/deep-copy",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
             "version": "1.6.1",
             "source": {
                 "type": "git",
@@ -2440,22 +2398,6 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/myclabs/DeepCopy/8e6e04167378abf1ddb4d3522d8755c5fd90d102.zip",
                 "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
-=======
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
-            "version": "1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://files.phpcomposer.com/files/myclabs/DeepCopy/5a5a9fc8025a08d8919be87d6884d5a92520cefe.zip",
-                "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe",
-<<<<<<< HEAD
-=======
->>>>>>> 04d99018575fc5e276180c620415ad34e609915a
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
                 "shasum": ""
             },
             "require": {
@@ -2484,15 +2426,7 @@
                 "object",
                 "object graph"
             ],
-<<<<<<< HEAD
-            "time": "2017-01-26T22:05:40+00:00"
-=======
-<<<<<<< HEAD
             "time": "2017-04-12T18:52:22+00:00"
-=======
-            "time": "2017-01-26T22:05:40+00:00"
->>>>>>> 04d99018575fc5e276180c620415ad34e609915a
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3823,13 +3757,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-<<<<<<< HEAD
     "stability-flags": {
         "zizaco/entrust": 20
     },
-=======
-    "stability-flags": [],
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

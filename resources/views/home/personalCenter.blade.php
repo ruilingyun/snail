@@ -270,7 +270,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right" id="ulul">
-                        <li class="lli"><a href="{{url('home/login_index')}}"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+                        <li class="lli"><a href="{{url('home/login-index')}}"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
                         <li class="lli"><a href="#"><span class="glyphicon glyphicon-facetime-video"></span> 视频</a></li>
                         <li class="lli"><a href="#"><span class="glyphicon glyphicon-zoom-in"></span> 发现</a></li>
                         <li class="lli"><a href="#"><span class="glyphicon glyphicon-globe"></span> 游戏</a></li>

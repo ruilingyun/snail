@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Home\UserLoginRequest;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class IndexController extends Controller
 {
@@ -46,13 +48,26 @@ class IndexController extends Controller
 
     public function doLogin(UserLoginRequest $request)
     {
-//        dd($request->all());
-        Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
-        //邮箱判断
-        $result = User::where('email',$request->input('email'))->get()->toArray();
-        if ($result[0]['confirmed'] == 0) {
-            return back();
+//        DB
+        $pass = $request->password;
+//        $pass = Hash::make($pass);
+        $res = DB::table('users')->where('email',$request->email)->get();
+        foreach ($res as $v){
+            $repass = $v->password;
         }
-        return redirect('/home/register');
+        if(Hash::check($pass,$repass)){
+//            dd(11);
+
+//        dump($pass);
+//        dd($repass);
+//        dd($request->all());
+            Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
+            //邮箱判断
+            $result = User::where('email',$request->input('email'))->get()->toArray();
+            if ($result[0]['confirmed'] == 0) {
+                return back();
+            }
+            return redirect('home/login-index');
+        }
     }
 }
