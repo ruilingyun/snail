@@ -77,12 +77,12 @@
     </div>
 
 
-    @foreach($result as $rel)
+{{--    @foreach($result as $rel)--}}
         <div class="poto">
-            <p style="margin-left: 10px;margin-top: 10px">{{($rel->created_at)}}</p>
-            <img  class="abc" src="{{url($rel->pic)}}" alt="">
+{{--            <p style="margin-left: 10px;margin-top: 10px">{{($rel->created_at)}}</p>--}}
+            {{--<img  class="abc" src="{{url($rel->pic)}}" alt="">--}}
         </div>
-    @endforeach
+    {{--@endforeach--}}
 
 </div>
 @endsection

@@ -15,17 +15,17 @@ class IndexController extends Controller
     //个人中心
     public function personalCenter()
     {
-        $result= DB::table('userxq')->where('uid','24')->orderBy('id','desc')->get()->first();
-//        dd(  $result);
+        $result= DB::table('userxq')->where('uid','$id')->orderBy('id','desc')->get()->first();
+//        dd(  $id);
         return view('home/personalCenter')->with('result',$result);
     }
 //    个人相册
     public function personalImages()
     {
-//        $result= DB::table('photolist')->where('uid','24')->get();
+        $result= DB::table('photos')->get();
 //        dd($result);
-//        return view('home/personalImages')->with('result',$result);
-        return view('home/personalImages');
+        return view('home/personalImages')->with('result',$result);
+//        return view('home/personalImages');
     }
 
     public function personalManger()

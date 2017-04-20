@@ -139,8 +139,7 @@ Route::post('home/photos','Home\PhotoController@photos');
 Route::get('home/photoList/{id}','Home\PhotoController@photolist');
 //上传照片
 Route::post('home/upphoto','Home\PhotoController@upphoto');
-//
-//Route::get('home/ee','Home\PhotoController@aa');
+
 
 //用户管理
 //普通用户
@@ -183,4 +182,7 @@ Route::any('admin/type-add', 'Admin\TypeController@typeadd');
 //删除新闻分类
 Route::get('admin/type-delete/{id}', 'Admin\TypeController@typedelete');
 
-
+//前台好友管理
+Route::get('home/myuser','Home\myuserController@myuser');
+//粉丝
+Route::get('home/myfans','Home\myuserController@myfans');

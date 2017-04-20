@@ -20,7 +20,6 @@ class photoController extends Controller
         $request->file('face')->move('home/photo',$iconname);
         $data = array_merge($request->only('name', 'desc', 'display'),['uid'=>Auth::user()->id],['time'=>date('Y-m-d H:i:s')],['face'=>'home/photo'.'/'.$iconname]);
          DB::table('photos')->insert($data);
-
         return redirect('home/personalImages');
     }
 
@@ -28,8 +27,8 @@ class photoController extends Controller
     public function photolist()
     {
 //        $result = DB::select('select * from photos where id ='.$id);
-        $result = DB::select('select * from photos');
-        return view('home/photoList')->with('result',$result);
+//        $result = DB::select('select * from photos');
+        return view('home/photoList');
     }
 //    上传照片
     public function upphoto(Request $request)

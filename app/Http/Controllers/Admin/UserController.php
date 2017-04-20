@@ -106,8 +106,5 @@ class UserController extends Controller
         return view('admin/allotrole', compact('roles','user_id'));
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
 }

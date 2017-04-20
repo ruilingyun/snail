@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('home/css/bootstrap.css')}}">
     <script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
     <link rel="stylesheet" href="{{url('home/css/bootstrap.min.css')}}">
-
+    <link rel="stylesheet" href="{{url('home/css/iconfont/iconfont.css')}}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', '个人中心')</title>
     <style>

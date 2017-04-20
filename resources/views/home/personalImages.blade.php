@@ -1,4 +1,4 @@
-@extends('home/personalCenter');
+@extends('home/personalCenter')
 <style>
     .personal-images{
         width: 920px;
@@ -83,17 +83,14 @@
                 <span>添加相册</span>
             </div>
         </div>
-
         @foreach($result as $rel)
             <div class="poto">
-                {{--<p style="margin-left: 10px;margin-top: 10px">{{($rel->created_at)}}</p>--}}
                 <div class="xc-xc">
                     <a href="photoList/{{$rel->id}}"><span class="xc-fm"><img class="xc-fm1" src="{{url($rel->face)}}" alt=""></span></a>
                     <span class="xc-name">{{$rel->name}}</span>
                     <span class="xc-ms">{{$rel->desc}}</span>
                     <span class="xc-time">{{$rel->time}}</span>
                 </div>
-                {{--<img  class="abc" src="{{url($rel->photo)}}" alt="">--}}
             </div>
         @endforeach
 
