@@ -70,17 +70,13 @@
     .xc-name{width: 150px;height: 100px;float: left;line-height: 100px;margin-left: 30px;text-align: center}
     .xc-ms{width: 350px;height: 100px;float: left;line-height: 100px;margin-left: 30px;text-align: center}
     .xc-time{width: 100px;height: 100px;float: left;line-height: 100px;margin-left: 30px;text-align: center}
+
 </style>
 @section('content');
     <div class="personal-images">
         <div class="personal-images-nav">
             <ul>
                 <li class="zhaopian">相册专辑</li>
-                <li class="zhaopian">|</li>
-                <li class="zhaopian">视频</li>
-                <li class="zhaopian">|</li>
-                <li class="zhaopian">我赞过的</li>
-                <li class="zhaopian">|</li>
                 <li class="zhaopian">照片墙</li>
             </ul>
             <div class="wrap" style="margin-left: 504px" id="login">
@@ -136,5 +132,14 @@
         })
     })
 </script>
+
+                {{--<li class="zhaopian">相册专辑</li>--}}
+            {{--</ul>--}}
+            {{--<ul>--}}
+                {{--<li class="upload"><span class="iconfont">&#xe658;</span>上传照片</li>--}}
+                {{--<li class="upload"><span class="iconfont">&#xe613;</span>上传视频</li>--}}
+            {{--</ul>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
 @endsection

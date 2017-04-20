@@ -1,7 +1,5 @@
 @extends('layouts/admin/master')
-@section('title', '后台管理系统-修改权限')
-
-
+@section('title', '后台管理系统-新增权限')
 <style>
     .power_title{
         width: 100%;
@@ -56,51 +54,46 @@
         <ul>
             <li class="li_power"><a href="{{url('admin/index')}}">首页=></a></li>
             <li class="li_power"><a href="{{url('admin/permission-list')}}">权限管理=></a></li>
-            <li class="li_power">修改权限</li>
+            <li class="li_power">新增新闻</li>
         </ul>
     </div>
     <div class="power_title">
         <ul>
-
-            <li class="li_power2"><a href="{{url('admin/permission-add')}}">新增文章</a></li>
-
-            <li class="li_power2"><a href="">批量删除</a></li>
-            <li class="li_power2"><a href="">跟新排序</a></li>
+            <li class="li_power2"><a href="{{url('admin/msg-publish')}}">发布新闻</a></li>
         </ul>
     </div>
     <div class="permissionadd_table">
         <table class="table-bordered">
             <form action="" method="post">
                 {{csrf_field()}}
-            <tr>
-                <td><b>分类</b>:   </td>
-                <td><select class="add_select" value="请选择">
-                        <option>查看权限</option>
-                        <option>修改全选</option>
-                        <option>删除权限</option>
-                        <option>管理权限</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><b>权限路由</b>:   </td>
-                <td><input type="text" class="form-control" name="name" placeholder="Privilege routing" value="{{$permission->name}}"></td>
-            </tr>
-            <tr>
-                <td><b>权限描述</b>:   </td>
-                <td><input type="text" class="form-control" name="display_name" placeholder="Authority description" value="{{$permission->display_name}}"></td>
-            </tr>
-            <tr>
-                <td><b>描述</b>:   </td>
-                <td><textarea class="form-control" rows="3" name="description">{{$permission->description}}</textarea></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" class="btn btn-success" value="提交" style="width: 100px;">
-                    <a href="{{url('admin/permission-list')}}" class="btn btn-primary">返回</a>
-                </td>
-            </tr>
+                <tr>
+                    <td><b>类型</b>:   </td>
+                    <td><select class="add_select" name="type_id[]">
+                            <option value="" selected><--请选择--></option>
+                            @foreach($types as $v)
+                            <option value="{{$v->id}}">{{$v->name}}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>是否热门</b></td>
+                    <td>
+                        <lable><input type="radio" name="is_hot" value="1"> 热门</lable>
+                        <lable><input type="radio" name="is_hot" value="2"> 非热门</lable>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>说点什么吧</b>:   </td>
+                    <td><textarea class="form-control" rows="3" name="content"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" class="btn btn-success" value="提交" style="width: 100px;">
+                        <a href="{{url('admin/msg-list')}}" class="btn btn-primary">返回</a>
+                    </td>
+                </tr>
             </form>
         </table>
     </div>

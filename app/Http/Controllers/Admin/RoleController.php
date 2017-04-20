@@ -30,6 +30,10 @@ class RoleController extends Controller
         if ($request->isMethod('post')){
 //            dd($_POST);
             $role = Role::create($request->all());
+<<<<<<< HEAD
+=======
+//            dd($role);
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
             return redirect('admin/role-list');
         }
         return view('admin/roleadd');

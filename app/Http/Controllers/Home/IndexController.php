@@ -19,13 +19,13 @@ class IndexController extends Controller
 //        dd(  $result);
         return view('home/personalCenter')->with('result',$result);
     }
-    //个人相册
+//    个人相册
     public function personalImages()
     {
-        $result= DB::table('photos')->get();
-
+//        $result= DB::table('photolist')->where('uid','24')->get();
 //        dd($result);
-        return view('home/personalImages')->with('result',$result);
+//        return view('home/personalImages')->with('result',$result);
+        return view('home/personalImages');
     }
 
     public function personalManger()
@@ -54,7 +54,7 @@ class IndexController extends Controller
     {
         $pass = $request->password;
 //        $pass = Hash::make($pass);
-         $res = DB::table('users')->where('email',$request->email)->get();
+        $res = DB::table('users')->where('email',$request->email)->get();
         foreach ($res as $v){
             $repass = $v->password;
         }
@@ -64,13 +64,13 @@ class IndexController extends Controller
 //        dump($pass);
 //        dd($repass);
 //        dd($request->all());
-        Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
-        //邮箱判断
-        $result = User::where('email',$request->input('email'))->get()->toArray();
-        if ($result[0]['confirmed'] == 0) {
-            return back();
-        }
-        return redirect('home/login-index');
+            Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
+            //邮箱判断
+            $result = User::where('email',$request->input('email'))->get()->toArray();
+            if ($result[0]['confirmed'] == 0) {
+                return back();
+            }
+            return redirect('home/login-index');
         }
     }
     //用户注销

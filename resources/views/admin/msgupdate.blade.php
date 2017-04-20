@@ -1,5 +1,5 @@
 @extends('layouts/admin/master');
-@section('title', '后台管理系统-分配权限')
+@section('title', '后台管理系统-修改类别')
 <style>
     .power_title{
         width: 100%;
@@ -33,28 +33,24 @@
     <div class="power_title">
         <ul>
             <li class="li_power"><a href="{{url('admin/index')}}">首页=></a></li>
-            <li class="li_power"><a href="{{url('admin/role-list')}}">管理员管理=></a></li>
-            <li class="li_power">分配权限</li>
+            <li class="li_power"><a href="{{url('admin/role-list')}}">新闻管理=></a></li>
+            <li class="li_power">修改类别</li>
         </ul>
     </div>
     <div class="power_title">
         <ul>
-            <li class="li_power2"><a href="{{url('admin/role-add')}}">新增管理员</a></li>
-
-            <li class="li_power2"><a href="">批量删除</a></li>
-            <li class="li_power2"><a href="">跟新排序</a></li>
-
+            <li class="li_power2"><a href="{{url('admin/msg-list')}}">新闻列表</a></li>
         </ul>
     </div>
     <div class="table_power">
         <table class="table table-bordered">
-            <form  class="form-inline" action="{{url('admin/allot-role').'/'.$user_id}}" method="post">
+            <form  class="form-inline" action="{{url('admin/msg-update').'/'.$id}}" method="post">
                 {{csrf_field()}}
                 <tr>
-                    <td><b>分配权限</b>:</td>
-                    <td>  @foreach($roles as $role)
+                    <td><b>修改类别</b>:</td>
+                    <td>  @foreach($types as $type)
                             <div class="checkbox">
-                                <label><input type="checkbox" name="role_id[]" value="{{$role->id}}">{{$role->display_name}}</label>
+                                <label><input type="checkbox" name="type_id[]" value="{{$type->id}}">{{$type->name}}</label>
                             </div>
                         @endforeach</td>
                 </tr>

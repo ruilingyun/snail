@@ -10,8 +10,10 @@
         }
         #navlist ul ul li{
             cursor:pointer;
+
             background-color: #035D1A;
             height: 80px;;
+
         }
 
         .font_size{
@@ -44,7 +46,9 @@
     {{--</header>--}}
     <section class="user">
         <div class="profile-img">
+
             <p><img src="{{url('/home/image/icon.jpg')}}" alt="" class="img-circle" width="50px" height="50px">     Welcome back 我yu世界只差一个妳</p>
+
         </div>
         <div class="buttons">
             <button class="ico-font">&#9206;</button>
@@ -81,17 +85,22 @@
         <ul>
             <li><a href=""><span class="iconfont"></span>添加文章</a></li>
             <li><a href=""><span class="iconfont"></span>修改文章</a></li>
+
             <li><a href=""><span class="iconfont"></span>删除文章</a></li>
         </ul>
         <li><h4 class="font_size"><span class="iconfont">&#xe614;</span>新闻管理</h4></li>
         <ul>
+
             <li><a href=""><span class="iconfont"></span>添加新闻</a></li>
+
             <li><a href=""><span class="iconfont"></span>删除新闻</a></li>
             <li><a href=""><span class="iconfont"></span>修改新闻</a></li>
         </ul>
         <li><h4 class="font_size"><span class="iconfont">&#xe624;</span>广告管理</h4></li>
         <ul>
+
             <li><a href=""><span class="iconfont"></span>添加广告</a></li>
+
             <li><a href=""><span class="iconfont"></span>修改广告</a></li>
             <li><a href=""><span class="iconfont"></span>删除广告</a></li>
         </ul>

@@ -21,10 +21,15 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
+
     <link rel="stylesheet" href="">
     {{--font--}}
     <link rel="stylesheet" href="css/iconfont/iconfont.css">
     <link rel="stylesheet" href="home/fonts/glyphicons-halflings-regular.ttf">
+
+    {{--font--}}
+    <link rel="stylesheet" href="css/iconfont/iconfont.css">
+
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
     <link rel="shortcut icon"type="image/x-icon" href="image/favicon.ico"media="screen" />
@@ -262,7 +267,10 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

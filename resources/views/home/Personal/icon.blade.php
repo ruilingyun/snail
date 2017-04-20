@@ -40,14 +40,14 @@
                     <div style="width: 100px;height: 100px;margin-left: 100px;margin-top: 100px;margin-left: 19px;margin-top: 47px; margin-bottom: 50px;">
                         <img src="{{url(Auth::user()->avatar)}}" width="100px" alt="">
                     </div>
-                            <div class="wrap">
-                                <span>本地照片</span>
-                                <input id="fileupload" name="avatar" class="file" type="file" />
-                            </div>
-                            <div class="wrap">
-                                <span>保存</span>
-                            <input type="submit" class="file" id="fileupload">
-                            </div>
+                    <div class="wrap">
+                        <span>本地照片</span>
+                        <input id="fileupload" name="avatar" class="file" type="file" />
+                    </div>
+                    <div class="wrap">
+                        <span>保存</span>
+                        <input type="submit" class="file" id="fileupload">
+                    </div>
                 </table>
 
             </form>

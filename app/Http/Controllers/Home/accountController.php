@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Home;
 
 use App\User;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+
 
 
 class accountController extends Controller
@@ -17,6 +20,7 @@ class accountController extends Controller
     //前台个人中心
     public function myMass()
     {
+
         $result= DB::table('userxq')->where('uid','24')->orderBy('id','desc')->get()->first();
 //        dd(  $result);
         return view('Home/Personal/myMass')->with('result',$result);
@@ -107,6 +111,7 @@ class accountController extends Controller
         //        查询当前id数据
         $user = User::findOrFail($user_id);
         return view('home/Personal/myMass', compact('user'));
+
     }
     //前台头像
     public function icon()
@@ -129,6 +134,7 @@ class accountController extends Controller
         return view('Home/Personal/screenSet');
     }
 
+
     //个人资料
     public function addmyzl(Request $request)
     {
@@ -149,5 +155,6 @@ class accountController extends Controller
         $user = User::findOrFail($user_id);
         return view('admin/userupdate', compact('user'));
     }
+
 
 }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -10,9 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-
     <title>Signin Template for Bootstrap</title>
-
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +34,6 @@
             padding-top: 40px;
             padding-bottom: 40px;
             background-color: #eee;
-
         }
 
         .form-signin {
@@ -74,7 +70,6 @@
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
-
     </style>
 </head>
 
@@ -82,16 +77,19 @@
 
 <div class="container">
 
-
-    <form class="form-signin" action="{{url('/admin/doLogin')}}" method="post">
-
+    <form class="form-signin" action="{{url('home/doLogin')}}" method="post">
         {{csrf_field()}}
-        <h2 class="form-signin-heading">请登录...</h2>
+        <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" name="name" class="form-control" placeholder="请输入用户名"  autofocus>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" class="form-control" placeholder="请输入密码" >
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
 
 </div> <!-- /container -->

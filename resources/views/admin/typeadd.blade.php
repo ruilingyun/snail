@@ -1,5 +1,5 @@
 @extends('layouts/admin/master')
-@section('title', '后台管理系统-修改用户')
+@section('title', '后台管理系统-新增权限')
 <style>
     .power_title{
         width: 100%;
@@ -37,37 +37,29 @@
         <ul>
             <li class="li_power"><a href="{{url('admin/index')}}">首页=></a></li>
             <li class="li_power"><a href="{{url('admin/permission-list')}}">权限管理=></a></li>
-            <li class="li_power">修改用户</li>
+            <li class="li_power">新增分类</li>
         </ul>
     </div>
     <div class="power_title">
-        <ul>
-
-            <li class="li_power2"><a href="{{url('admin/permission-add')}}">新增文章</a></li>
-
-            <li class="li_power2"><a href="">批量删除</a></li>
-            <li class="li_power2"><a href="">更新排序</a></li>
-        </ul>
+        {{--<ul>--}}
+            {{--<li class="li_power2"><a href="{{url('admin/permission-add')}}">新增文章</a></li>--}}
+            {{--<li class="li_power2"><a href="">批量删除</a></li>--}}
+            {{--<li class="li_power2"><a href="">跟新排序</a></li>--}}
+        {{--</ul>--}}
     </div>
     <div class="permissionadd_table">
         <table class="table-bordered">
             <form action="" method="post">
                 {{csrf_field()}}
                 <tr>
-                    <td><b>用户名</b>:   </td>
-                    <td><input type="text" name="name" class="form-control" placeholder="User name" value="{{$user->name}}"></td>
+                    <td><b>类别</b>:   </td>
+                    <td><input type="text" class="form-control" placeholder="Type" name="name"></td>
                 </tr>
-
-                <tr>
-                    <td><b>邮箱</b>:   </td>
-                    <td><input type="email" name="email" class="form-control" placeholder="Email" value="{{$user->email}}"></td>
-                </tr>
-
                 <tr>
                     <td></td>
                     <td>
                         <input type="submit" class="btn btn-success" value="提交" style="width: 100px;">
-                        <a href="{{url('admin/user-List')}}" class="btn btn-primary">返回</a>
+                        <a href="{{url('admin/permission-list')}}" class="btn btn-primary">返回</a>
                     </td>
                 </tr>
             </form>

@@ -11,11 +11,13 @@
         width: 200px;
         height: 200px;
         background-color: #FFFFFF;
+
     }
     .fancer{
         float: left;
         list-style: none;
         margin-left: 4px;
+
     }
     p{
         text-align: center;
@@ -25,12 +27,14 @@
         height: 250px;
         margin-top: 20px;
         background-color: #FFFFFF;
+
     }
     .ad2{
         width: 200px;
         height: 250px;
         margin-top: 20px;
         background-color: #FFFFFF;
+
     }
     .ad3{
         width: 200px;
@@ -41,12 +45,18 @@
     .publish{
         width: 600px;
         background-color: #FFFFFF;
+
+    }
+    .publish{
+        width: 600px;
+        background-color: #888888;
     }
     .f_nav{
         width: 600px;
         height: 35px;
     }
     .img-circle{margin-top: 20px}
+
     li{
         list-style: none;
     }
@@ -56,6 +66,7 @@
         color: #1A7FB5;
         margin-top: 10px;
         font: 16px 楷体;
+
     }
     .f-right{
         float: right;
@@ -64,6 +75,7 @@
         font: 16px 楷体;
         margin-top: 10px;
         margin-right: 20px;
+
     }
     .input-nav{
         /*margin-top: 20px;*/
@@ -91,13 +103,17 @@
         width: 560px;
         height: 74px;
         margin-left: 20px;
+
         background-color: #FFFFFF;
+
         border: black solid 1px;
     }
     .assortment-all{
         width: 600px;
         height: 40px;
+
         background-color: #FFFFFF;
+
     }
     .assortment-all1{
         float: left;
@@ -111,12 +127,15 @@
         width: 600px;
         height: 800px;
         margin-top: 20px;
+
         background-color: #FFFFFF;
+
     }
 
 </style>
 <link rel="stylesheet" href="home/css/reset.css">
 <link rel="stylesheet" href="home/js/xml.js">
+
 <link rel="shortcut icon"type="image/x-icon" href="image/favicon.ico"media="screen" />
 
 @section('content')
@@ -124,7 +143,9 @@
         <div class="f_nav">
             <ul>
                 <li class="f-left">有什么新鲜事想告诉大家?</li>
+
                 <li class="f-right">可发300字微博</li>
+
             </ul>
         </div>
         {{--<form action="">--}}
@@ -164,8 +185,10 @@
 @section('right')
     <div class="right-all">
         <div class="right-nav">
+
             <p><a href="personalCenter"><img src="{{url(Auth::user()->avatar)}}" alt="" class="img-circle" width="60px" height="60px"></a></p>
             <p>{{Auth::user()->name}} <span class="iconfont">&#xe688;</span></p>
+
             <p>
                 <ul>
                 <li class="fancer"><p>66</p><p>关注</p></li>
@@ -180,7 +203,6 @@
         <div class="ad2"></div>
         <div class="ad3"></div>
     </div>
-
 
     <script>
         var ipt = document.getElementById("ipt");
@@ -220,4 +242,5 @@
 
         }
     </script>
+
 @endsection

@@ -1,4 +1,6 @@
+
 {{--首页模板(已登录)--}}
+
         <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -83,7 +85,9 @@
     .ulul2 li{width: 90px;height: 30px;margin-left: -30px;line-height: 30px}
     .ulul2 a{text-decoration: none}
     /*搜索框*/
+
     .search-t{width: 440px;height: 28px;outline-style: none}
+
     .ulul3 li{
         width:468px;
         height: 30px;
@@ -166,9 +170,11 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right" id="ulul">
                 <span  id="navlist" style="width: 180px;height: 50px;float: right">
+
                     <span style="float: left;margin-top: 7px; margin-left:10px; border-right: 1px solid #D9D9D9;width: 1px;height:25px; font-size: 25px" class="iconfont">&#xe612;</span>
                     <li class="lia">
                     <a href=""><span id="fonta" class="iconfont" style="margin-top: 12px; margin-left:50px;float:left;color: #686D77; font-size: 17px;">&#x3434;</span></a>
+
                         <ul style="width:130px;margin-left: -100px;" class="ulul1">
                             <a href=""><li> @我的</li></a>
                             <a href=""><li> 评论</li></a>
@@ -190,7 +196,9 @@
                             <a href=""><li> 屏蔽设置</li></a>
                             <a href=""><li> 消息设置</li></a>
                             <a href=""><li> 帮助中心</li></a>
+
                             <a href="logout"><li> 退出</li></a>
+
                         </ul>
                     </li>
                     <a href=""><span id="font-c" class="iconfont" style=" margin-top: 15px;margin-left:20px;float:left;color: #F96214;">&#xe669;</span></a>
@@ -200,7 +208,9 @@
                 <li class="lli"><a href="#"><span class="iconfont">&#xe501;</span> 发现</a></li>
                 <li class="lli"><a href="#"><span class="iconfont">&#xe609;</span> 游戏</a></li>
                 {{--登录的用户名--}}
+
                 <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span> {{Auth::user()->name}}</a></li>
+
             </ul>
             <form class="navbar-form navbar-right" style="margin-right: 47px">
                 <div id="navlist1">

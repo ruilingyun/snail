@@ -40,8 +40,10 @@
     <div class="power_title">
         <ul>
             <li class="li_power2"><a href="{{url('admin/role-add')}}">新增角色</a></li>
+
             <li class="li_power2"><a href="">批量删除</a></li>
             <li class="li_power2"><a href="">跟新排序</a></li>
+
         </ul>
     </div>
     <div class="table_power">

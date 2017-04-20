@@ -81,6 +81,7 @@
             width: 920px;
             height: 300px;
             margin-top: 50px;
+
         }
         .page_center .page_top .page_top_info .personal_icon{
             position: relative;
@@ -150,6 +151,7 @@
             width:300px;
             height: 60px;
             background-color: #FFFFFF;
+
         }
         .fance{
             float: left;
@@ -169,6 +171,7 @@
             /*height: 400px;*/
             margin-top: 30px;
             background-color: #FFFFFF;
+
 
         }
         .rank{
@@ -198,7 +201,9 @@
             width: 300px;;
             height: 350px;
             margin-top: 30px;
+
             background-color: #FFFFFF;
+
         }
         .images-nav{
             width: 300px;
@@ -216,7 +221,9 @@
         .search-nav{
             width: 600px;
             height: 40px;
+
             background-color: #FFFFFF;
+
         }
         .search-all{
             float: left;
@@ -244,20 +251,26 @@
         .content1{
             width: 600px;
             height: 250px;
+
             background-color: #FFFFFF;
+
             margin-top: 20px;
         }
         .content2{
             width: 600px;
             height: 400px;
+
             background-color: #FFFFFF;
+
             margin-top: 20px;
 
         }
         .content3{
             width: 600px;
             height: 300px;
+
             background-color: #FFFFFF;
+
             margin-top: 20px;
 
         }
@@ -331,6 +344,8 @@
             display:none;
             list-style: none;
         }
+   .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto; margin-top: px}
+
 
     </style>
     <link rel="stylesheet" href="/home/css/personal.css">
@@ -338,7 +353,9 @@
 </head>
 <body>
     <div id="personal_main">
+
         {{--头部--}}
+
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -416,6 +433,7 @@
             <div class="page_top">
                 <div class="page_top_info pull-left">
                     <div class="personal_icon">
+
                         <img src="{{url(Auth::user()->avatar)}}" alt="" class="img-circle" width="100px" height="100px">
                     </div>
                     <div class="personal_name">
@@ -423,6 +441,7 @@
                     </div>
                     <div class="personal_introduce">
                         {{--<p><b>{{$result->notice}}</b></p>--}}
+
                     </div>
                 </div>
                 <div class="page_top_nav pull-left">
@@ -447,6 +466,7 @@
             <div class="p-content-left">
                 <div class="content-nav">
                     <ul>
+
                         <a href=""><li class="fance">
                             <p style="">195</p>
                             <p style="margin-top: -10px;">关注</p>
@@ -461,6 +481,7 @@
                             <p style="">128</p>
                             <p style="margin-top: -10px;">微博</p>
                         </li></a>
+
                     </ul>
                 </div>
                 <div class="attest">
