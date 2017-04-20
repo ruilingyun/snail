@@ -11,11 +11,19 @@
         width: 200px;
         height: 200px;
         background-color: #FFFFFF;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     }
     .fancer{
         float: left;
         list-style: none;
         margin-left: 4px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     }
     p{
         text-align: center;
@@ -25,18 +33,34 @@
         height: 250px;
         margin-top: 20px;
         background-color: #FFFFFF;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     }
     .ad2{
         width: 200px;
         height: 250px;
         margin-top: 20px;
         background-color: #FFFFFF;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     }
     .ad3{
         width: 200px;
         height: 250px;
         margin-top: 20px;
         background-color: #FFFFFF;
+<<<<<<< HEAD
+=======
+    }
+    .publish{
+        width: 600px;
+        background-color: #FFFFFF;
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     }
     .publish{
         width: 600px;
@@ -46,7 +70,12 @@
         width: 600px;
         height: 35px;
     }
+<<<<<<< HEAD
     .img-big{margin-top: 20px}
+=======
+    .img-circle{margin-top: 20px}
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     li{
         list-style: none;
     }
@@ -56,6 +85,10 @@
         color: #1A7FB5;
         margin-top: 10px;
         font: 16px 楷体;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     }
     .f-right{
         float: right;
@@ -64,6 +97,10 @@
         font: 16px 楷体;
         margin-top: 10px;
         margin-right: 20px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     }
     .input-nav{
         /*margin-top: 20px;*/
@@ -91,13 +128,25 @@
         width: 560px;
         height: 74px;
         margin-left: 20px;
+<<<<<<< HEAD
         background-color: #FFFFFF;
+=======
+
+        background-color: #FFFFFF;
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
         border: black solid 1px;
     }
     .assortment-all{
         width: 600px;
         height: 40px;
+<<<<<<< HEAD
         background-color: #FFFFFF;
+=======
+
+        background-color: #FFFFFF;
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     }
     .assortment-all1{
         float: left;
@@ -111,6 +160,7 @@
         width: 600px;
         /*height: 800px;*/
         margin-top: 20px;
+<<<<<<< HEAD
         background-color: #FFFFFF;
     }
     .content-list{
@@ -229,17 +279,35 @@
     }
     .comment-middle-list-del a{
         margin-left: 500px;
+=======
+
+        background-color: #FFFFFF;
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     }
 
 
 </style>
+<<<<<<< HEAD
+=======
+<link rel="stylesheet" href="home/css/reset.css">
+<link rel="stylesheet" href="home/js/xml.js">
+
+<link rel="shortcut icon"type="image/x-icon" href="image/favicon.ico"media="screen" />
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
 
 @section('content')
     <div class="publish">
         <div class="f_nav">
             <ul>
                 <li class="f-left">有什么新鲜事想告诉大家?</li>
+<<<<<<< HEAD
                 <li class="f-right">可发300字微博</li>
+=======
+
+                <li class="f-right">可发300字微博</li>
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             </ul>
         </div>
         <form action="{{url('home/login-index')}}" method="post">
@@ -349,8 +417,15 @@
 @section('right')
     <div class="right-all">
         <div class="right-nav">
+<<<<<<< HEAD
             <p><a href="personalCenter"><img src="{{url(Auth::user()->avatar)}}" alt="" class="img-circle img-big" width="60px" height="60px"></a></p>
             <p>{{Auth::user()->name}} <span class="iconfont">&#xe688;</span></p>
+=======
+
+            <p><a href="personalCenter"><img src="{{url(Auth::user()->avatar)}}" alt="" class="img-circle" width="60px" height="60px"></a></p>
+            <p>{{Auth::user()->name}} <span class="iconfont">&#xe688;</span></p>
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             <p>
                 <ul>
                 <li class="fancer"><p>66</p><p>关注</p></li>
@@ -365,6 +440,7 @@
         <div class="ad2"></div>
         <div class="ad3"></div>
     </div>
+<<<<<<< HEAD
     <script>
         var ipt = document.getElementById("ipt");
         var txt = document.getElementById('txt');
@@ -405,6 +481,9 @@
 //        }
 
     </script>
+=======
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     <script>
         var ipt = document.getElementById("ipt");
         var txt = document.getElementById('txt');
@@ -438,6 +517,7 @@
                     this.parentNode.parentNode.removeChild(this.parentNode)
                 }
             }
+<<<<<<< HEAD
         }
 //        cmt.onclick = function(){
 //            var divs = document.createElement("div");
@@ -454,4 +534,12 @@
 
 
     </script>
+=======
+
+
+
+        }
+    </script>
+
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
 @endsection

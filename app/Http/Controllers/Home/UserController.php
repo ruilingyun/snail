@@ -31,6 +31,7 @@ class UserController extends Controller
         ];
         $user = User::create(array_merge($request->all(),$data));
         // 发送邮件
+
         $view = 'home.emailConfirmed';
         $subject = '请验证邮箱';
         $this->sendEmail($user,$view,$subject,$data);
@@ -40,7 +41,12 @@ class UserController extends Controller
 
     public function sendEmail($user,$view,$subject,$data)
     {
+<<<<<<< HEAD
       Mail::send($view, $data, function ($m) use ($subject,$user) {
+=======
+//        dd($user->all());
+        Mail::send($view, $data, function ($m) use ($subject,$user) {
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             $m->to($user->email)->subject($subject);
         });
     }

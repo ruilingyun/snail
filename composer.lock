@@ -5,10 +5,24 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "content-hash": "83484111e2241e954ba2b5895282020f",
+=======
+<<<<<<< HEAD
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     "content-hash": "76036da3b5b55b91dbe1e1affa01bf9e",
 =======
     "content-hash": "9a388dee5f0b8580183e7f23178c5fe8",
 >>>>>>> 04d99018575fc5e276180c620415ad34e609915a
+<<<<<<< HEAD
+=======
+>>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+=======
+    "content-hash": "63b97a2ddebdde836cd5228044e3a407",
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -166,7 +180,15 @@
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             "name": "guzzlehttp/guzzle",
             "version": "6.2.3",
             "source": {
@@ -345,7 +367,14 @@
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
+<<<<<<< HEAD
 >>>>>>> 04d99018575fc5e276180c620415ad34e609915a
+<<<<<<< HEAD
+=======
+>>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+=======
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -977,7 +1006,15 @@
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -1028,7 +1065,14 @@
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
+<<<<<<< HEAD
 >>>>>>> 04d99018575fc5e276180c620415ad34e609915a
+<<<<<<< HEAD
+=======
+>>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+=======
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             "name": "psr/log",
             "version": "1.0.2",
             "source": {
@@ -2113,6 +2157,86 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+        },
+        {
+            "name": "zizaco/entrust",
+            "version": "5.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Zizaco/entrust.git",
+                "reference": "3623cc052937d9e62543402b50f24065720d44b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/Zizaco/entrust/3623cc052937d9e62543402b50f24065720d44b9.zip",
+                "reference": "3623cc052937d9e62543402b50f24065720d44b9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "~5.0",
+                "illuminate/console": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "illuminate/database": "~5.0",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "~4.1",
+                "sami/sami": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/commands"
+                ],
+                "psr-4": {
+                    "Zizaco\\Entrust\\": "src/Entrust/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Elkins",
+                    "homepage": "http://andrewelkins.com"
+                },
+                {
+                    "name": "Zizaco Zizuini",
+                    "email": "zizaco@gmail.com"
+                },
+                {
+                    "name": "Ben Batschelet",
+                    "homepage": "http://github.com/bbatsche"
+                },
+                {
+                    "name": "Michele Angioni",
+                    "email": "michele.angioni@gmail.com"
+                }
+            ],
+            "description": "This package provides a flexible way to add Role-based Permissions to Laravel",
+            "keywords": [
+                "acl",
+                "auth",
+                "illuminate",
+                "laravel",
+                "permission",
+                "roles"
+            ],
+            "time": "2016-12-29T06:25:06+00:00"
+<<<<<<< HEAD
+=======
+>>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+=======
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
         }
     ],
     "packages-dev": [
@@ -2269,19 +2393,47 @@
             "source": {
                 "type": "git",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                "url": "https://github.com/padraic/mockery.git",
+=======
+<<<<<<< HEAD
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
                 "url": "https://github.com/mockery/mockery.git",
 =======
                 "url": "https://github.com/padraic/mockery.git",
 >>>>>>> 04d99018575fc5e276180c620415ad34e609915a
+<<<<<<< HEAD
+=======
+>>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+=======
+                "url": "https://github.com/padraic/mockery.git",
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
             },
             "dist": {
                 "type": "zip",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                "url": "https://files.phpcomposer.com/files/padraic/mockery/6fdb61243844dc924071d3404bb23994ea0b6856.zip",
+=======
+<<<<<<< HEAD
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
                 "url": "https://files.phpcomposer.com/files/mockery/mockery/6fdb61243844dc924071d3404bb23994ea0b6856.zip",
 =======
                 "url": "https://files.phpcomposer.com/files/padraic/mockery/6fdb61243844dc924071d3404bb23994ea0b6856.zip",
 >>>>>>> 04d99018575fc5e276180c620415ad34e609915a
+<<<<<<< HEAD
+=======
+>>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+=======
+                "url": "https://files.phpcomposer.com/files/padraic/mockery/6fdb61243844dc924071d3404bb23994ea0b6856.zip",
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
                 "shasum": ""
             },
@@ -2339,6 +2491,14 @@
         {
             "name": "myclabs/deep-copy",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             "version": "1.6.1",
             "source": {
                 "type": "git",
@@ -2349,6 +2509,7 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/myclabs/DeepCopy/8e6e04167378abf1ddb4d3522d8755c5fd90d102.zip",
                 "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+<<<<<<< HEAD
 =======
             "version": "1.6.0",
             "source": {
@@ -2361,6 +2522,12 @@
                 "url": "https://files.phpcomposer.com/files/myclabs/DeepCopy/5a5a9fc8025a08d8919be87d6884d5a92520cefe.zip",
                 "reference": "5a5a9fc8025a08d8919be87d6884d5a92520cefe",
 >>>>>>> 04d99018575fc5e276180c620415ad34e609915a
+<<<<<<< HEAD
+=======
+>>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+=======
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
                 "shasum": ""
             },
             "require": {
@@ -2390,10 +2557,24 @@
                 "object graph"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            "time": "2017-01-26T22:05:40+00:00"
+=======
+<<<<<<< HEAD
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             "time": "2017-04-12T18:52:22+00:00"
 =======
             "time": "2017-01-26T22:05:40+00:00"
 >>>>>>> 04d99018575fc5e276180c620415ad34e609915a
+<<<<<<< HEAD
+=======
+>>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+=======
+            "time": "2017-04-12T18:52:22+00:00"
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3724,7 +3905,23 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
+<<<<<<< HEAD
     "stability-flags": [],
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "stability-flags": {
+        "zizaco/entrust": 20
+    },
+=======
+    "stability-flags": [],
+>>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
+=======
+    "stability-flags": {
+        "zizaco/entrust": 20
+    },
+>>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
+>>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -32,7 +32,7 @@
     {{--右边部分--}}
     <div class="main-right" id="navenc">
         <div class="right-1"><span class="span-0">消息设置</span></div>
-        <p class="right-2"><span class="span-0">@我的</span><span class="span-1">@我的相关设置</span><a href="">编辑</a></p>
+        <p class="right-2"><span class="span-0">@我的</span><span class="span-1">@我的相关设置</span><i>编辑</i></p>
         {{--下拉内容--}}
         <ul>
             <form action="" class="form-1">
@@ -46,7 +46,7 @@
                 <div><input type="submit" class="submit" value="保存"><input type="reset" class="submit" value="重置"></div>
             </form>
         </ul>
-        <p class="right-2"><span class="span-0">评论</span><span class="span-1">&nbsp;&nbsp;&nbsp; 评论的相关设置</span><a href="">编辑</a></p>
+        <p class="right-2"><span class="span-0">评论</span><span class="span-1">&nbsp;&nbsp;&nbsp; 评论的相关设置</span><i>编辑</i></p>
         {{--下拉内容--}}
         <ul>
             <form action="" class="form-1">
@@ -67,7 +67,7 @@
                 <div><input type="submit" class="submit" value="保存"><input type="reset" class="submit" value="重置"></div>
             </form>
         </ul>
-        <p class="right-2"><span class="span-0">赞</span><span class="span-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 赞的相关设置</span><a href="">编辑</a></p>
+        <p class="right-2"><span class="span-0">赞</span><span class="span-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 赞的相关设置</span><i>编辑</i></p>
         {{--下拉内容--}}
         <ul>
             <form action="" class="form-1">
@@ -80,7 +80,7 @@
                 <div><input type="submit" class="submit" value="保存"><input type="reset" class="submit" value="重置"></div>
             </form>
         </ul>
-        <p class="right-2"><span class="span-0">私信</span><span class="span-1">&nbsp;&nbsp;&nbsp; 私信的相关设置</span><a href="">编辑</a></p>
+        <p class="right-2"><span class="span-0">私信</span><span class="span-1">&nbsp;&nbsp;&nbsp; 私信的相关设置</span><i>编辑</i></p>
         {{--下拉内容--}}
         <ul>
             <form action="" class="form-1">
@@ -93,7 +93,7 @@
                 <div><input type="submit" class="submit" value="保存"><input type="reset" class="submit" value="重置"></div>
             </form>
         </ul>
-        <p class="right-2"><span class="span-0">未关注人私信</span><span class="span-1" style="margin-left: 157px">未关注人私信的相关设置</span><a href="">编辑</a></p>
+        <p class="right-2"><span class="span-0">未关注人私信</span><span class="span-1" style="margin-left: 157px">未关注人私信的相关设置</span><i>编辑</i></p>
         {{--下拉内容--}}
         <ul>
             <form action="" class="form-1">
@@ -103,7 +103,7 @@
                 <div><input type="submit" class="submit" value="保存"><input type="reset" class="submit" value="重置"></div>
             </form>
         </ul>
-        <p class="right-2"><span class="span-0">新粉丝</span><span class="span-1">新粉丝的相关设置</span><a href="">编辑</a></p>
+        <p class="right-2"><span class="span-0">新粉丝</span><span class="span-1">新粉丝的相关设置</span><i>编辑</i></p>
         {{--下拉内容--}}
         <ul>
             <form action="" class="form-1">
@@ -114,7 +114,7 @@
                 <div><input type="submit" class="submit" value="保存"><input type="reset" class="submit" value="重置"></div>
             </form>
         </ul>
-        <p class="right-2"><span class="span-0">好友圈</span><span class="span-1">好友圈的相关设置</span><a href="">编辑</a></p>
+        <p class="right-2"><span class="span-0">好友圈</span><span class="span-1">好友圈的相关设置</span><i>编辑</i></p>
         {{--下拉内容--}}
         <ul>
             <form action="" class="form-1">
