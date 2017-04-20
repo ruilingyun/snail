@@ -41,12 +41,7 @@ class UserController extends Controller
 
     public function sendEmail($user,$view,$subject,$data)
     {
-<<<<<<< HEAD
-      Mail::send($view, $data, function ($m) use ($subject,$user) {
-=======
-//        dd($user->all());
         Mail::send($view, $data, function ($m) use ($subject,$user) {
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             $m->to($user->email)->subject($subject);
         });
     }
