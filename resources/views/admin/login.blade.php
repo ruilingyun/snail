@@ -11,12 +11,7 @@
     <link rel="shortcut icon"type="image/x-icon" href="{{url('admin/image/favicon.ico')}}"media="screen" />
 
 
-<<<<<<< HEAD
     <title>新浪微博后台登录</title>
-=======
-
-    <title>Signin Template for Bootstrap</title>
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
 
 
     <!-- Bootstrap core CSS -->
@@ -41,13 +36,8 @@
         body {
             padding-top: 40px;
             padding-bottom: 40px;
-<<<<<<< HEAD
             background-image: url('image/tim3.jpg');
             background-repeat: no-repeat;
-=======
-            background-color: #eee;
-
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
         }
 
         .form-signin {
@@ -84,13 +74,10 @@
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
-<<<<<<< HEAD
         .form-control{
             margin-top: 20px;
         }
-=======
 
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     </style>
 </head>
 

@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-{{--首页模板(已登录)--}}
 <!DOCTYPE html>
-=======
 
-{{--首页模板(已登录)--}}
-
-        <!DOCTYPE html>
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
@@ -182,13 +175,7 @@
                             <a href=""><li> 屏蔽设置</li></a>
                             <a href=""><li> 消息设置</li></a>
                             <a href=""><li> 帮助中心</li></a>
-<<<<<<< HEAD
                             <a href="{{url('/home/logout')}}"><li> 退出</li></a>
-=======
-
-                            <a href="logout"><li> 退出</li></a>
-
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
                         </ul>
                     </li>
                     <a href=""><span id="font-c" class="iconfont" style=" margin-top: 15px;margin-left:20px;float:left;color: #F96214;">&#xe669;</span></a>
@@ -198,13 +185,7 @@
                 <li class="lli"><a href="#"><span class="iconfont">&#xe501;</span> 发现</a></li>
                 <li class="lli"><a href="#"><span class="iconfont">&#xe609;</span> 游戏</a></li>
                 {{--登录的用户名--}}
-<<<<<<< HEAD
                 <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span>{{Auth::user()->name}}</a></li>
-=======
-
-                <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span> {{Auth::user()->name}}</a></li>
-
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             </ul>
             <form class="navbar-form navbar-right" style="margin-right: 47px">
                 <div id="navlist1">

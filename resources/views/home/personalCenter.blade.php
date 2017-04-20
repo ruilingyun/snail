@@ -7,15 +7,11 @@
     <link rel="stylesheet" href="{{asset('home/css/bootstrap.css')}}">
     <script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
     <link rel="stylesheet" href="{{url('home/css/bootstrap.min.css')}}">
-
+    <link rel="stylesheet" href="{{url('home/css/iconfont/iconfont.css')}}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', '个人中心')</title>
-<<<<<<< HEAD
-    <style>    .navbar{background-color:#FFFFFF;border-bottom: none}
-=======
     <style>
         .navbar{background-color:#FFFFFF;border-bottom: none}
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
         .navbar-form{margin-right: 100px}
         .img-a{margin-left: 50px}
         #ulul{margin-right: 100px}
@@ -307,18 +303,10 @@
         .main-left a{text-decoration: none}
         .lia{width: 45px;height: 50px;position: relative; float: left }
         .ulul1 li{
-<<<<<<< HEAD
-            width:140px;
-            height: 30px;
-            list-style: none;
-            float:left;
-            margin-left: -30px;
-=======
             width:125px;
             height: 30px;
             list-style: none;
             float:left;
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
             line-height: 30px;
         }
         #navlist li ul{
@@ -330,11 +318,7 @@
             display:none;
             list-style: none;
         }
-<<<<<<< HEAD
-        .ulul2 li{width: 90px;height: 30px;margin-left: -30px;line-height: 30px}
-=======
         .ulul2 li{width: 90px;height: 30px;margin-left: 5px;line-height: 30px;}
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
         .ulul2 a{text-decoration: none}
         /*搜索框*/
         .search-t{width: 468px;height: 28px;outline-style: none}
@@ -360,11 +344,8 @@
             display:none;
             list-style: none;
         }
-<<<<<<< HEAD
-=======
    .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto; margin-top: px}
 
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
 
     </style>
     <link rel="stylesheet" href="/home/css/personal.css">
@@ -372,13 +353,9 @@
 </head>
 <body>
     <div id="personal_main">
-<<<<<<< HEAD
-        {{--头部--}}
-=======
 
         {{--头部--}}
 
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -409,11 +386,7 @@
                     <li class="lia">
                     <a href=""><span id="font-b" class="iconfont" style="margin-top: 15px;margin-left:20px;float:left;color: #686D77;font-size: 18px"></span></a>
                         <ul class="ulul2">
-<<<<<<< HEAD
-                            <a href=""><li> 账号设置</li></a>
-=======
                             <a href="myMass"><li> 账号设置</li></a>
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
                             <a href=""><li> 会员中心</li></a>
                             <a href=""><li> V认证</li></a>
                             <a href=""><li> 账号安全</li></a>
@@ -421,11 +394,7 @@
                             <a href=""><li> 屏蔽设置</li></a>
                             <a href=""><li> 消息设置</li></a>
                             <a href=""><li> 帮助中心</li></a>
-<<<<<<< HEAD
-                            <a href=""><li> 退出</li></a>
-=======
                             <a href="logout"><li> 退出</li></a>
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
                         </ul>
                     </li>
                     <a href=""><span id="font-c" class="iconfont" style=" margin-top: 15px;margin-left:20px;float:left;color: #F96214;">&#xe669;</span></a>
@@ -435,11 +404,7 @@
                         <li class="lli"><a href="#"><span class="iconfont">&#xe501;</span> 发现</a></li>
                         <li class="lli"><a href="#"><span class="iconfont">&#xe609;</span> 游戏</a></li>
                         {{--登录的用户名--}}
-<<<<<<< HEAD
-                        <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span> XXXX</a></li>
-=======
                         <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span> {{Auth::user()->name}} </a></li>
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
                     </ul>
                     <form class="navbar-form navbar-right" style="margin-right: 47px">
                         <div id="navlist1">
@@ -461,8 +426,6 @@
                     </form>
 
                 </div>
-
-
             </div>
         </nav>
 

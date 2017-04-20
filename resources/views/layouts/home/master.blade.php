@@ -14,27 +14,8 @@
     <link href="{{url('home/css/bootstrap.min.css')}}" rel="stylesheet">
     <title>@yield('title', '个人中心界面')</title>
     <script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
-<<<<<<< HEAD
     <link rel="stylesheet" href="css/iconfont/iconfont.css">
     <link rel="stylesheet" href="home/fonts/glyphicons-halflings-regular.ttf">
-=======
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="">
-    {{--font--}}
-    <link rel="stylesheet" href="css/iconfont/iconfont.css">
-    <link rel="stylesheet" href="home/fonts/glyphicons-halflings-regular.ttf">
-
-    {{--font--}}
-    <link rel="stylesheet" href="css/iconfont/iconfont.css">
-
-    <!-- Custom styles for this template -->
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
     <link href="dashboard.css" rel="stylesheet">
 
 </head>
@@ -257,28 +238,6 @@
     })
 </script>
 
-<<<<<<< HEAD
-=======
-
-
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-{{--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>--}}
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-{{--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="../../assets/js/vendor/holder.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
->>>>>>> a4e4ecda2533c84d35e134fb6488c569ed266aca
 {{--搜索框下拉--}}
 <script>
     var lis = document.getElementById('navlist').getElementsByTagName('li');
