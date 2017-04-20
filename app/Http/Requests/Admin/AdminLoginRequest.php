@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Requests;
+
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,7 +25,7 @@ class AdminLoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'email' => 'required',
             'password' => 'required',
         ];
     }
@@ -32,8 +33,8 @@ class AdminLoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '用户名不能为空',
-            'name.required' => '密码不能为空',
+            'email.required' => '用户邮箱不能为空',
+            'password.required' => '密码不能为空',
         ];
     }
 }

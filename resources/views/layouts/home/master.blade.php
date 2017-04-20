@@ -9,39 +9,15 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-{{--    <link rel="icon" href="{{url('/home/image/favicon.ico')}}">--}}
     {{--css--}}
     <link rel="stylesheet" href="/home/css/personal.css">
     <link href="{{url('home/css/bootstrap.min.css')}}" rel="stylesheet">
     <title>@yield('title', '个人中心界面')</title>
     <script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="">
-    {{--font--}}
     <link rel="stylesheet" href="css/iconfont/iconfont.css">
     <link rel="stylesheet" href="home/fonts/glyphicons-halflings-regular.ttf">
-
-    {{--font--}}
-    <link rel="stylesheet" href="css/iconfont/iconfont.css">
-
-    <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
-    <link rel="shortcut icon"type="image/x-icon" href="image/favicon.ico"media="screen" />
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <style>
     /*头部CSS*/
@@ -64,7 +40,6 @@
         width:468px;
         height: 30px;
         list-style: none;
-        /*float:left;*/
         margin-left: -40px;
         line-height: 30px;
     }
@@ -112,7 +87,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="" class="img-a"><img src="image/logo.jpg" alt=""></a>
+            <a href="" class="img-a"><img src="{{url('home/image/logo.jpg')}}" alt=""></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right" id="ulul">
@@ -262,25 +237,6 @@
         })
     })
 </script>
-
-
-
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> a13e66ab9de8e4ab64fbc560875f71c116cf873f
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-{{--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>--}}
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-{{--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="../../assets/js/vendor/holder.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 {{--搜索框下拉--}}
 <script>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -9,9 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
+    <link rel="shortcut icon"type="image/x-icon" href="{{url('admin/image/favicon.ico')}}"media="screen" />
 
 
-    <title>Signin Template for Bootstrap</title>
+    <title>新浪微博后台登录</title>
 
 
     <!-- Bootstrap core CSS -->
@@ -36,8 +36,8 @@
         body {
             padding-top: 40px;
             padding-bottom: 40px;
-            background-color: #eee;
-
+            background-image: url('image/tim3.jpg');
+            background-repeat: no-repeat;
         }
 
         .form-signin {
@@ -74,6 +74,9 @@
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
+        .form-control{
+            margin-top: 20px;
+        }
 
     </style>
 </head>
@@ -88,12 +91,11 @@
         {{csrf_field()}}
         <h2 class="form-signin-heading">请登录...</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" name="name" class="form-control" placeholder="请输入用户名"  autofocus>
+        <input type="text" name="name" class="form-control" placeholder="请输入用户邮箱"  autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="请输入密码" >
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
     </form>
-
 </div> <!-- /container -->
 
 

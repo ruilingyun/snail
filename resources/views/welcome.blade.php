@@ -79,11 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-<<<<<<< HEAD
-                    三只蜗牛
-=======
                     Laravel
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
                 </div>
 
                 <div class="links">

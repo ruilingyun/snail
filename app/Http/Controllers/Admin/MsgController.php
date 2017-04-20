@@ -83,7 +83,7 @@ class MsgController extends Controller
             $data = [
                 'is_hot' => $request->is_hot,
                 'type_id' => $request->type_id[0],
-                'content' => $request->content,
+//                'content' => $request->content,
                 'user_id' => '17'
 
             ];
