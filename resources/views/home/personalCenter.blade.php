@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="{{asset('home/css/bootstrap.css')}}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title', '我yu世界只差一个妳的微博_微博')</title>
+    <title>@yield('title', '个人中心')</title>
     <style>    .navbar{background-color:#FFFFFF;border-bottom: none}
         .navbar-form{margin-right: 100px}
         .img-a{margin-left: 50px}
@@ -251,12 +251,80 @@
         }
         .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto; margin-top: px}
 
+        /*补充css*/
+        .navbar{background-color:#FFFFFF;border-bottom: none}
+        .navbar-form{margin-right: 100px}
+        .img-a{margin-left: 50px}
+        /*#ulul{margin-right: 180px}*/
+        #navbar a:hover{color: #FF6600}
+
+        body{background-color: #B0D7EE;}
+        .main{width: 970px;margin-left: auto;margin: 80px auto;background-color: #FAFAFA;}
+        .main-left{background-color: #F1F1F1;width: 150px;float: left}
+        .main-right{width: 790px;float: left;margin-left: 20px}
+        .main-left legend{font-size: 16px;text-align: center}
+        .left-1{width: 150px;height: 35px;text-align: center;line-height: 35px;color: #333333;margin-top: 10px;}
+        .left-1:hover{background-color: #818287;}
+        .left-1 span{color: #717378;}
+        .right-2:hover{background-color: #FAFAFA;}
+        .right-2{background-color: #F1F1F1;width: 788px;height: 40px;line-height: 40px;margin-top: 10px;border: 0.5px solid #D9D9D9;cursor: pointer}
+        .right-1{width: 788px;height: 40px;line-height: 40px;border-bottom: 2px solid red;}
+        .right-1 a{float: right}
+        .span-0{margin-left: 10px}
+        .right-2 a{float: right;margin-right: 10px}
+        .main-left a{text-decoration: none}
+        .lia{width: 45px;height: 50px;position: relative; float: left }
+        .ulul1 li{
+            width:140px;
+            height: 30px;
+            list-style: none;
+            float:left;
+            margin-left: -30px;
+            line-height: 30px;
+        }
+        #navlist li ul{
+            position:absolute;
+            top:50px;
+            background-color: #fff;
+            width:100px;
+            border-top:none;
+            display:none;
+            list-style: none;
+        }
+        .ulul2 li{width: 90px;height: 30px;margin-left: -30px;line-height: 30px}
+        .ulul2 a{text-decoration: none}
+        /*搜索框*/
+        .search-t{width: 468px;height: 28px;outline-style: none}
+        .ulul3 li{
+            width:468px;
+            height: 30px;
+            list-style: none;
+            /*float:left;*/
+            margin-left: -40px;
+            line-height: 30px;
+        }
+        .ulul3{margin-top: -14px}
+        .ulul3 li:hover{
+            background-color: #F2F2F5;}
+        .ulul3 a{text-decoration: none}
+        .lia1{list-style: none;float: left}
+        #navlist1 li ul{
+            position:absolute;
+            top:50px;
+            background-color: #fff;
+            width:468px;
+            border-top:none;
+            display:none;
+            list-style: none;
+        }
+
     </style>
     <link rel="stylesheet" href="/home/css/personal.css">
     <link rel="stylesheet" href="css/iconfont/iconfont.css">
 </head>
 <body>
     <div id="personal_main">
+        {{--头部--}}
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -270,20 +338,49 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right" id="ulul">
-                        <li class="lli"><a href="{{url('home/login_index')}}"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-                        <li class="lli"><a href="#"><span class="glyphicon glyphicon-facetime-video"></span> 视频</a></li>
-                        <li class="lli"><a href="#"><span class="glyphicon glyphicon-zoom-in"></span> 发现</a></li>
-                        <li class="lli"><a href="#"><span class="glyphicon glyphicon-globe"></span> 游戏</a></li>
-                        <li class="lli"><a href="" class="user">注册</a></li>
-                        <li class="lli" style="margin-top: 13px">|</li>
-                        <li class="lli"><a href="" class="register">登录</a></li>
+                <span  id="navlist" style="width: 180px;height: 50px;float: right;margin-right: -126px;">
+                    <span style="float: left;margin-top: 7px; margin-left:10px; border-right: 1px solid #D9D9D9;width: 1px;height:25px; font-size: 25px" class="iconfont">&#xe612;</span>
+                    <li class="lia">
+                    <a href=""><span id="fonta" class="iconfont" style="margin-top: 12px; margin-left:50px;float:left;color: #686D77; font-size: 17px;">&#x3434;</span></a>
+                        <ul style="width:130px;margin-left: -100px;" class="ulul1">
+                            <a href=""><li> @我的</li></a>
+                            <a href=""><li> 评论</li></a>
+                            <a href=""><li> 赞</li></a>
+                            <a href=""><li> 私信</li></a>
+                            <a href=""><li> 未关注人私信</li></a>
+                            <a href=""><li> 群通知</li></a>
+                            <a href=""><li> 消息设置</li></a>
+                        </ul>
+                    </li>
+                    <li class="lia">
+                    <a href=""><span id="font-b" class="iconfont" style="margin-top: 15px;margin-left:20px;float:left;color: #686D77;font-size: 18px"></span></a>
+                        <ul class="ulul2">
+                            <a href=""><li> 账号设置</li></a>
+                            <a href=""><li> 会员中心</li></a>
+                            <a href=""><li> V认证</li></a>
+                            <a href=""><li> 账号安全</li></a>
+                            <a href=""><li> 隐私设置</li></a>
+                            <a href=""><li> 屏蔽设置</li></a>
+                            <a href=""><li> 消息设置</li></a>
+                            <a href=""><li> 帮助中心</li></a>
+                            <a href=""><li> 退出</li></a>
+                        </ul>
+                    </li>
+                    <a href=""><span id="font-c" class="iconfont" style=" margin-top: 15px;margin-left:20px;float:left;color: #F96214;">&#xe669;</span></a>
+                </span>
+                        <li class="lli"><a href="#"><span class="iconfont">&#xe60d;</span> 首页</a></li>
+                        <li class="lli"><a href="#"><span class="iconfont">&#xe613;</span> 视频</a></li>
+                        <li class="lli"><a href="#"><span class="iconfont">&#xe501;</span> 发现</a></li>
+                        <li class="lli"><a href="#"><span class="iconfont">&#xe609;</span> 游戏</a></li>
+                        {{--登录的用户名--}}
+                        <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span> XXXX</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right" style="margin-right: 80px">
-                        <div id="navlist">
-                            <li class="lia">
+                    <form class="navbar-form navbar-right" style="margin-right: 47px">
+                        <div id="navlist1">
+                            <li class="lia1">
                                 <input type="text" class="search-t"  placeholder="大家都在搜:人民的名义...">
                                 {{--搜索下拉框--}}
-                                <ul class="ulul1">
+                                <ul class="ulul3">
                                     <a href="" style="color: orangered"><li> 查看完整热搜榜>></li></a>
                                     <a href=""><li> 1</li></a>
                                     <a href=""><li> 2</li></a>
@@ -294,10 +391,12 @@
                                 </ul>
                             </li>
                             <input type="submit" class="form-control" value="搜索" style="height: 28px;line-height: 12px">
-
                         </div>
                     </form>
+
                 </div>
+
+
             </div>
         </nav>
         <div class="page_center">

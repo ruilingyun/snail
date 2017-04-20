@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Home;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserLoginRequest extends FormRequest
+class AdminLoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,18 +24,17 @@ class UserLoginRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-            'email' => 'required|email',
+            'email' => 'required',
             'password' => 'required',
         ];
+
     }
 
     public function messages()
     {
         return [
-            'email.required'=> '邮箱不能为空',
-            'password.required' => '密码不能为空'
+            'email.required' => '用户名不能为空',
+            'password.required' => '密码不能为空',
         ];
-
     }
 }

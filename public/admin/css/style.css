@@ -688,11 +688,7 @@ nav ul {
 }
 
 nav ul li {
-<<<<<<< HEAD
-	background-color: #0D3625;
-=======
 	background: #3B3E40;
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
 	border-bottom: 1px solid #27292a;
 	border-top: 1px solid #46494b;
 	
@@ -700,12 +696,6 @@ nav ul li {
 	-moz-box-shadow: inset -20px 0 10px -20px #000;
 	-webkit-box-shadow: inset -20px 0 10px -20px #000;	
 }
-<<<<<<< HEAD
-nav ul ul li{
-	background-color: #2ab27b;
-}
-=======
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
 
 nav ul li:first-child {
 	border-top: none;
@@ -1923,13 +1913,4 @@ ul.icon-fonts li .unicode {
 ul.icon-fonts li .html {
 	color: #999;
 	font-size: 12px;
-<<<<<<< HEAD
-}
-dl dt{
-	width: 200px;
-	height:35px;
-	font-size: 20px;
-	color: whitesmoke;
-=======
->>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
 }

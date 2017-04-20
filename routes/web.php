@@ -12,45 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
-
-
-//前台首页控制器
-//登录后路由
-Route::get('home/login_index', 'Home\IndexController@loginindex');
-//个人中心主页路由
-Route::get('home/personalCenter', 'Home\IndexController@personalCenter');
-//个人中心相册路由
-Route::get('home/personalImages', 'Home\IndexController@personalImages');
-//个人中心管理路由
-Route::get('home/personalManger', 'Home\IndexController@personalManger');
-
-//后台首页控制器
-Route::get('admin/index','Admin\IndexController@index');
-
-
-//权限管理
-Route::get('admin/permission-list', 'Admin\PermissionController@permissionList');
-Route::any('admin/permission-add', 'Admin\PermissionController@permissionadd');
-Route::any('admin/permission-update/{permission_id}', 'Admin\PermissionController@permissionupdate');
-Route::get('admin/permission-delete/{permission_id}', 'Admin\PermissionController@permissiondelete');
-
-
-//角色管理
-Route::get('admin/role-list', 'Admin\RoleController@roleList');
-Route::any('admin/role-add', 'Admin\RoleController@roleadd');
-Route::any('admin/role-update/{role_id}', 'Admin\RoleController@update');
-Route::get('admin/role-delete/{role_id}', 'Admin\RoleController@roledelete');
-Route::any('admin/allot-permission/{role_id}', 'Admin\RoleController@allotpermission');
-
-
-//管理员管理
-Route::get('admin/user-list', 'Admin\UserController@userList');
-Route::any('admin/user-add', 'Admin\UserController@useradd');
-Route::any('admin/user-update/{user_id}', 'Admin\UserController@userupdate');
-Route::any('admin/user-delete/{user_id}', 'Admin\UserController@userdelete');
-Route::any('admin/allot-role/{user_id}', 'Admin\UserController@allotrole');
 
 //前台首页
 Route::get('home/index','Home\IndexController@index');
@@ -58,11 +21,14 @@ Route::get('home/index','Home\IndexController@index');
 // 前台登录
 Route::get('home/showLogin', 'Home\IndexController@showLogin');
 Route::post('home/doLogin', 'Home\IndexController@doLogin');
+//退出登录
+Route::get('/home/logout', 'Home\IndexController@logout');
+
 // 前台注册
 Route::get('home/register', 'Home\UserController@register');
 Route::post('home/store', 'Home\UserController@store');
 Route::get('verify/{confirmed_code}', 'Home\UserController@emailConfirm');
-//前台个人中心
+//前台个人设置
 //账号设置->个人信息
 Route::get('home/myMass','Home\accountController@myMass');
 //头像
@@ -74,10 +40,25 @@ Route::get('home/news','Home\accountController@news');
 //隐私设置
 Route::get('home/screen','Home\accountController@screen');
 
+// 前台个人中心
+Route::get('home/personalCenter', 'HOME\IndexController@personalCenter');
+Route::get('home/personalImages', 'HOME\IndexController@personalImages');
+Route::get('home/personalManger', 'HOME\IndexController@personalManger');
+
+//发微博
+Route::get('home/login-index', 'Home\UserController@pushMsg');
+Route::post('home/login-index', 'Home\UserController@doPush');
+// 删除微博
+Route::get('home/delMsg/{id}', 'Home\UserController@delMsg');
+// 评论
+Route::post('home/comment', 'Home\UserController@doComment');
+Route::get('home/delCom/{id}', 'Home\UserController@delCom');
+
+
+
 
 
 
 // 后台登录
-Route::get('admin/login', 'Admin\UserController@showLogin');
-Route::post('admin/login', 'Admin\UserController@doLogin');
-
+Route::get('admin/login', 'Admin\IndexController@showLogin');
+Route::post('admin/doLogin', 'Admin\IndexController@doLogin');
