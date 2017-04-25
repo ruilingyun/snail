@@ -128,6 +128,7 @@ class UserController extends Controller
         }
     }
 
+
     public function doPush(DoPush $request)
     {
         $user = Auth::user()->id;
