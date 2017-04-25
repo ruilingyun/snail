@@ -138,7 +138,7 @@
         width: 40px;
         height: 60px;
         line-height: 60px;
-        font-size: 20px;
+        font-size: 15px;
         margin-right: 10px;
     }
     .list-middle{
@@ -163,7 +163,6 @@
         width: 598px;
         /*height: 70px;*/
         background-color: #ccc;
-        margin-top: 0px;
         margin-left: -40px;
         display: none;
     }
@@ -202,7 +201,6 @@
     }
     .comment-middle-list{
         width: 598px;
-        height: 50px;
     }
     .comment-middle-list .comment-middle-list-avatar{
         margin-top: 10px;
@@ -214,7 +212,6 @@
         padding: 5px;
         margin-left: 5px;
         width: 530px;
-        height: 50px;
     }
     .comment-middle-list-nc{
         width: 530px;
@@ -227,8 +224,23 @@
         font-size: 10px;
         line-height:15px;
     }
-    .comment-middle-list-del a{
-        margin-left: 500px;
+    .comment-middle-list-del .comment-del{
+        margin-left: 450px;
+    }
+    .comment-middle-list-del .onclick-reply{
+        margin-left: 10px;
+    }
+    .comment-reply{
+        width: 598px;
+        background-color: #c0c0c0;
+        margin-left: -50px;
+        display: none;
+    }
+    .reply-content{
+        width: 548px;
+        height: 50px;
+        margin: 0 auto;
+        /*background-color: red;*/
     }
     #shouc{font-size: 18px;color: #8c8c8c}
 
@@ -279,14 +291,23 @@
         <div class="content-all" id="txt">
             <div class="content-list">
                 <div class="list-top clearfix">
+                    @foreach($users as $value_name)
+                        @if($value_name->id==$v->users_id)
                     <div class="list-useravatar pull-left">
-                        <img src="{{url(Auth::user()->avatar)}}" width="50px" height="50px" class="img-circle">
+                        <a href="{{url('home/other_per'.'/'.$v->users_id)}}"><img src="{{url($value_name->avatar)}}" width="50px" height="50px" class="img-circle"></a>
                     </div>
                     <div class="list-name pull-left">
-                        <span>{{Auth::user()->name}}</span>
+                        <span>{{$value_name->name}}</span>
                     </div>
+                        @else
+                        @endif
+                    @endforeach
                     <div class="list-delete pull-right">
-                        <a href="{{url('home/delMsg'.'/'.$v->id)}}">删除</a>
+                        @if($v->users_id == Auth::user()->id)
+                                <a href="{{url('home/delMsg'.'/'.$v->id)}}">删除</a>
+                            @else
+                                <a href="{{url('home/delMsg'.'/'.$v->id)}}">屏蔽</a>
+                        @endif
                     </div>
                 </div>
                 {{--{{$new->collect_id}}--}}
@@ -295,6 +316,7 @@
                 </div>
                 <div class="list-bottom">
                     <ul class="clearfix">
+<<<<<<< HEAD
 
                         <li class="pull-left"><a href="{{url('home/collect'.'/'.$v->id)}}"><span class="glyphicon glyphicon-heart-empty" id="shouc"></span></a>
                             @if('{{$v->id}} == {{$collect_id}}')
@@ -305,8 +327,13 @@
                         </li>
                         <li class="pull-left"><a href="{{url('home/relay'.'/'.$v->id)}}"><span class="glyphicon glyphicon-share"></span></a> {{$v->relayNum}}</li>
                         <li class="pull-left"> <a href="{{url('home/zan'.'/'.$v->id)}}"><span class="glyphicon glyphicon-thumbs-up"></span></a>{{$v->zanNum}}</li>
+=======
+                        <li class="pull-left"><span class="glyphicon glyphicon-heart-empty"></span>收藏</li>
+                        <li class="pull-left"><span class="glyphicon glyphicon-share "></span>1120</li>
+                        <li class="pull-left"><span class="glyphicon glyphicon-thumbs-up"></span>11001</li>
+>>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
                         <li class="pull-left cmt">
-                            <span class="glyphicon glyphicon-edit"></span>4210
+                            <span class="glyphicon glyphicon-edit"></span>评论
                         </li>
                         <div class="list-comment">
                             <form action="{{url('home/comment')}}" method="post">
@@ -326,18 +353,51 @@
                                 </div>
                             </form>
                             @foreach($comment as $value)
-                                @if($value->say_id==$v->id)
+                                @if($value->say_id == $v->id)
                                     <div class="comment-middle-list clearfix">
+                                        @foreach($users as $value_commit)
+                                            @if($value_commit->id == $value->commit_users_id)
                                         <div class="comment-middle-list-avatar pull-left">
-                                            <img src="{{url(Auth::user()->avatar)}}" width="30px" height="30px" class="img-rounded">
+                                            <img src="{{url($value_commit->avatar)}}" width="30px" height="30px" class="img-rounded">
                                         </div>
                                         <div class="comment-middle-list-ncd pull-left">
                                             <div class="comment-middle-list-nc clearfix">
-                                                <div class="comment-middle-list-username pull-left">{{Auth::user()->name}}</div>
+                                                <div class="comment-middle-list-username pull-left">{{$value_commit->name}}</div>
+                                            @else
+                                            @endif
+                                        @endforeach
                                                 <div class="comment-middle-list-comment pull-left">: {{$value->commit_content}}</div>
                                             </div>
-                                            <div class="comment-middle-list-del">
-                                                <a href="{{url('home/delCom'.'/'.$value->id)}}">删除</a>
+                                            <div class="comment-middle-list-del clearfix">
+                                                <a href="{{url('home/delCom'.'/'.$value->id)}}" class="comment-del pull-left">删除</a>
+                                                <span class="onclick-reply pull-left reply">回复</span>
+                                            </div>
+                                            <div class="comment-reply">
+                                                <div class="reply-content">
+                                                    <div class="content clearfix">
+                                                        <form action="{{url('home/reply')}}" method="post">
+                                                            {{csrf_field()}}
+                                                                <textarea class="comment-info pull-left" name="reply_content" rows="1" id="reply" resize="no" style="width: 450px;height: 30px;margin-left: 10px;margin-top: 10px;"></textarea>
+                                                            <input type="hidden" value="{{date('Y-m-d H:i:s',time())}}" name="addtime">
+                                                            <input id="zid" type="hidden" value="{{$v->id}}" name="say_id">
+                                                            <input id="zid" type="hidden" value="{{$value->id}}" name="commit_id">
+                                                                <input class="btn-reply pull-left" type="submit" value="回复" style="margin-top: 10px; margin-left: 20px;height: 30px;">
+                                                        </form>
+                                                    </div>
+                                                    @foreach($reply as $items)
+                                                    @if($items->commit_id==$value->id)
+                                                        <div class="reply-list clearfix" style="margin-top: 10px;">
+                                                            <div class="reply-avatar pull-left" style="margin-left: 10px;">
+                                                                <img src="{{url(Auth::user()->avatar)}}" width="30px" height="30px" class="img-rounded">
+                                                            </div>
+                                                            <div class="reply-content-list pull-left" style="width: 488px;height: 30px;margin-left: 20px;font-size: 10px">
+                                                                <span>{{$items->reply_content}}</span>
+                                                            </div>
+                                                        </div>
+                                                    @else
+                                                    @endif
+                                                    @endforeach
+                                                </div>
                                             </div>
 
                                         </div>
@@ -361,11 +421,37 @@
             <p>{{Auth::user()->name}} <span class="iconfont">&#xe688;</span></p>
             <p>
                 <ul>
-                    <li class="fancer"><p>66</p><p>关注</p></li>
+                    <a href="{{url('home/vip_follow')}}"><li class="fancer">
+                <p>
+                    @if($count_fans)
+                        {{$count_fans}}
+                    @else
+                        0
+                    @endif
+                </p>
+                <p>关注</p></li></a>
             <li class="fancer">|</li>
-            <li class="fancer"><p>1596</p><p>粉丝</p></li>
+            <a href="{{url('home/vip_fans')}}"> <li class="fancer">
+                <p>
+                    @if($count_fans1)
+                        {{$count_fans1}}
+                    @else
+                        0
+                    @endif
+                </p>
+                <p>粉丝</p></li></a>
             <li class="fancer">|</li>
-            <li class="fancer"><p>151</p><p>微博</p></li>
+            <a href="{{url('home/personalCenter')}}"><li class="fancer">
+                <p>
+                        @if($count_weibo)
+                            {{$count_weibo}}
+                        @else
+                            0
+                        @endif
+
+                </p>
+                <p>微博</p>
+            </li></a>
             </ul>
             </p>
         </div>
@@ -451,6 +537,18 @@
         $(function(){
             $('.cmt').click(function(){
                 $(this).next('div').slideToggle('slow',function () {
+
+                });
+            })
+        })
+        $(function(){
+            $('.glyphicon-thumbs-up').click(function(){
+                $(this).addClass('text-dange');
+            });
+        })
+        $(function(){
+            $('.reply').click(function(){
+                $(this).parent().next('div').slideToggle('slow',function () {
 
                 });
             })

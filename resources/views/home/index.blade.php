@@ -51,7 +51,7 @@
                 <input type="submit" value="登录" class="f-submit">
             </form>
             <div style="border-bottom: 1px solid black;margin-top: 10px">
-            <p style="font-size: 12px;color: #808080;margin-left: 10px">还没有微博?<a href="register" style="color: #EB7350">立即注册!</a></p>
+            <p style="font-size: 12px;color: #808080;margin-left: 10px">还没有微博?<a href="{{url('home/register')}}" style="color: #EB7350">立即注册!</a></p>
             </div>
             <p style="margin-top: 10px;font-size: 12px;color: #808080;margin-left: 10px">其他登录:XXX</p>
         </div>
@@ -86,8 +86,13 @@
         <p><a href="" class="hot-a1">#天真人类</a><p></p></p>
     </div>
     {{--微博找人--}}
-    <div class="fond-r">
-        <p style="border-bottom: 1px solid #808080"> 微博找人</p>
+    <div class="fond-r" style="background-color: greenyellow;">
+        <p style="border-bottom: 1px solid #808080;text-align: center"><b>友情链接</b></p>
+        @foreach($link as $value)
+            <div style="width: 230px;height: 50px;text-align: center;line-height: 50px;font-size: 20px">
+                <a href="http://{{$value->link_address}}">{{$value->links_name}}</a>
+            </div>
+        @endforeach
     </div>
 </div>
 @endsection

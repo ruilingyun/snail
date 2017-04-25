@@ -83,11 +83,20 @@
 
 <div class="container">
 
+<<<<<<< HEAD
     <form class="form-signin" action="{{url('admin/doLogin')}}" method="post">
         {{csrf_field()}}
         <h2 class="form-signin-heading">请登录...</h2>
         @if(count($errors)> 0)
             <div class="alert alert-danger input" style="width: 300px;margin-top: -25px;margin-left: 198px">
+=======
+
+    <form class="form-signin" action="{{url('/admin/doLogin')}}" method="post">
+        {{csrf_field()}}
+        <h2 class="form-signin-heading">请登录...</h2>
+        @if(count($errors)> 0)
+            <div class="alert alert-danger input" style="width: 264px;margin-top: -25px;margin-left: 198px">
+>>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
                 <ul>
                     @foreach($errors->all() as $error)
                         <li>{{$error}}</li>
@@ -96,7 +105,11 @@
             </div>
         @endif
         <label for="inputEmail" class="sr-only">Email address</label>
+<<<<<<< HEAD
         <input type="text" name="email" class="form-control" placeholder="请输入用户邮箱"  autofocus>
+=======
+        <input type="email" name="email" class="form-control" placeholder="请输入用户邮箱"  autofocus>
+>>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="请输入密码" >
         <button class="btn btn-lg btn-success btn-block" type="submit">登录</button>

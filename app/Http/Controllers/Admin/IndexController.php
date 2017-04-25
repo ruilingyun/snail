@@ -14,9 +14,20 @@ use Illuminate\Support\Facades\Validator;
 
 class IndexController extends Controller
 {
+<<<<<<< HEAD
 
 //    后台首页
     public function index()
+=======
+    //    后台首页
+    public function index()
+    {
+        return view('admin/index');
+    }
+
+    //
+    public function showLogin()
+>>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
     {
         return view('admin/index');
     }
@@ -82,6 +93,7 @@ class IndexController extends Controller
 //            dd($messages);
             return view('admin/login', compact('messages'));
         }
+<<<<<<< HEAD
 //        dd($user_name);
         // 如果允许登录则对密码进行hash 比较，判断密码是否正确
         if (Hash::check($request->password,$pass)){
@@ -96,7 +108,13 @@ class IndexController extends Controller
              $messages =  '为密码错误';
 //            $err ='0';
             return view('admin/login',compact('err'));
+=======
+        if (Hash::check($pass, $repass)) {
+            Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
+            return redirect('admin/index');
+>>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
         }
+        return redirect('admin/login');
     }
 
     public function outLogin()

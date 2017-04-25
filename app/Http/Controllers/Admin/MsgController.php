@@ -13,7 +13,6 @@ class MsgController extends Controller
     //新闻列表
     public function msglist()
     {
-//        dd(11);
         $result = DB::table('users')
             ->rightJoin('msg' , 'users.id', 'msg.user_id')
             ->get();
@@ -26,11 +25,9 @@ class MsgController extends Controller
             foreach ($type as $value){
                 $typeval = $value->name;
             }
-//            dd($typeL);
             $v->type = $typeval;
 
         }
-//        dd($result);
         return view('admin/msglist', compact('result','type'));
 
     }
@@ -38,12 +35,10 @@ class MsgController extends Controller
     //修改新闻类型
     public function msgupdate(Request $request, $id)
     {
-//        dd(1);
         if($request->isMethod('post')){
             $data = [
                 'type_id' => $request->type_id[0],
             ];
-//            dd($data);
             DB::table('msg')
                 ->where('id',$id)
                 ->update($data);
@@ -53,8 +48,6 @@ class MsgController extends Controller
 
         $types = DB::table('type')
             ->get();
-//        dd($types);
-//        dd($id);
         return view('admin/msgupdate',compact('types','id'));
 
     }
@@ -92,7 +85,6 @@ class MsgController extends Controller
         }
         $types = DB::table('type')
             ->get();
-//         dd($types);
         return view('admin/msgpublish',compact('types'));
     }
 
