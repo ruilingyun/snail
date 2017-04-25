@@ -126,6 +126,31 @@ Route::any('admin/allot-role/{user_id}', 'Admin\UserController@allotrole');
 
 
 
+
+//上传照片
+Route::post('home/photolist','Home\PhotoController@upphotos');
+
+//个人资料
+//上传资料
+Route::post('home/setmass','Home\myMassController@setmass');
+//修改资料
+Route::post('home/resetmass','Home\myMassController@resetmass');
+
+
+//上传相册
+Route::post('home/photos','Home\PhotoController@photos');
+//修改相册
+Route::post('home/upphotos/{id}','Home\PhotoController@upphotos');
+//照片列表
+Route::get('home/photoList/{id}','Home\PhotoController@photolist');
+//上传照片
+Route::post('home/upphoto/{id}','Home\PhotoController@upphoto');
+//删除相册
+Route::get('home/delPhotos/{id}','Home\PhotoController@delPhotos');
+//删除照片
+Route::get('home/delPhoto/{id}','Home\PhotoController@delPhoto');
+
+
 //用户管理
 //普通用户
 Route::get('admin/users-list', 'Admin\UsersController@userslist');
@@ -167,3 +192,22 @@ Route::any('admin/type-add', 'Admin\TypeController@typeadd');
 //删除新闻分类
 Route::get('admin/type-delete/{id}', 'Admin\TypeController@typedelete');
 
+
+//前台好友管理
+Route::get('home/myuser','Home\myuserController@myuser');
+//粉丝
+Route::get('home/myfans','Home\myuserController@myfans');
+//收藏微博
+Route::get('home/collect/{id}','Home\UserController@collect');
+//转发微博
+Route::get('home/relay/{id}','Home\UserController@relay');
+//点赞
+Route::get('home/zan/{id}','Home\myuserController@zan');
+//赞 转发 收藏 展示
+//Route::get('home/show','Home\myuserController@show');
+//模糊查询
+Route::get('home/seach','Home\myuserController@seach');
+//天气接口
+Route::get('home/tianqi','Home\myuserController@tianqi');
+//新闻接口
+Route::get('home/xinwen','Home\myuserController@xinwen');

@@ -20,8 +20,8 @@ class accountController extends Controller
     //前台个人中心
     public function myMass()
     {
-
-        $result= DB::table('userxq')->where('uid','24')->orderBy('id','desc')->get()->first();
+        $id = Auth::user()->id;
+        $result= DB::table('userxq')->where('uid',$id)->orderBy('id','desc')->get()->first();
 //        dd(  $result);
         return view('Home/Personal/myMass')->with('result',$result);
     }

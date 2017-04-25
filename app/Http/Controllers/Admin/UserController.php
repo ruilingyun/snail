@@ -14,12 +14,16 @@ class UserController extends Controller
     {
         $users = User::paginate(3);
         foreach ($users as $user) {
-            $roles = array();
-            foreach ($user->roles as $role) {
-                $roles[] = $role->display_name;
-            }
-            $user->roles = implode(',', $roles);
+        $roles = array();
+//            dd($user->roles);
+        foreach ($user->roles as $role) {
+            $roles[] = $role->display_name;
+//                dump($role->display_name);
+//              dump($user->roles);
         }
+        $user->roles = implode(',', $roles);
+//        dd($user->roles);
+    }
         return view('admin/userList', compact('users'));
     }
 
@@ -57,13 +61,16 @@ class UserController extends Controller
         if ($request->isMethod('post')){
             //获取当前用户的角色
             $user = User::find($user_id);
+
             DB::table('role_user')->where('user_id', $user_id)->delete();
             foreach($request->input('role_id') as $role_id){
 //                $role = Permission::find($permission_id);
+//                dump($data);
                 $result =  DB::table('role_user')->insert([
                     'role_id'=>$role_id,
                     'user_id' => $user_id,
                 ]);
+//
 
             }
             return redirect('admin/user-list');
@@ -71,5 +78,6 @@ class UserController extends Controller
         $roles = Role::all();
         return view('admin/allotrole', compact('roles','user_id'));
     }
+
 
 }

@@ -157,7 +157,7 @@
                         <ul style="width:130px;margin-left: -100px;" class="ulul1">
                             <a href=""><li> @我的</li></a>
                             <a href=""><li> 评论</li></a>
-                            <a href=""><li> 赞</li></a>
+                            <a href="{{url('home/show')}}"><li> 赞</li></a>
                             <a href=""><li> 私信</li></a>
                             <a href=""><li> 未关注人私信</li></a>
                             <a href=""><li> 群通知</li></a>

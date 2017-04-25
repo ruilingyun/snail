@@ -1,5 +1,5 @@
 @extends('layouts/admin/master')
-@section('title', '后台管理系统-新增权限')
+@section('title', '后台管理系统-新增新闻')
 <style>
     .power_title{
         width: 100%;
@@ -78,10 +78,12 @@
                 </tr>
                 <tr>
                     <td><b>是否热门</b></td>
+                    <div class="checkbox">
                     <td>
                         <lable><input type="radio" name="is_hot" value="1"> 热门</lable>
                         <lable><input type="radio" name="is_hot" value="2"> 非热门</lable>
                     </td>
+                    </div>
                 </tr>
                 <tr>
                     <td><b>说点什么吧</b>:   </td>

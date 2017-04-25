@@ -16,13 +16,34 @@ class IndexController extends Controller
     // 个人中心
     public function personalCenter()
     {
-        $result= DB::table('userxq')->where('uid','24')->orderBy('id','desc')->get()->first();
-        return view('home/personalCenter')->with('result',$result);
+        $id = Auth::user()->id;
+        $resu= DB::table('userxq')->where('uid',$id)->orderBy('id','desc')->get()->first();
+        $data = DB::table('user_grade')->where('user_id',$id)->get();
+        $zan = DB::table('zan')->where('zanuser_id',$id)->orderBy('id','desc')->get();
+        $count_zan =count($zan);
+        $result = DB::select('select * from user_grade where user_id ='.$id );
+        if (empty($result)){
+            $data=[
+                'user_id'=>$id,
+                'grade'=>1,
+            ];
+//            dd($data);
+            DB::table('user_grade')->insert($data);
+        }
+//        dd($count_zan);
+        return view('home/personalCenter')->with('resu',$resu)->with('data',$data)->with('count_zan',$count_zan);
     }
     // 个人相册
     public function personalImages()
     {
-        return view('home/personalImages');
+        $id = Auth::user()->id;
+        $result= DB::table('photos')->where('uid','=',$id)->get();
+        $data = DB::table('user_grade')->where('user_id',$id)->get();
+        $resu= DB::table('userxq')->where('uid',$id)->orderBy('id','desc')->get()->first();
+
+//        dd($result);
+        return view('home/personalImages')->with('result',$result)->with('data',$data)->with('resu',$resu);
+
     }
 
     public function personalManger()

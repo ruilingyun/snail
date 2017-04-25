@@ -13,7 +13,6 @@
 
     <title>新浪微博后台登录</title>
 
-
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
@@ -77,7 +76,6 @@
         .form-control{
             margin-top: 20px;
         }
-
     </style>
 </head>
 
@@ -85,17 +83,25 @@
 
 <div class="container">
 
-
-    <form class="form-signin" action="{{url('/admin/doLogin')}}" method="post">
-
+    <form class="form-signin" action="{{url('admin/doLogin')}}" method="post">
         {{csrf_field()}}
         <h2 class="form-signin-heading">请登录...</h2>
+        @if(count($errors)> 0)
+            <div class="alert alert-danger input" style="width: 300px;margin-top: -25px;margin-left: 198px">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" name="name" class="form-control" placeholder="请输入用户邮箱"  autofocus>
+        <input type="text" name="email" class="form-control" placeholder="请输入用户邮箱"  autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="请输入密码" >
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+        <button class="btn btn-lg btn-success btn-block" type="submit">登录</button>
     </form>
+
 </div> <!-- /container -->
 
 

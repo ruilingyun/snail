@@ -1,5 +1,7 @@
 {{--首页--}}
 @extends('layouts.home.master')
+<script src="{{url('/js/jquery-1.8.3.min.js')}}"></script>
+
 @section('title','微博-随时随地发现新鲜事')
 @section('content')
     <div>新闻</div>
@@ -54,6 +56,22 @@
             <p style="margin-top: 10px;font-size: 12px;color: #808080;margin-left: 10px">其他登录:XXX</p>
         </div>
     </div>
+    {{--天气接口--}}
+    <div style="font: 20px black   新宋体;text-align: center; width: 230px;height: 37px;">
+        <a href="{{url('home/tianqi')}}" target='abc'>天气预报</a>
+    </div>
+    <div style="background-color: #ccc;width: 300px;height: 400px;background:url({{asset('home/img/tianqi.jpg')}})">
+        {{--<img  class="abc" src="{{asset('home/img/tianqi.jpg')}}" alt="" style="width: 300px;height:400px;">--}}
+        <iframe src="" name='abc' frameborder="0" scrolling="no" style="height: 400px;width: 300px;"></iframe>
+    </div>
+    {{--新闻接口--}}
+    <div style="font: 20px black   新宋体;text-align: center; width: 230px;height: 37px;">
+        <a href="{{url('home/xinwen')}}" target='abce'>新闻</a>
+    </div>
+    <div style="background-color: #ccc;width: 300px;height: 400px;background:url({{asset('home/img/tianqi.jpg')}})">
+        {{--<img  class="abc" src="{{asset('home/img/tianqi.jpg')}}" alt="" style="width: 300px;height:400px;">--}}
+        <iframe src="" name='abce' frameborder="0" scrolling="no" style="height: 400px;width: 300px;"></iframe>
+    </div>
     {{--热门微博--}}
     <div class="hot">
         <p style="border-bottom: 1px solid #808080"> 热门话题</p>
@@ -73,3 +91,5 @@
     </div>
 </div>
 @endsection
+
+

@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
+
 
 class UserController extends Controller
 {
@@ -61,13 +63,52 @@ class UserController extends Controller
     // 发微博
     public function pushMsg()
     {
+        $id = Auth::user()->id;
         //根据模型将所以的数据查询出来
         $msg =Msg::where('id','>','0')->orderBy('id','desc')->get();
-        $comment =Comment::where('id','>','0')->orderBy('id','desc')->get();
-        while($msg){
-            return view('home.login-index',compact('msg','comment'));
-//            return view('home.login-index', compact('msg'));
+        $comment = Comment::where('id','>','0')->orderBy('id','desc')->get();
+        $collect = DB::select('select * from collect');
+        $collect_id = ($collect[0]->collect_id);
+        $count_collect = count($collect);
+        $zan = DB::table('zan')->where('zanuser_id',$id)->orderBy('id','desc')->get();
+        $count_zan =count($zan);
+        $relay = DB::table('relay')->where('user_id',$id)->orderBy('id','desc')->get();
+        $count_relay =count($relay);
+//        $a=[];
+        foreach ($msg as $v){
+            $say_id = $v->id;
 
+            $a =  DB::table('collect')
+                ->where('collect_id',$say_id)
+                ->get();
+            $v->collectionNum = count($a);
+        }
+        foreach ($msg as $v){
+            $say_id = $v->id;
+
+            $b =  DB::table('zan')
+                ->where('zan_id',$say_id)
+                ->get();
+            $v->is_zan = $b;
+            $v->zanNum = count($b);
+        }
+        foreach ($msg as $v){
+            $say_id = $v->id;
+
+            $c =  DB::table('relay')
+                ->where('msg_id',$say_id)
+                ->get();
+            $v->is_relay = $c;
+            $v->relayNum = count($c);
+        }
+
+
+
+
+//        dd($count_zan);
+        while($msg){
+            return view('home.login-index',compact('msg','comment','count_zan','count_collect','collect_id','count_relay','a'));
+//            return view('home.login-index', compact('msg'));
         }
     }
 
@@ -86,6 +127,16 @@ class UserController extends Controller
             'users_id'=>$users_id,
         ];
         Msg::create(array_merge($request->all(),$data));
+//        账号等级
+        $grade = DB::select('select grade from user_grade where user_id ='.$users_id);
+        $gra = $grade[0]->grade +=1;
+//       dd($gra);
+        $grade=[
+            'grade'=>$gra,
+        ];
+
+//        dd($data);
+         DB::table('user_grade')->where('user_id',$users_id)->update($grade);
         return redirect('home/login-index');
     }
 
@@ -129,6 +180,69 @@ class UserController extends Controller
         $com = Comment::find($id);
         $com->delete();
         return redirect('home/login-index');
+    }
+
+    //收藏微博 (取消收藏)
+    public function collect($id)
+    {
+//        dd($id);
+        $user_id = Auth::user()->id;
+        $result = DB::select('select * from collect where collect_id ='.$id);
+        $says = Msg::where('id','=',$id)->get();
+        $users = $says->toArray();
+        $users_id = $users[0]['users_id'];
+//        dd($users_id);
+        $collect_id = $id;
+        if (empty($result)){
+            $data=[
+                'user_id'=>Auth::user()->id,
+                'userby_id'=>$users_id,
+                'collect_id'=>$id,
+            ];
+             DB::table('collect')->insert($data);
+        }else{
+             DB::delete('delete from collect where collect_id = ?',array($id));
+        }
+//        dd($id);
+        return redirect('home/login-index');
+    }
+    //转发微博
+    public function relay($id)
+    {
+//        dd($id);
+        $user = Auth::user()->id;
+        $result = DB::select('select * from msg where id ='.$id );
+        $users_id = $user;
+        $content = $result[0]->content;
+        $data=[
+            'users_id'=>$users_id,
+            'content'=>$content,
+            'type_id'=>1,
+            'is_hot'=>1,
+        ];
+
+         DB::table('msg')->insert($data);
+
+        $data1=[
+            'user_id'=>$users_id,
+            'msg_id'=>$id,
+        ];
+        DB::table('relay')->insert($data1);
+
+        //        账号等级
+        $grade = DB::select('select grade from user_grade where user_id ='.$users_id);
+
+        $gra = $grade[0]->grade +=1;
+//       dd($gra);
+        $grade=[
+            'grade'=>$gra,
+        ];
+
+//        dd($data);
+        DB::table('user_grade')->where('user_id',$users_id)->update($grade);
+
+        return redirect('home/login-index');
+
     }
 
 }

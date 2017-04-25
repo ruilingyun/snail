@@ -440,7 +440,7 @@
                         <p><b>{{Auth::user()->name}}</b><span class="iconfont">&#xe688;</span></p>
                     </div>
                     <div class="personal_introduce">
-                        {{--<p><b>{{$result->notice}}</b></p>--}}
+{{--                        <p><b>{{$resu->notice}}</b></p>--}}
 
                     </div>
                 </div>
@@ -489,15 +489,18 @@
                         <ul>
                             <li class="put-attest"><b>申请认证</b></li>
                             <li class="put-attest">|</li>
-                            <li class="put-attest">14级 <span class="iconfont">&#xe688;</span> </li>
+                            @if($data->isEmpty())
+                                @else
+                            <li class="put-attest">{{$data[0]->grade}}级 <span class="iconfont">&#xe688;</span> </li>
+                                @endif
                         </ul>
                     </div>
                     <ul>
                         <li class="a-data"><span class="iconfont">&#xe60d;</span>   安徽芜湖</li>
                         <li class="a-data"><span class="iconfont">&#xe61b;</span>毕业于   芜湖联合大学</li>
                         <li class="a-data"><span class="iconfont">&#xe67c;</span>1995年10月28日</li>
-                        <li class="a-data"><span class="iconfont">&#xe5e6;</span>简介:    任时光匆匆流去我只在乎你</li>
-                        <li class="a-data-email"><span class="iconfont">&#xe60c;</span>1357119039@qq.com</li>
+                        {{--<li class="a-data"><span class="iconfont">&#xe5e6;</span>简介:    {{$resu->notice}}</li>--}}
+                        <li class="a-data-email"><span class="iconfont">&#xe60c;</span>邮箱:  {{Auth::user()->email}}</li>
                         <li class="a-data"><a href="">编辑个人资料</a> <span>></span></li>
 
                     </ul>

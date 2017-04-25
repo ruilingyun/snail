@@ -44,7 +44,7 @@
     </div>
     <div class="table_power">
         <table class="table table-bordered">
-            <form  class="form-inline" action="{{url('admin/msg-update').'/'.$id}}" method="post">
+            <form  class="form-inline" action="{{url('admin/new-update').'/'.$id}}" method="post">
                 {{csrf_field()}}
                 <tr>
                     <td><b>修改类别</b>:</td>

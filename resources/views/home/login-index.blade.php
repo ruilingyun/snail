@@ -230,10 +230,9 @@
     .comment-middle-list-del a{
         margin-left: 500px;
     }
-
+    #shouc{font-size: 18px;color: #8c8c8c}
 
 </style>
-
 @section('content')
     <div class="publish">
         <div class="f_nav">
@@ -268,14 +267,15 @@
             <li class="assortment-all1"><a href="" class="abc">音乐</a></li>
             <li class="assortment-all1"><a href="" class="abc">文章</a></li>
         </ul>
-        <form class="form-inline">
+        <form class="form-inline" action="" method="get">
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="输入搜索内容">
+                <input type="text" class="form-control" placeholder="输入搜索内容">
             </div>
             <button type="submit" class="btn btn-default">搜索</button>
         </form>
     </div>
     @foreach($msg as $v)
+
         <div class="content-all" id="txt">
             <div class="content-list">
                 <div class="list-top clearfix">
@@ -289,14 +289,22 @@
                         <a href="{{url('home/delMsg'.'/'.$v->id)}}">删除</a>
                     </div>
                 </div>
+                {{--{{$new->collect_id}}--}}
                 <div class="list-middle">
                     <span>{{$v->content}}</span>
                 </div>
                 <div class="list-bottom">
                     <ul class="clearfix">
-                        <li class="pull-left"><span class="glyphicon glyphicon-heart-empty"></span>收藏</li>
-                        <li class="pull-left"><span class="glyphicon glyphicon-share"></span>1120</li>
-                        <li class="pull-left"><span class="glyphicon glyphicon-thumbs-up"></span>11001</li>
+
+                        <li class="pull-left"><a href="{{url('home/collect'.'/'.$v->id)}}"><span class="glyphicon glyphicon-heart-empty" id="shouc"></span></a>
+                            @if('{{$v->id}} == {{$collect_id}}')
+                                {{$v->collectionNum}}
+                            @else
+                                22
+                            @endif
+                        </li>
+                        <li class="pull-left"><a href="{{url('home/relay'.'/'.$v->id)}}"><span class="glyphicon glyphicon-share"></span></a> {{$v->relayNum}}</li>
+                        <li class="pull-left"> <a href="{{url('home/zan'.'/'.$v->id)}}"><span class="glyphicon glyphicon-thumbs-up"></span></a>{{$v->zanNum}}</li>
                         <li class="pull-left cmt">
                             <span class="glyphicon glyphicon-edit"></span>4210
                         </li>

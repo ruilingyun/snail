@@ -1,4 +1,9 @@
-@extends('home/personalCenter');
+@extends('home/personalCenter')
+<link href="{{url('home/css/bootstrap.min.css')}}" rel="stylesheet">
+<script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
+<link rel="stylesheet" href="{{url('home/css/bootstrap.css')}}">
+
+
 <style>
     .personal-images{
         width: 920px;
@@ -28,7 +33,7 @@
         color: #626262;
     }
     .poto{margin: 15px;float: left;}
-    .abc{width: 150px;height: 150px;cursor: pointer;position: absolute}
+    .abc{width: 150px;height: 150px;cursor: pointer;margin-top: 30px;position: relative}
     .wrap span{
         color:#808080;
     }
@@ -51,6 +56,8 @@
     }
     .wrap:hover{background-color: #F3B94F;}
     .wrap .file{position:absolute;top:0;right:0;margin:0;border:solid transparent; opacity:0;  filter:alpha(opacity=0);  cursor: pointer;  }
+    /*#slogin{display:none;position: absolute;bottom: 0;left: 300px}*/
+
 </style>
 @section('content');
 <div class="personal-images">
@@ -59,14 +66,11 @@
             <li class="zhaopian">照片墙</li>
         </ul>
         <ul>
-            <form action="{{url('home/upphoto')}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('home/upphoto'.'/'.$id)}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="wrap" style="margin-left: 680px">
                     <span>本地照片</span>
                     <input id="fileupload" name="pic" class="file" type="file" />
-                    {{--@foreach($result as $rel)--}}
-                    {{--<input type="hidden" name="id" value="{{$rel->id}}">--}}
-                    {{--@endforeach--}}
                 </div>
                 <div class="wrap">
                     <span>保存</span>
@@ -76,13 +80,30 @@
         </ul>
     </div>
 
-
     @foreach($result as $rel)
         <div class="poto">
             <p style="margin-left: 10px;margin-top: 10px">{{($rel->created_at)}}</p>
-            <img  class="abc" src="{{url($rel->pic)}}" alt="">
+            <a href="{{url('home/delPhoto'.'/'.$rel->id)}}">X</a>
+            <img  class="abc" src="{{url($rel->pic)}}" alt="" >
+            {{--隐藏大图--}}
+            {{--<div id="slogin">--}}
+                {{--<span href="" id="tuichu">X</span>--}}
+                {{--<img src="{{url($rel->pic)}}" alt="" width="400px">--}}
+            {{--</div>--}}
         </div>
     @endforeach
 
 </div>
+
+<script>
+    $(function(){
+        $('#login').mouseover(function(){
+            $('#slogin').css('display','block');
+        })
+        $('#login').mouseleave(function(){
+            $('#slogin').css('display','none');
+        })
+    })
+</script>
+
 @endsection

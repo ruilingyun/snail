@@ -15,8 +15,10 @@ class RoleController extends Controller
         $roles = Role::paginate(3);
         foreach ($roles as $role){
             $perms = array();
+//            dd($role->perms);
             foreach ($role->perms as $perm){
                 $perms[] = $perm->display_name;
+//                dump($perm->display_name);
             }
             $role->perms = implode(',', $perms);
         }
@@ -26,7 +28,9 @@ class RoleController extends Controller
     public function roleadd(Request $request)
     {
         if ($request->isMethod('post')){
+//            dd($_POST);
             $role = Role::create($request->all());
+//            dd($role);
             return redirect('admin/role-list');
         }
         return view('admin/roleadd');
@@ -41,10 +45,16 @@ class RoleController extends Controller
 
             DB::table('permission_role')->where('role_id', $role_id)->delete();
             foreach($request->input('permission_id') as $permission_id){
+
+//                $role = Permission::find($permission_id);
+
+
+//                dump($data);
                $result =  DB::table('permission_role')->insert([
                    'permission_id'=>$permission_id,
                    'role_id' => $role_id,
                ]);
+//
 
             }
             return redirect('admin/role-list');

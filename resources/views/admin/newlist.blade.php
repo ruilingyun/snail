@@ -45,12 +45,12 @@
         <ul>
             <li class="li_power"><a href="{{url('admin/index')}}">首页=></a></li>
             <li class="li_power"><a href="{{url('admin/permissionList')}}">新闻管理=></a></li>
-            <li class="li_power">微博列表</li>
+            <li class="li_power">新闻列表</li>
         </ul>
     </div>
     <div class="power_title">
         <ul>
-            <li class="li_power2"><a href="{{url('admin/msg-publish')}}">发布微博</a></li>
+            <li class="li_power2"><a href="{{url('admin/new-publish')}}">发布新闻</a></li>
         </ul>
     </div>
     <div class="search">
@@ -86,8 +86,8 @@
                         @endif
                     </td>
                     <td>
-                        <a href="msg-update/{{$rel->id}}" class="btn btn-default">修改</a>
-                        <a href="msg-delete/{{$rel->id}}" class="btn btn-default">删除</a>
+                        <a href="new-update/{{$rel->id}}" class="btn btn-default">修改分类</a>
+                        <a href="new-delete/{{$rel->id}}" class="btn btn-danger">删除</a>
                     </td>
                 </tr>
             @endforeach

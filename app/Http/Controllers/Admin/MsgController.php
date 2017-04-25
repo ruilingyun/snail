@@ -69,8 +69,6 @@ class MsgController extends Controller
 
         return redirect('admin/msg-list');
 
-
-
     }
 
     //新闻发布
@@ -83,7 +81,7 @@ class MsgController extends Controller
             $data = [
                 'is_hot' => $request->is_hot,
                 'type_id' => $request->type_id[0],
-//                'content' => $request->content,
+                'content' => $request->content,
                 'user_id' => '17'
 
             ];
@@ -119,13 +117,7 @@ class MsgController extends Controller
         return view('admin/newsContent',compact('result','types'));
     }
 
-    //新闻类别列表
-    public function newsTypeList()
-    {
-        $types = DB::table('type')
-            ->get();
-        return view('admin/newsTypeList',compact('types'));
-    }
+
 
 
 
