@@ -22,7 +22,6 @@ class accountController extends Controller
     {
 
         $result= DB::table('userxq')->where('uid','24')->orderBy('id','desc')->get()->first();
-//        dd(  $result);
         return view('Home/Personal/myMass')->with('result',$result);
     }
     //修改昵称

@@ -104,11 +104,9 @@
             <li><a href=""><span class="iconfont"></span>修改广告</a></li>
             <li><a href=""><span class="iconfont"></span>删除广告</a></li>
         </ul>
-        <li><h4 class="font_size"><span class="iconfont">&#xe603;</span>商品管理</h4></li>
+        <li><h4 class="font_size"><span class="iconfont">&#xe603;</span>友情链接</h4></li>
         <ul>
-            <li><a href=""><span class="iconfont">&#9881;</span>商品模块</a></li>
-            <li><a href="userList"><span class="iconfont">&#xe6d3;</span> 用户管理 <span class="pip">3</span></a></li>
-            <li><a href="set"><span class="iconfont">&#9881;</span> 设置</a></li>
+            <li><a href="{{url('admin/link-list')}}"><span class="iconfont">&#9881;</span>链接管理</a></li>
         </ul>
     </ul>
 </nav>

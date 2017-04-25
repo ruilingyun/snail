@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Hash;
 
 class IndexController extends Controller
 {
+    //    后台首页
+    public function index()
+    {
+        return view('admin/index');
+    }
+
     //
     public function showLogin()
     {
@@ -32,8 +38,9 @@ class IndexController extends Controller
         }
         if (Hash::check($pass, $repass)) {
             Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
-            return redirect('admin.index');
+            return redirect('admin/index');
         }
+        return redirect('admin/login');
     }
 
 }

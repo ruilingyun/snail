@@ -344,7 +344,7 @@
             display:none;
             list-style: none;
         }
-   .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto;}
+        .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto;}
         .content-all{
             width: 600px;
             /*height: 800px;*/
@@ -485,23 +485,23 @@
     <link rel="stylesheet" href="css/iconfont/iconfont.css">
 </head>
 <body>
-    <div id="personal_main">
+<div id="personal_main">
 
-        {{--头部--}}
+    {{--头部--}}
 
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="{{url('home/login-index')}}" class="img-a"><img src="{{url('home/image/logo.jpg')}}" alt=""></a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right" id="ulul">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="{{url('home/login-index')}}" class="img-a"><img src="{{url('home/image/logo.jpg')}}" alt=""></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right" id="ulul">
                 <span  id="navlist" style="width: 180px;height: 50px;float: right;margin-right: -126px;">
                     <span style="float: left;margin-top: 7px; margin-left:10px; border-right: 1px solid #D9D9D9;width: 1px;height:25px; font-size: 25px" class="iconfont">&#xe612;</span>
                     <li class="lia">
@@ -532,100 +532,128 @@
                     </li>
                     <a href=""><span id="font-c" class="iconfont" style=" margin-top: 15px;margin-left:20px;float:left;color: #F96214;">&#xe669;</span></a>
                 </span>
-                        <li class="lli"><a href="#"><span class="iconfont">&#xe60d;</span> 首页</a></li>
-                        <li class="lli"><a href="#"><span class="iconfont">&#xe613;</span> 视频</a></li>
-                        <li class="lli"><a href="#"><span class="iconfont">&#xe501;</span> 发现</a></li>
-                        <li class="lli"><a href="#"><span class="iconfont">&#xe609;</span> 游戏</a></li>
-                        {{--登录的用户名--}}
-                        <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span> {{Auth::user()->name}} </a></li>
-                    </ul>
-                    <form class="navbar-form navbar-right" style="margin-right: 47px">
-                        <div id="navlist1">
-                            <li class="lia1">
-                                <input type="text" class="search-t"  placeholder="大家都在搜:人民的名义...">
-                                {{--搜索下拉框--}}
-                                <ul class="ulul3">
-                                    <a href="" style="color: orangered"><li> 查看完整热搜榜>></li></a>
-                                    <a href=""><li> 1</li></a>
-                                    <a href=""><li> 2</li></a>
-                                    <a href=""><li> 3</li></a>
-                                    <a href=""><li> 4</li></a>
-                                    <a href=""><li> 5</li></a>
-                                    <a href=""><li> 6</li></a>
-                                </ul>
-                            </li>
-                            <input type="submit" class="form-control" value="搜索" style="height: 28px;line-height: 12px">
-                        </div>
-                    </form>
+                    <li class="lli"><a href="#"><span class="iconfont">&#xe60d;</span> 首页</a></li>
+                    <li class="lli"><a href="#"><span class="iconfont">&#xe613;</span> 视频</a></li>
+                    <li class="lli"><a href="#"><span class="iconfont">&#xe501;</span> 发现</a></li>
+                    <li class="lli"><a href="#"><span class="iconfont">&#xe609;</span> 游戏</a></li>
+                    {{--登录的用户名--}}
+                    <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span> {{Auth::user()->name}} </a></li>
+                </ul>
+                <form class="navbar-form navbar-right" style="margin-right: 47px">
+                    <div id="navlist1">
+                        <li class="lia1">
+                            <input type="text" class="search-t"  placeholder="大家都在搜:人民的名义...">
+                            {{--搜索下拉框--}}
+                            <ul class="ulul3">
+                                <a href="" style="color: orangered"><li> 查看完整热搜榜>></li></a>
+                                <a href=""><li> 1</li></a>
+                                <a href=""><li> 2</li></a>
+                                <a href=""><li> 3</li></a>
+                                <a href=""><li> 4</li></a>
+                                <a href=""><li> 5</li></a>
+                                <a href=""><li> 6</li></a>
+                            </ul>
+                        </li>
+                        <input type="submit" class="form-control" value="搜索" style="height: 28px;line-height: 12px">
+                    </div>
+                </form>
 
-                </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <div class="page_center">
-            <div class="page_top">
-                <div class="page_top_info pull-left">
+    <div class="page_center">
+        <div class="page_top">
+            <div class="page_top_info pull-left">
+                @foreach($users as $value1)
                     <div class="personal_icon">
-
-                        <img src="{{url(Auth::user()->avatar)}}" alt="" class="img-circle" width="100px" height="100px">
+                        <img src="{{url($value1->avatar)}}" alt="" class="img-circle" width="100px" height="100px">
                     </div>
                     <div class="personal_name">
-                        <p><b>{{Auth::user()->name}}</b><span class="iconfont">&#xe688;</span></p>
+                        <p><b>{{$value1->name}}</b><span class="iconfont">&#xe688;</span></p>
                     </div>
                     <div class="personal_introduce">
                         {{--<p><b>{{$result->notice}}</b></p>--}}
 
                     </div>
-                </div>
-                <div class="page_top_nav pull-left">
-                    <ul class="clearfix">
-                        <li class="pull-left" id="lis"><a href="{{url('home/personalCenter')}}" class="mycolor">我的主页</a></li>
-                        <li class="pull-left" id="lis"><a href="{{url('home/personalImages')}}" class="mycolor">我的相册</a></li>
-                        <li class="pull-left" id="lis"><a href="{{url('home/personalManger')}}" class="mycolor">管理中心</a></li>
-                    </ul>
-                </div>
+                    @if($value1->id==Auth::user()->id)
+                        @else
+                            <div class="guanzhu" style="margin: 0 auto;margin-top: 15px;width: 120px;">
+                                @if(!$follow->isEmpty())
+                                    @foreach($follow as $value_follow)
+                                        @if($value_follow->usersby_id == Auth::user()->id)
+                                            <form action="{{url('home/nozhu'.'/'.$value_follow->usersby_id)}}">
+                                                <input type="hidden" value="{{$value1->id}}" name="users_id">
+                                                <input type="submit"  class="btn btn-warning" value="已关注(取消关注)">
+                                            </form>
+                                        @else
+                                            <form action="{{url('home/guanzhu'.'/'.$value1->id)}}">
+                                                <input type="hidden" value="{{Auth::user()->id}}" name="usersby_id">
+                                                <input type="submit" class="btn btn-info" value="+ 关注">
+                                            </form>
+                                        @endif
+                                    @endforeach
+                                @else
+                                    <form action="{{url('home/guanzhu'.'/'.$value1->id)}}">
+                                        <input type="hidden" value="{{Auth::user()->id}}" name="usersby_id">
+                                        <input type="submit" class="btn btn-info" value="+ 关注">
+                                    </form>
+                                @endif
+                            </div>
+                    @endif
+                @endforeach
             </div>
-            <div class="page_middle">
-                <div class="info_left">
-                    <div class="little_title">
+            <div class="page_top_nav pull-left">
+                <ul class="clearfix">
+                    <li class="pull-left" id="lis"><a href="{{url('home/personalCenter')}}" class="mycolor">我的主页</a></li>
+                    <li class="pull-left" id="lis"><a href="{{url('home/personalImages')}}" class="mycolor">我的相册</a></li>
+                    <li class="pull-left" id="lis"><a href="{{url('home/personalManger')}}" class="mycolor">管理中心</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="page_middle">
+            <div class="info_left">
+                <div class="little_title">
 
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-@section('content')
+    @section('content')
         <div class="p-content">
             <div class="p-content-left">
                 <div class="content-nav">
                     <ul>
 
                         <a href=""><li class="fance">
-                            <p style="">@if($count_fans)
-                                    {{$count_fans}}
-                                @else
-                                    0
-                                @endif</p>
-                            <p style="margin-top: -10px;">关注</p>
-                        </li></a>
+                                <p style="">@if($count_fans)
+                                        {{$count_fans}}
+                                    @else
+                                        0
+                                    @endif</p>
+                                <p style="margin-top: -10px;">关注</p>
+                            </li></a>
                         <li class="fance1"></li>
                         <a href=""><li class="fance">
-                            <p style="">@if($count_fans1)
-                                    {{$count_fans1}}
-                                @else
-                                    0
-                                @endif</p>
-                            <p style="margin-top: -10px;">粉丝</p>
-                        </li></a>
+                                <p style="">@if($count_fans1)
+                                        {{$count_fans1}}
+                                    @else
+                                        0
+                                    @endif</p>
+                                <p style="margin-top: -10px;">粉丝</p>
+                            </li></a>
                         <li class="fance1"></li>
                         <a href=""><li class="fance">
-                            <p style="">@if($count_weibo)
-                                    {{$count_weibo}}
-                                @else
-                                    0
-                                @endif</p>
-                            <p style="margin-top: -10px;">微博</p>
-                        </li></a>
+                                <p style="">
+                                    @if($count_weibo)
+                                        {{$count_weibo}}
+                                    @else
+                                        0
+                                    @endif
+                                </p>
+                                <p style="margin-top: -10px;">微博</p>
+                            </li></a>
 
                     </ul>
                 </div>
@@ -672,14 +700,19 @@
                     <div class="content-all" id="txt">
                         <div class="content-list">
                             <div class="list-top clearfix">
+                                @foreach($users as $value_name)
+                                    @if($value_name->id==$v->users_id)
                                 <div class="list-useravatar pull-left">
-                                    <img src="{{url(Auth::user()->avatar)}}" width="50px" height="50px" class="img-circle">
+                                    <img src="{{url($value_name->avatar)}}" width="50px" height="50px" class="img-circle">
                                 </div>
                                 <div class="list-name pull-left">
-                                    <span>{{Auth::user()->name}}</span>
+                                    <span>{{$value_name->name}}</span>
                                 </div>
+                                    @else
+                                    @endif
+                                @endforeach
                                 <div class="list-delete pull-right">
-                                    <a href="{{url('home/delMsg'.'/'.$v->id)}}">删除</a>
+                                    <a href="{{url('home/delMsg'.'/'.$v->id)}}"></a>
                                 </div>
                             </div>
                             <div class="list-middle">
@@ -714,52 +747,52 @@
                                             @if($value->say_id==$v->id)
                                                 <div class="comment-middle-list clearfix">
                                                     @foreach($users as $value_commit)
-                                                        @if($value_commit->id == $value->commit_users_id)
-                                                    <div class="comment-middle-list-avatar pull-left">
-                                                        <img src="{{url($value_commit->avatar)}}" width="30px" height="30px" class="img-rounded">
-                                                    </div>
-                                                    <div class="comment-middle-list-ncd pull-left">
-                                                        <div class="comment-middle-list-nc clearfix">
-                                                            <div class="comment-middle-list-username pull-left">{{$value_commit->name}}</div>
-                                                     @else
-                                                     @endif
-                                                     @endforeach
-                                                            <div class="comment-middle-list-comment pull-left">: {{$value->commit_content}}</div>
-                                                        </div>
-                                                        <div class="comment-middle-list-del clearfix">
-                                                            <a href="{{url('home/delCom'.'/'.$value->id)}}" class="comment-del pull-left">删除
-                                                            </a>
-                                                            <span class="onclick-reply pull-left reply">回复</span>
-                                                        </div>
-                                                        <div class="comment-reply">
-                                                            <div class="reply-content">
-                                                                <div class="content clearfix">
-                                                                    <form action="{{url('home/reply')}}" method="post">
-                                                                        {{csrf_field()}}
-                                                                        <textarea class="comment-info pull-left" name="reply_content" rows="1" id="reply" resize="no" style="width: 450px;height: 30px;margin-left: 10px;margin-top: 10px;"></textarea>
-                                                                        <input type="hidden" value="{{date('Y-m-d H:i:s',time())}}" name="addtime">
-                                                                        <input id="zid" type="hidden" value="{{$v->id}}" name="say_id">
-                                                                        <input id="zid" type="hidden" value="{{$value->id}}" name="commit_id">
-                                                                        <input class="btn-reply pull-left" type="submit" value="回复" style="margin-top: 10px; margin-left: 20px;height: 30px;">
-                                                                    </form>
-                                                                </div>
-                                                                @foreach($reply as $items)
-                                                                    @if($items->commit_id==$value->id)
-                                                                        <div class="reply-list clearfix" style="margin-top: 10px;">
-                                                                            <div class="reply-avatar pull-left" style="margin-left: 10px;">
-                                                                                <img src="{{url(Auth::user()->avatar)}}" width="30px" height="30px" class="img-rounded">
-                                                                            </div>
-                                                                            <div class="reply-content-list pull-left" style="width: 488px;height: 30px;margin-left: 20px;font-size: 10px">
-                                                                                <span>{{$items->reply_content}}</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    @else
-                                                                    @endif
-                                                                @endforeach
+                                                        {{--@if($value_commit->id == $value->commit_users_id)--}}
+                                                            <div class="comment-middle-list-avatar pull-left">
+                                                                <img src="{{url($value_commit->avatar)}}" width="30px" height="30px" class="img-rounded">
                                                             </div>
-                                                        </div>
+                                                            <div class="comment-middle-list-ncd pull-left">
+                                                                <div class="comment-middle-list-nc clearfix">
+                                                                    <div class="comment-middle-list-username pull-left">{{$value_commit->name}}</div>
+                                                                    {{--@else--}}
+                                                                    {{--@endif--}}
+                                                                    @endforeach
+                                                                    <div class="comment-middle-list-comment pull-left">: {{$value->commit_content}}</div>
+                                                                </div>
+                                                                <div class="comment-middle-list-del clearfix">
+                                                                    <a href="{{url('home/delCom'.'/'.$value->id)}}" class="comment-del pull-left">删除
+                                                                    </a>
+                                                                    <span class="onclick-reply pull-left reply">回复</span>
+                                                                </div>
+                                                                <div class="comment-reply">
+                                                                    <div class="reply-content">
+                                                                        <div class="content clearfix">
+                                                                            <form action="{{url('home/reply')}}" method="post">
+                                                                                {{csrf_field()}}
+                                                                                <textarea class="comment-info pull-left" name="reply_content" rows="1" id="reply" resize="no" style="width: 450px;height: 30px;margin-left: 10px;margin-top: 10px;"></textarea>
+                                                                                <input type="hidden" value="{{date('Y-m-d H:i:s',time())}}" name="addtime">
+                                                                                <input id="zid" type="hidden" value="{{$v->id}}" name="say_id">
+                                                                                <input id="zid" type="hidden" value="{{$value->id}}" name="commit_id">
+                                                                                <input class="btn-reply pull-left" type="submit" value="回复" style="margin-top: 10px; margin-left: 20px;height: 30px;">
+                                                                            </form>
+                                                                        </div>
+                                                                        @foreach($reply as $items)
+                                                     `                       @if($items->commit_id==$value->id)
+                                                                                <div class="reply-list clearfix" style="margin-top: 10px;">
+                                                                                    <div class="reply-avatar pull-left" style="margin-left: 10px;">
+                                                                                        <img src="{{url(Auth::user()->avatar)}}" width="30px" height="30px" class="img-rounded">
+                                                                                    </div>
+                                                                                    <div class="reply-content-list pull-left" style="width: 488px;height: 30px;margin-left: 20px;font-size: 10px">
+                                                                                        <span>{{$items->reply_content}}</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            @else
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </div>
+                                                                </div>
 
-                                                    </div>
+                                                            </div>
 
                                                 </div>
                                             @else
@@ -774,76 +807,76 @@
                 @endforeach
             </div>
         </div>
-@show()
+    @show()
 
 
-        <div class="bottom-div">
-            <div class="global_footer S_bg4">
-                <div class="clearfix">
-                    <dl class="list">
-                        <dt>找找感兴趣的人</dt>
-                        <dd><a href="http://verified.weibo.com/?bottomnav=1">名人堂</a><a href="http://vip.weibo.com/home?bottomnav=1">微博会员</a></dd>
-                        <dd><a href="http://club.weibo.com?bottomnav=1">微博达人</a></dd>
-                        <dd><a href="http://verified.e.weibo.com/media?bottomnav=1">媒体</a><a href="http://verified.e.weibo.com/brand?bottomnav=1">企业</a><a href="http://gov.weibo.com/government/index.php?bottomnav=1">政府</a></dd>
-                    </dl>
-                    <dl class="list">
-                        <dt>精彩内容</dt>
-                        <dd><a href="http://huati.weibo.com/?bottomnav=1">微话题</a><a href="http://data.weibo.com/top?bottomnav=1">风云榜</a></dd>
-                        <dd><a href="http://talk.weibo.com?bottomnav=1">微访谈</a></dd>
-                        <dd><a href="http://hot.plaza.weibo.com/?bottomnav=1&amp;type=re&amp;act=day">热门微博</a></dd>
-                    </dl>
-                    <dl class="list">
-                        <dt>热门应用</dt>
-                        <dd><a href="http://weiba.weibo.com?bottomnav=1">微吧</a><a href="http://gongyi.weibo.com/?bottomnav=1">微公益</a></dd>
-                        <dd><a href="http://photo.weibo.com?bottomnav=1">相册</a><a href="http://music.weibo.com/t/index.php?bottomnav=1">微音乐</a></dd>
-                        <dd><a href="http://vote.weibo.com?bottomnav=1">投票</a><a href="http://game.weibo.com?bottomnav=1">微游戏</a></dd>
-                    </dl>
-                    <dl class="list">
-                        <dt>手机玩微博</dt>
-                        <dd><a href="http://m.weibo.com/web/cellphone.php?bottomnav=1">WAP版</a><a href="http://m.weibo.com/web/cellphone.php?bottomnav=1#msg">短彩发微博</a></dd>
-                        <dd><a href="http://m.weibo.com/web/cellphone.php?bottomnav=1#iphone">iPhone客户端</a><a href="http://m.weibo.com/web/cellphone.php?bottomnav=1#ipad">iPad客户端</a></dd>
-                        <dd><a href="http://m.weibo.com/web/cellphone.php?bottomnav=1#android">Android客户端</a></dd>
-                    </dl>
-                    <dl class="list list_right">
-                        <dt>认证&amp;合作</dt>
-                        <dd><a href="http://verified.weibo.com/verify?bottomnav=1">申请认证</a><a href="http://open.weibo.com/?bottomnav=1">开放平台</a></dd>
-                        <dd><a href="http://e.weibo.com/introduce/introduce?bottomnav=1">企业微博</a><a href="http://open.weibo.com/connect?bottomnav=1">连接网站</a></dd>
-                        <dd><a href="http://weibo.com/static/logo?bottomnav=1">微博标识</a><a href="http://tui.weibo.com?bottomnav=1">广告服务</a></dd>
-                    </dl>
+    <div class="bottom-div">
+        <div class="global_footer S_bg4">
+            <div class="clearfix">
+                <dl class="list">
+                    <dt>找找感兴趣的人</dt>
+                    <dd><a href="http://verified.weibo.com/?bottomnav=1">名人堂</a><a href="http://vip.weibo.com/home?bottomnav=1">微博会员</a></dd>
+                    <dd><a href="http://club.weibo.com?bottomnav=1">微博达人</a></dd>
+                    <dd><a href="http://verified.e.weibo.com/media?bottomnav=1">媒体</a><a href="http://verified.e.weibo.com/brand?bottomnav=1">企业</a><a href="http://gov.weibo.com/government/index.php?bottomnav=1">政府</a></dd>
+                </dl>
+                <dl class="list">
+                    <dt>精彩内容</dt>
+                    <dd><a href="http://huati.weibo.com/?bottomnav=1">微话题</a><a href="http://data.weibo.com/top?bottomnav=1">风云榜</a></dd>
+                    <dd><a href="http://talk.weibo.com?bottomnav=1">微访谈</a></dd>
+                    <dd><a href="http://hot.plaza.weibo.com/?bottomnav=1&amp;type=re&amp;act=day">热门微博</a></dd>
+                </dl>
+                <dl class="list">
+                    <dt>热门应用</dt>
+                    <dd><a href="http://weiba.weibo.com?bottomnav=1">微吧</a><a href="http://gongyi.weibo.com/?bottomnav=1">微公益</a></dd>
+                    <dd><a href="http://photo.weibo.com?bottomnav=1">相册</a><a href="http://music.weibo.com/t/index.php?bottomnav=1">微音乐</a></dd>
+                    <dd><a href="http://vote.weibo.com?bottomnav=1">投票</a><a href="http://game.weibo.com?bottomnav=1">微游戏</a></dd>
+                </dl>
+                <dl class="list">
+                    <dt>手机玩微博</dt>
+                    <dd><a href="http://m.weibo.com/web/cellphone.php?bottomnav=1">WAP版</a><a href="http://m.weibo.com/web/cellphone.php?bottomnav=1#msg">短彩发微博</a></dd>
+                    <dd><a href="http://m.weibo.com/web/cellphone.php?bottomnav=1#iphone">iPhone客户端</a><a href="http://m.weibo.com/web/cellphone.php?bottomnav=1#ipad">iPad客户端</a></dd>
+                    <dd><a href="http://m.weibo.com/web/cellphone.php?bottomnav=1#android">Android客户端</a></dd>
+                </dl>
+                <dl class="list list_right">
+                    <dt>认证&amp;合作</dt>
+                    <dd><a href="http://verified.weibo.com/verify?bottomnav=1">申请认证</a><a href="http://open.weibo.com/?bottomnav=1">开放平台</a></dd>
+                    <dd><a href="http://e.weibo.com/introduce/introduce?bottomnav=1">企业微博</a><a href="http://open.weibo.com/connect?bottomnav=1">连接网站</a></dd>
+                    <dd><a href="http://weibo.com/static/logo?bottomnav=1">微博标识</a><a href="http://tui.weibo.com?bottomnav=1">广告服务</a></dd>
+                </dl>
+            </div>
+            <div class="other_link S_line2 clearfix">
+                <div class="help_link">
+                    <p><a href="http://ir.weibo.com/?bottomnav=1&amp;wvr=5" class="S_func1"><i class="W_ico16 ico_weibo"></i>关于微博</a>　<a href="http://help.weibo.com/?refer=didao&amp;bottomnav=1" class="S_func1">微博帮助</a>　<a class="S_func1" href="http://weiba.weibo.com/wanzhuanweibo?bottomnav=1">意见反馈</a>　<a class="S_func1" href="http://open.weibo.com/?bottomnav=1">开放平台</a>　<a class="S_func1" href="http://hr.weibo.com?bottomnav=1">微博招聘</a>　<a class="S_func1" href="http://news.sina.com.cn/guide/?bottomnav=1">新浪网导航</a>　<a class="S_func1" href="http://service.account.weibo.com/?bottomnav=1" target="__blank">社区管理中心</a>　<a class="S_func1" href="http://service.account.weibo.com/roles/gongyue?bottomnav=1" target="__blank">微博社区公约</a></p>
+                    <p></p>
+                    <p class="S_txt2">北京微梦创科网络技术有限公司 <a class="S_func1" href="http://weibo.com/aj/static/jww.html?_wv=5">京网文[2011]0398-130号</a> <a class="S_func1" href="http://www.miibeian.gov.cn" target="_blank">京ICP备12002058号</a></p>
                 </div>
-                <div class="other_link S_line2 clearfix">
-                    <div class="help_link">
-                        <p><a href="http://ir.weibo.com/?bottomnav=1&amp;wvr=5" class="S_func1"><i class="W_ico16 ico_weibo"></i>关于微博</a>　<a href="http://help.weibo.com/?refer=didao&amp;bottomnav=1" class="S_func1">微博帮助</a>　<a class="S_func1" href="http://weiba.weibo.com/wanzhuanweibo?bottomnav=1">意见反馈</a>　<a class="S_func1" href="http://open.weibo.com/?bottomnav=1">开放平台</a>　<a class="S_func1" href="http://hr.weibo.com?bottomnav=1">微博招聘</a>　<a class="S_func1" href="http://news.sina.com.cn/guide/?bottomnav=1">新浪网导航</a>　<a class="S_func1" href="http://service.account.weibo.com/?bottomnav=1" target="__blank">社区管理中心</a>　<a class="S_func1" href="http://service.account.weibo.com/roles/gongyue?bottomnav=1" target="__blank">微博社区公约</a></p>
-                        <p></p>
-                        <p class="S_txt2">北京微梦创科网络技术有限公司 <a class="S_func1" href="http://weibo.com/aj/static/jww.html?_wv=5">京网文[2011]0398-130号</a> <a class="S_func1" href="http://www.miibeian.gov.cn" target="_blank">京ICP备12002058号</a></p>
-                    </div>
-                    <div class="copy">
-                        <p class="W_linkb">
-                            <select id="pl_account_changeLanguage">
-                                <option value="zh-cn" selected="selected">中文(简体)</option>
-                                <option value="zh-tw">中文(台湾)</option>
-                                <option value="zh-hk">中文(香港)</option>
-                                <option value="en">English</option>
-                            </select></p>
-                        <p class="S_txt2">Copyright © 2009-2017 WEIBO </p>
-                    </div>
+                <div class="copy">
+                    <p class="W_linkb">
+                        <select id="pl_account_changeLanguage">
+                            <option value="zh-cn" selected="selected">中文(简体)</option>
+                            <option value="zh-tw">中文(台湾)</option>
+                            <option value="zh-hk">中文(香港)</option>
+                            <option value="en">English</option>
+                        </select></p>
+                    <p class="S_txt2">Copyright © 2009-2017 WEIBO </p>
                 </div>
             </div>
         </div>
-
     </div>
+
+</div>
 </body>
 </html>
 
 <script>
-     var lis = document.getElementById('lis');
+    var lis = document.getElementById('lis');
 
-     lis.onmouseover = function(){
-         this.style.backgroundColor = '#646464';
-     }
-     lis.onmouseout = function(){
-         this.style.backgroundColor = '';
-     }
+    lis.onmouseover = function(){
+        this.style.backgroundColor = '#646464';
+    }
+    lis.onmouseout = function(){
+        this.style.backgroundColor = '';
+    }
 
 </script>
 <script>

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Comment;
+use App\Follow;
 use App\Http\Requests\Home\UserLoginRequest;
+use App\Links;
 use App\Msg;
+use App\Reply;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,9 +20,27 @@ class IndexController extends Controller
     // 个人中心
     public function personalCenter()
     {
+        $id = Auth::user()->id;
+        $users = User::where('id','>','0')->get();
+        $user_id = Auth::user()->id;
+        $msg =Msg::where('users_id','=',$user_id)->orderBy('id','desc')->get();
+        $comment =Comment::where('id','>','0')->orderBy('id','desc')->get();
+//        while($msg){
+//            return view('home.login-index',compact('msg','comment'));
+//        }
+        $follow = Follow::where('usersby_id','=',$id)->get();
+        $follows = Follow::where('users_id','=',$id)->get();
+        $users_id = DB::select('select * from msg where users_id = '.$id);
         $result= DB::table('userxq')->where('uid','24')->orderBy('id','desc')->get()->first();
-        return view('home/personalCenter')->with('result',$result);
+        $reply=Reply::where('id','>','0')->orderBy('id','desc')->get();
+        $count_weibo = count($users_id);
+        $count_fans = count($follow);
+        $count_fans1 = count($follows);
+
+        return view('home/personalCenter')->with('result',$result)->with('msg',$msg)->with('comment',$comment)->with('reply', $reply)->with('users',$users)->with('count_weibo', $count_weibo)->with('count_fans',$count_fans)->with('count_fans1',$count_fans1);
     }
+
+
     // 个人相册
     public function personalImages()
     {
@@ -32,7 +54,10 @@ class IndexController extends Controller
 
     public function index()
     {
-        return view('home/index');
+        $link = Links::where('id','>','0')->orderBy('id')->get();
+
+//        dd($link);
+        return view('home.index', compact('link'));
     }
 
     //前台登录
@@ -63,6 +88,23 @@ class IndexController extends Controller
     {
         Auth::logout();
         return redirect('/home/index');
+    }
+
+    // 粉丝页
+    public function vip_fans()
+    {
+        $follow = Follow::where('id','>','0')->get();
+        $users = User::where('id','>','0')->get();
+
+        return view('home.vip_fans',compact('follow','users'));
+    }
+
+    public function vip_follow()
+    {
+        $follow = Follow::where('id','>','0')->get();
+        $users = User::where('id','>','0')->get();
+
+        return view('home.vip_follow',compact('follow','users'));
     }
 
 }

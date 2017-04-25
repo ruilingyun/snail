@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    return redirect('home/index');
 });
 
 //前台首页
@@ -31,7 +31,9 @@ Route::get('verify/{confirmed_code}', 'Home\UserController@emailConfirm');
 //登录后路由
 Route::get('home/login-index', 'Home\IndexController@loginindex');
 //个人中心主页路由
+Route::get('home/personalCenter', 'Home\IndexController@pushMsg');
 Route::get('home/personalCenter', 'Home\IndexController@personalCenter');
+
 //个人中心相册路由
 Route::get('home/personalImages', 'Home\IndexController@personalImages');
 //个人中心管理路由
@@ -78,6 +80,17 @@ Route::get('home/personalCenter', 'HOME\IndexController@personalCenter');
 Route::get('home/personalImages', 'HOME\IndexController@personalImages');
 Route::get('home/personalManger', 'HOME\IndexController@personalManger');
 
+//前台微博关注
+Route::get('home/other_per/{id}','Home\UserController@other_per'); //其他用户个人主页
+Route::get('home/vip_follow','Home\UserController@vip_follow');//关注页面
+Route::get('home/guanzhu/{id}','Home\UserController@guanzhu'); //关注
+Route::get('home/nozhu/{id}','Home\UserController@nozhu'); //取消关注
+
+// 粉丝列表
+Route::get('home/vip_fans', 'Home\IndexController@vip_fans');
+// 关注列表
+Route::get('home/vip_follow', 'Home\IndexController@vip_follow');
+
 //发微博
 Route::get('home/login-index', 'Home\UserController@pushMsg');
 Route::post('home/login-index', 'Home\UserController@doPush');
@@ -86,6 +99,10 @@ Route::get('home/delMsg/{id}', 'Home\UserController@delMsg');
 // 评论
 Route::post('home/comment', 'Home\UserController@doComment');
 Route::get('home/delCom/{id}', 'Home\UserController@delCom');
+// 回复
+Route::post('home/reply', 'Home\UserController@doReply');
+
+
 
 
 
@@ -119,11 +136,6 @@ Route::any('admin/user-add', 'Admin\UserController@useradd');
 Route::any('admin/user-update/{user_id}', 'Admin\UserController@userupdate');
 Route::any('admin/user-delete/{user_id}', 'Admin\UserController@userdelete');
 Route::any('admin/allot-role/{user_id}', 'Admin\UserController@allotrole');
-
-
-
-
-
 
 
 //用户管理
@@ -167,3 +179,12 @@ Route::any('admin/type-add', 'Admin\TypeController@typeadd');
 //删除新闻分类
 Route::get('admin/type-delete/{id}', 'Admin\TypeController@typedelete');
 
+// 链接管理
+Route::get('admin/link-list', 'Admin\LinkController@linkList');
+// 添加链接
+Route::any('admin/link-add', 'Admin\LinkController@linkAdd');
+// 修改链接
+Route::any('admin/link-update/{id}', 'Admin\LinkController@linkUpdate');
+Route::post('admin/doLink', 'Admin\LinkController@doUpdate');
+// 删除链接
+Route::get('admin/link-delete/{id}', 'Admin\LinkController@linkDelete');
