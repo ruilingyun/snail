@@ -21,7 +21,7 @@ class IndexController extends Controller
     public function personalCenter()
     {
         $id = Auth::user()->id;
-<<<<<<< HEAD
+
         $resu= DB::table('userxq')->where('uid',$id)->orderBy('id','desc')->get()->first();
         $data = DB::table('user_grade')->where('user_id',$id)->get();
         $zan = DB::table('zan')->where('zanuser_id',$id)->orderBy('id','desc')->get();
@@ -37,7 +37,7 @@ class IndexController extends Controller
         }
 //        dd($count_zan);
         return view('home/personalCenter')->with('resu',$resu)->with('data',$data)->with('count_zan',$count_zan);
-=======
+
         $users = User::where('id','>','0')->get();
         $user_id = Auth::user()->id;
         $msg =Msg::where('users_id','=',$user_id)->orderBy('id','desc')->get();
@@ -55,7 +55,6 @@ class IndexController extends Controller
         $count_fans1 = count($follows);
 
         return view('home/personalCenter')->with('result',$result)->with('msg',$msg)->with('comment',$comment)->with('reply', $reply)->with('users',$users)->with('count_weibo', $count_weibo)->with('count_fans',$count_fans)->with('count_fans1',$count_fans1);
->>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
     }
 
 

@@ -138,10 +138,6 @@ Route::any('admin/user-delete/{user_id}', 'Admin\UserController@userdelete');
 Route::any('admin/allot-role/{user_id}', 'Admin\UserController@allotrole');
 
 
-<<<<<<< HEAD
-
-
-
 
 
 
@@ -169,8 +165,6 @@ Route::get('home/delPhotos/{id}','Home\PhotoController@delPhotos');
 Route::get('home/delPhoto/{id}','Home\PhotoController@delPhoto');
 
 
-=======
->>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
 //用户管理
 //普通用户
 Route::get('admin/users-list', 'Admin\UsersController@userslist');
@@ -212,7 +206,6 @@ Route::any('admin/type-add', 'Admin\TypeController@typeadd');
 //删除新闻分类
 Route::get('admin/type-delete/{id}', 'Admin\TypeController@typedelete');
 
-<<<<<<< HEAD
 
 //前台好友管理
 Route::get('home/myuser','Home\myuserController@myuser');
@@ -232,7 +225,7 @@ Route::get('home/seach','Home\myuserController@seach');
 Route::get('home/tianqi','Home\myuserController@tianqi');
 //新闻接口
 Route::get('home/xinwen','Home\myuserController@xinwen');
-=======
+
 // 链接管理
 Route::get('admin/link-list', 'Admin\LinkController@linkList');
 // 添加链接
@@ -242,4 +235,3 @@ Route::any('admin/link-update/{id}', 'Admin\LinkController@linkUpdate');
 Route::post('admin/doLink', 'Admin\LinkController@doUpdate');
 // 删除链接
 Route::get('admin/link-delete/{id}', 'Admin\LinkController@linkDelete');
->>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
