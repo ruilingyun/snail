@@ -70,7 +70,7 @@ class UserController extends Controller
         //根据模型将所以的数据查询出来
         $users = User::where('id','>','0')->get();
         $msg =Msg::where('id','>','0')->orderBy('id','desc')->get();
-
+<<<<<<< HEAD
         $comment = Comment::where('id','>','0')->orderBy('id','desc')->get();
         $collect = DB::select('select * from collect');
         $collect_id = ($collect[0]->collect_id);
@@ -114,7 +114,7 @@ class UserController extends Controller
         while($msg){
             return view('home.login-index',compact('msg','comment','count_zan','count_collect','collect_id','count_relay','a'));
 //            return view('home.login-index', compact('msg'));
-
+=======
         $follow = Follow::where('usersby_id','=',$id)->get();
         $follows = Follow::where('users_id','=',$id)->get();
         $comment =Comment::where('id','>','0')->orderBy('id','desc')->get();
@@ -125,9 +125,9 @@ class UserController extends Controller
         $count_fans1 = count($follows);
         while($msg){
             return view('home.login-index',compact('msg','comment','reply','users','count_weibo','count_fans','count_fans1'));
+>>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
         }
     }
-
 
     public function doPush(DoPush $request)
     {
@@ -207,6 +207,7 @@ class UserController extends Controller
         return redirect('home/login-index');
     }
 
+<<<<<<< HEAD
     //收藏微博 (取消收藏)
     public function collect($id)
     {
@@ -268,6 +269,7 @@ class UserController extends Controller
 
         return redirect('home/login-index');
 
+=======
     // 回复
     public function doReply(Request $request)
     {
@@ -324,6 +326,7 @@ class UserController extends Controller
         $follow = Follow::where('users_id','=',$users_id)->where('usersby_id','=',$id);
         $follow->delete();
         return redirect('home/other_per'.'/'.$users_id);
+>>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
     }
 
 }
