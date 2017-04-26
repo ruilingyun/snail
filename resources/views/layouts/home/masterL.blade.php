@@ -1,5 +1,5 @@
-{{--首页模板(未登录)--}}
-        <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
@@ -16,27 +16,9 @@
     <title>@yield('title', '个人中心界面')</title>
     <script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
 
-    <!-- Bootstrap core CSS -->
-    {{--<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">--}}
     {{--<link rel="stylesheet" href="{{url('home/css/bootstrap.css')}}">--}}
     <link rel="stylesheet" href="{{url('home/css/bootstrap.min.css')}}">
     {{--<link rel="stylesheet" href="{{url('home/css/bootstrap.css/bootstrap.min.css')}}">--}}
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    {{--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">--}}
-
-<!-- Custom styles for this template -->
-    {{--<link href="dashboard.css" rel="stylesheet">--}}
-    {{--<link rel="shortcut icon"type="image/x-icon" href="image/favicon.ico"media="screen" />--}}
-<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    {{--<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->--}}
-    {{--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>--}}
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <!--<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>-->
-    {{--<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>--}}
-    {{--<![endif]-->--}}
 </head>
 <style>
     /*头部CSS*/
@@ -44,7 +26,6 @@
     .navbar{background-color:#FFFFFF;border-bottom: none}
     .navbar-form{margin-right: 100px}
     .img-a{margin-left: 50px}
-    /*#ulul{margin-right: 180px}*/
     #navbar a:hover{color: #FF6600}
 
     body{background-color: #B0D7EE;}
@@ -83,7 +64,7 @@
     .ulul2 li{width: 90px;height: 30px;margin-left: -30px;line-height: 30px}
     .ulul2 a{text-decoration: none}
     /*搜索框*/
-    .search-t{width: 468px;height: 28px;outline-style: none}
+    .search-t{width: 400px;height: 28px;outline-style: none}
     .ulul3 li{
         width:468px;
         height: 30px;
@@ -114,7 +95,7 @@
     .row li{width: 150px;height: 32px;margin-top: 12px; background-color: #A6ACBC;font: 17px 宋体;text-align: center
     }
     /*搜索框*/
-    .search-t{width: 468px;height: 28px;outline-style: none}
+    .search-t{width: 400px;height: 28px;outline-style: none}
     .ulul1 li{
         width:130px;
         height: 30px;
@@ -138,9 +119,9 @@
         list-style: none;
     }
     body{
-        background-image: url('/home/image/homeBG.jpg');
+        background-image: url('/home/image/t2.jpg');
         background-repeat: no-repeat;
-        background-color: #080808;
+        background-color: #80DBF8;
     }
     /*中间中*/
     .main-cen{width: 600px;height:1000px;float: left;margin-top: 60px}
@@ -161,14 +142,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="" class="img-a"><img src="image/logo.jpg" alt=""></a>
+            <a href="" class="img-a"><img src="{{url('home/image/logo.jpg')}}" alt=""></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right" id="ulul">
                 <span  id="navlist" style="width: 180px;height: 50px;float: right">
-                    <span style="float: left;margin-top: 7px; margin-left:10px; border-right: 1px solid #D9D9D9;width: 1px;height:25px; font-size: 25px" class="iconfont">&#xe618;</span>
+
+                    <span style="float: left;margin-top: 7px; margin-left:10px; border-right: 1px solid #D9D9D9;width: 1px;height:25px; font-size: 25px" class="iconfont">&#xe612;</span>
                     <li class="lia">
-                    <a href=""><span id="fonta" class="iconfont" style="margin-top: 12px; margin-left:55px;float:left;color: #686D77; font-size: 17px;">&#x3434;</span></a>
+                    <a href=""><span id="fonta" class="iconfont" style="margin-top: 12px; margin-left:50px;float:left;color: #686D77; font-size: 17px;">&#x3434;</span></a>
+
                         <ul style="width:130px;margin-left: -100px;" class="ulul1">
                             <a href=""><li> @我的</li></a>
                             <a href=""><li> 评论</li></a>
@@ -190,7 +173,7 @@
                             <a href=""><li> 屏蔽设置</li></a>
                             <a href=""><li> 消息设置</li></a>
                             <a href=""><li> 帮助中心</li></a>
-                            <a href=""><li> 退出</li></a>
+                            <a href="{{url('/home/logout')}}"><li> 退出</li></a>
                         </ul>
                     </li>
                     <a href=""><span id="font-c" class="iconfont" style=" margin-top: 15px;margin-left:20px;float:left;color: #F96214;">&#xe669;</span></a>
@@ -200,7 +183,7 @@
                 <li class="lli"><a href="#"><span class="iconfont">&#xe501;</span> 发现</a></li>
                 <li class="lli"><a href="#"><span class="iconfont">&#xe609;</span> 游戏</a></li>
                 {{--登录的用户名--}}
-                <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span> XXXX</a></li>
+                <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span>{{Auth::user()->name}}</a></li>
             </ul>
             <form class="navbar-form navbar-right" style="margin-right: 47px">
                 <div id="navlist1">
@@ -317,18 +300,6 @@
         </div>
     </div>
 </div>
-
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-{{--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>--}}
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-{{--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="../../assets/js/vendor/holder.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 {{--搜索框下拉--}}
 <script>

@@ -80,9 +80,9 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->roles}}</td>
                 <td>
-                    <a href="allot-role/{{$user->id}}">分配角色</a>
-                    <a href="user-update/{{$user->id}}">修改</a>
-                    <a href="user-delete/{{$user->id}}">删除</a>
+                    <a href="allot-role/{{$user->id}}" class="btn btn-default">分配角色</a>
+                    <a href="user-update/{{$user->id}}" class="btn btn-default">修改</a>
+                    <a href="user-delete/{{$user->id}}" class="btn btn-danger">删除</a>
                 </td>
             </tr>
             @endforeach

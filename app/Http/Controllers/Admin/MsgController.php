@@ -13,6 +13,11 @@ class MsgController extends Controller
     //新闻列表
     public function msglist()
     {
+        //验证是否登录
+        if(empty(session()->get('adminName'))){
+            $err = 2;
+            return view('admin/login', compact('err'));
+        }
 //        dd(11);
         $result = DB::table('users')
             ->rightJoin('msg' , 'users.id', 'msg.user_id')
@@ -69,8 +74,6 @@ class MsgController extends Controller
 
         return redirect('admin/msg-list');
 
-
-
     }
 
     //新闻发布
@@ -119,13 +122,7 @@ class MsgController extends Controller
         return view('admin/newsContent',compact('result','types'));
     }
 
-    //新闻类别列表
-    public function newsTypeList()
-    {
-        $types = DB::table('type')
-            ->get();
-        return view('admin/newsTypeList',compact('types'));
-    }
+
 
 
 

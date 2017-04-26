@@ -45,7 +45,8 @@
     {{--</header>--}}
     <section class="user">
         <div class="profile-img">
-            <p><img src="{{url('/home/image/icon.jpg')}}" alt="" class="img-circle" width="50px" height="50px">     Welcome back <b>我yu世界只差一个妳</b></p>
+            <p><img src="{{url('/home/image/icon.jpg')}}" alt="" class="img-circle" width="50px" height="50px">     Welcome back <b>{{session('adminName')}}</b>
+
         </div>
         <div class="buttons">
             <button class="ico-font">&#9206;</button>
@@ -57,7 +58,11 @@
 		</span>
             <span class="button">提示</span>
             <span class="button">帮助</span>
-            <span class="button blue"><a href="index.html">注销</a></span>
+            @if(empty(session('adminName')))
+            <span class="button black"><a href="{{url('admin/login')}}">请登录</a></span>
+            @else
+            <span class="button blue"><a href="{{url('admin/outlogin')}}">注销</a></span>
+            @endif
         </div>
     </section>
 </div>
@@ -71,6 +76,7 @@
             <li><a href="{{url('admin/role-list')}}"><span class="iconfont">&#xe721;</span>角色管理</a></li>
             <li><a href="{{url('admin/user-list')}}"><span class="iconfont">&#xe602;</span>管理员管理</a></li>
         </ul>
+
         <li><h4 class="font_size"><span class="iconfont">&#xe6d3;</span>用户管理</h4></li>
         <ul>
             <li><a href="{{url('admin/users-list')}}"><span class="iconfont">&#xe667;</span>普通用户</a></li>
@@ -78,31 +84,32 @@
             <li><a href="{{url('admin/manager-list')}}"><span class="iconfont">&#xe602;</span>管理员</a></li>
             <li><a href="{{url('admin/super-list')}}"><span class="iconfont">&#xe602;</span>超级管理员</a></li>
         </ul>
-        <li><h4 class="font_size"><span class="iconfont">&#xe66c;</span>微博管理</h4></li>
 
+        <li><h4 class="font_size"><span class="iconfont">&#xe66c;</span>新闻管理</h4></li>
         <ul>
-            <li><a href="{{url('admin/msg-list')}}"><span class="iconfont">&#xe669;</span>文章列表</a></li>
+            <li><a href="{{url('admin/new-list')}}"><span class="iconfont">&#xe614;</span>新闻列表</a></li>
             <li><a href="{{url('admin/type-list')}}"><span class="iconfont">&#xe617;</span>新闻类别</a></li>
-            <li><a href=""><span class="iconfont"></span>删除文章</a></li>
         </ul>
-        <li><h4 class="font_size"><span class="iconfont">&#xe614;</span>新闻管理</h4></li>
-        <ul>
-            <li><a href=""><span class="iconfont">&#xe614;</span>新闻列表</a></li>
-            <li><a href=""><span class="iconfont"></span>删除新闻</a></li>
-            <li><a href=""><span class="iconfont"></span>修改新闻</a></li>
-        </ul>
+
         <li><h4 class="font_size"><span class="iconfont">&#xe624;</span>广告管理</h4></li>
         <ul>
-            <li><a href=""><span class="iconfont">&#xe617;</span>广告列表</a></li>
-            <li><a href=""><span class="iconfont"></span>修改广告</a></li>
-            <li><a href=""><span class="iconfont"></span>删除广告</a></li>
+            <li><a href="{{url('admin/advert-list')}}"><span class="iconfont">&#xe617;</span>广告列表</a></li>
+            <li><a href="{{url('admin/advert-add')}}"><span class="iconfont">&#xe61a;</span>添加广告</a></li>
+            <li><a href="{{url('admin/advert-online')}}"><span class="iconfont">&#xe67c;</span>上架广告</a></li>
         </ul>
+
         <li><h4 class="font_size"><span class="iconfont">&#xe603;</span>商品管理</h4></li>
         <ul>
-            <li><a href=""><span class="iconfont">&#9881;</span>商品模块</a></li>
-            <li><a href="userList"><span class="iconfont">&#xe6d3;</span> 用户管理 <span class="pip">3</span></a></li>
-            <li><a href="set"><span class="iconfont">&#9881;</span> 设置</a></li>
+            <li><a href="{{url('admin/goods-list')}}"><span class="iconfont">&#xe615;</span>商品列表</a></li>
+            <li><a href="{{url('admin/goodstype-list')}}"><span class="iconfont">&#xe617;</span>商品分类</a></li>
         </ul>
+
+        <li><h4 class="font_size"><span class="iconfont">&#xe637;</span>个人中心</h4></li>
+        <ul>
+            <li><a href="{{url('admin/personal-infor')}}"><span class="iconfont">&#xe60c;</span>个人信息</a></li>
+        </ul>
+
+
     </ul>
 </nav>
 @yield('content')
@@ -127,16 +134,16 @@
 
 
 
-<script type="text/javascript">
-    // Feature slider for graphs
-    $('.cycle').cycle({
-        fx: "scrollHorz",
-        timeout: 0,
-        slideResize: 0,
-        prev:    '.left-btn',
-        next:    '.right-btn'
-    });
-</script>
+{{--<script type="text/javascript">--}}
+    {{--// Feature slider for graphs--}}
+    {{--$('.cycle').cycle({--}}
+        {{--fx: "scrollHorz",--}}
+        {{--timeout: 0,--}}
+        {{--slideResize: 0,--}}
+        {{--prev:    '.left-btn',--}}
+        {{--next:    '.right-btn'--}}
+    {{--});--}}
+{{--</script>--}}
 {{--<script type="text/javascript">--}}
 {{--var lis = document.getElementById('navlist').getElementsByTagName('li');--}}
 

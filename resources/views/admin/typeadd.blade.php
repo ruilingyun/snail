@@ -1,5 +1,5 @@
 @extends('layouts/admin/master')
-@section('title', '后台管理系统-新增权限')
+@section('title', '后台管理系统-新增新闻分类')
 <style>
     .power_title{
         width: 100%;
@@ -59,7 +59,7 @@
                     <td></td>
                     <td>
                         <input type="submit" class="btn btn-success" value="提交" style="width: 100px;">
-                        <a href="{{url('admin/permission-list')}}" class="btn btn-primary">返回</a>
+                        <a href="{{url('admin/type-list')}}" class="btn btn-primary">返回</a>
                     </td>
                 </tr>
             </form>

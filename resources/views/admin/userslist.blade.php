@@ -44,7 +44,7 @@
     <div class="power_title">
         <ul>
             <li class="li_power"><a href="{{url('admin/index')}}">首页=></a></li>
-            <li class="li_power"><a href="{{url('admin/permissionList')}}">用户管理=></a></li>
+            <li class="li_power"><a href="{{url('admin/users-list')}}">用户管理=></a></li>
             <li class="li_power">用户列表</li>
         </ul>
     </div>
@@ -81,9 +81,10 @@
                     <td>{{$display_name}}</td>
                     <td>
                         <a href="users-delete/{{$user->id}}" class="btn btn-danger">删除</a>
-                        <a href="users-update/{{$user->id}}" class="btn btn-default">修改</a>
-                        @if($user->status == 0)
-                        <a href="start-users/{{$user->id}}" class="btn btn-default">禁用</a>
+                        {{--<a href="users-update/{{$user->id}}" class="btn btn-default">修改</a>--}}
+                        <a href="users-detail/{{$user->id}}" class="btn btn-default">详情</a>
+                        @if($user->status == 2)
+                        <a href="start-users/{{$user->id}}" class="btn btn-danger">禁用</a>
                         @elseif($user->status == 1)
                         <a href="forbidden-users/{{$user->id}}" class="btn btn-default">启用</a>
                         @endif

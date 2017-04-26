@@ -81,9 +81,9 @@
                 <td>{{$role->description}}</td>
                 <td>{{$role->perms}}</td>
                 <td>
-                    <a href="allot-permission/{{$role->id}}">分配权限</a>
-                    <a href="role-update/{{$role->id}}">修改</a>
-                    <a href="role-delete/{{$role->id}}">删除</a>
+                    <a href="allot-permission/{{$role->id}}" class="btn btn-default">分配权限</a>
+                    <a href="role-update/{{$role->id}}" class="btn btn-default">修改</a>
+                    <a href="role-delete/{{$role->id}}" class="btn btn-danger">删除</a>
                 </td>
             </tr>
             @endforeach

@@ -76,9 +76,8 @@
                     <td>{{$type->id}}</td>
                     <td>{{$type->name}}</td>
                     <td>
-                        <a href="type-delete/{{$type->id}}" class="btn btn-danger">删除</a>
                         <a href="type-update/{{$type->id}}" class="btn btn-default">修改</a>
-                        {{--<a href="{{url('admin/type-add')}}" class="btn btn-default">添加</a>--}}
+                        <a href="type-delete/{{$type->id}}" class="btn btn-danger">删除</a>
                     </td>
                 </tr>
             @endforeach

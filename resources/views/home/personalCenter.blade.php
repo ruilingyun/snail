@@ -5,9 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="{{asset('home/css/bootstrap.css')}}">
+    <script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
+    <link rel="stylesheet" href="{{url('home/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url('home/css/iconfont/iconfont.css')}}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title', '我yu世界只差一个妳的微博_微博')</title>
-    <style>    .navbar{background-color:#FFFFFF;border-bottom: none}
+    <title>@yield('title', '个人中心')</title>
+    <style>
+        .navbar{background-color:#FFFFFF;border-bottom: none}
         .navbar-form{margin-right: 100px}
         .img-a{margin-left: 50px}
         #ulul{margin-right: 100px}
@@ -20,7 +24,7 @@
         .row li{width: 150px;height: 32px;margin-top: 12px; background-color: #A6ACBC;font: 17px 宋体;text-align: center
         }
         /*搜索框*/
-        .search-t{width: 468px;height: 28px;outline-style: none}
+        .search-t{width: 400px;height: 28px;outline-style: none}
         .ulul1 li{
             width:468px;
             height: 30px;
@@ -62,6 +66,7 @@
             /*background-color: lightseagreen;*/
         }
         .page_center{
+            background-image: url("{{url('home/image/beij1.jpg')}}");
             width: 920px;
             /*min-height: 1000px;*/
             margin: 0 auto;
@@ -75,6 +80,8 @@
             position: absolute;
             width: 920px;
             height: 300px;
+            margin-top: 50px;
+
         }
         .page_center .page_top .page_top_info .personal_icon{
             position: relative;
@@ -143,17 +150,28 @@
             margin-top: -10px;
             width:300px;
             height: 60px;
-            background-color: #888888;
+            background-color: #FFFFFF;
+
         }
         .fance{
             float: left;
             margin-left: 30px;
+            margin-top: 10px;
+        }
+        .fance1{
+            width: 1px;
+            height: 40px;
+            background-color: #D9D9D9;
+            float: left;
+            margin-left: 32px;
+            margin-top: 10px;
         }
         .attest{
             width: 300px;
             /*height: 400px;*/
             margin-top: 30px;
-            background-color: #888888;
+            background-color: #FFFFFF;
+
 
         }
         .rank{
@@ -183,7 +201,14 @@
             width: 300px;;
             height: 350px;
             margin-top: 30px;
-            background-color: #888888;
+            background-color: #FFFFFF;
+
+        /*.image{*/
+            /*width: 300px;;*/
+            /*height: 300px;*/
+            /*margin-top: 30px;*/
+            /*background-color: #FFFFFF;*/
+
         }
         .images-nav{
             width: 300px;
@@ -201,7 +226,9 @@
         .search-nav{
             width: 600px;
             height: 40px;
-            background-color: #888888;
+
+            background-color: #FFFFFF;
+
         }
         .search-all{
             float: left;
@@ -229,27 +256,103 @@
         .content1{
             width: 600px;
             height: 250px;
-            background-color: #888888;
+
+            background-color: #FFFFFF;
+
             margin-top: 20px;
         }
         .content2{
             width: 600px;
             height: 400px;
-            background-color: #888888;
+
+            background-color: #FFFFFF;
+
             margin-top: 20px;
 
         }
         .content3{
             width: 600px;
             height: 300px;
-            background-color: #888888;
+
+            background-color: #FFFFFF;
+
             margin-top: 20px;
 
         }
         .mycolor:hover{
-            color: #888888;
+            color: #FFFFFF;
         }
         .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto; margin-top: px}
+
+        /*补充css*/
+        .navbar{background-color:#FFFFFF;border-bottom: none}
+        .navbar-form{margin-right: 100px}
+        .img-a{margin-left: 50px}
+        /*#ulul{margin-right: 180px}*/
+        #navbar a:hover{color: #FF6600}
+
+        body{background-color: #B0D7EE;}
+        .main{width: 970px;margin-left: auto;margin: 80px auto;background-color: #FAFAFA;}
+        .main-left{background-color: #F1F1F1;width: 150px;float: left}
+        .main-right{width: 790px;float: left;margin-left: 20px}
+        .main-left legend{font-size: 16px;text-align: center}
+        .left-1{width: 150px;height: 35px;text-align: center;line-height: 35px;color: #333333;margin-top: 10px;}
+        .left-1:hover{background-color: #818287;}
+        .left-1 span{color: #717378;}
+        .right-2:hover{background-color: #FAFAFA;}
+        .right-2{background-color: #F1F1F1;width: 788px;height: 40px;line-height: 40px;margin-top: 10px;border: 0.5px solid #D9D9D9;cursor: pointer}
+        .right-1{width: 788px;height: 40px;line-height: 40px;border-bottom: 2px solid red;}
+        .right-1 a{float: right}
+        .span-0{margin-left: 10px}
+        .right-2 a{float: right;margin-right: 10px}
+        .main-left a{text-decoration: none}
+        .lia{width: 45px;height: 50px;position: relative; float: left }
+        .ulul1 li{
+            width:125px;
+            height: 30px;
+            list-style: none;
+            float:left;
+            line-height: 30px;
+        }
+        #navlist li ul{
+            position:absolute;
+            top:50px;
+            background-color: #fff;
+            width:100px;
+            border-top:none;
+            display:none;
+            list-style: none;
+        }
+        .ulul2 li{width: 90px;height: 30px;margin-left: 5px;line-height: 30px;}
+        .ulul2 a{text-decoration: none}
+        /*搜索框*/
+        .search-t{width: 400px;height: 28px;outline-style: none}
+        .ulul3 li{
+            width:468px;
+            height: 30px;
+            list-style: none;
+            /*float:left;*/
+            margin-left: -40px;
+            line-height: 30px;
+        }
+        .ulul3{margin-top: -14px}
+        .ulul3 li:hover{
+            background-color: #F2F2F5;}
+        .ulul3 a{text-decoration: none}
+        .lia1{list-style: none;float: left}
+        #navlist1 li ul{
+            position:absolute;
+            top:50px;
+            background-color: #fff;
+            width:468px;
+            border-top:none;
+            display:none;
+            list-style: none;
+        }
+        .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto; margin-top: px}
+        .iframe{widht:230px; height: 300px; margin:0px; padding:0px; width:100%; height:100%; iframeborder:no;}
+
+
 
     </style>
     <link rel="stylesheet" href="/home/css/personal.css">
@@ -257,6 +360,9 @@
 </head>
 <body>
     <div id="personal_main">
+
+        {{--头部--}}
+
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -270,20 +376,49 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right" id="ulul">
-                        <li class="lli"><a href="{{url('home/login-index')}}"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-                        <li class="lli"><a href="#"><span class="glyphicon glyphicon-facetime-video"></span> 视频</a></li>
-                        <li class="lli"><a href="#"><span class="glyphicon glyphicon-zoom-in"></span> 发现</a></li>
-                        <li class="lli"><a href="#"><span class="glyphicon glyphicon-globe"></span> 游戏</a></li>
-                        <li class="lli"><a href="" class="user">注册</a></li>
-                        <li class="lli" style="margin-top: 13px">|</li>
-                        <li class="lli"><a href="" class="register">登录</a></li>
+                <span  id="navlist" style="width: 180px;height: 50px;float: right;margin-right: -126px;">
+                    <span style="float: left;margin-top: 7px; margin-left:10px; border-right: 1px solid #D9D9D9;width: 1px;height:25px; font-size: 25px" class="iconfont">&#xe612;</span>
+                    <li class="lia">
+                    <a href=""><span id="fonta" class="iconfont" style="margin-top: 12px; margin-left:50px;float:left;color: #686D77; font-size: 17px;">&#x3434;</span></a>
+                        <ul style="width:130px;margin-left: -100px;" class="ulul1">
+                            <a href=""><li> @我的</li></a>
+                            <a href=""><li> 评论</li></a>
+                            <a href=""><li> 赞</li></a>
+                            <a href=""><li> 私信</li></a>
+                            <a href=""><li> 未关注人私信</li></a>
+                            <a href=""><li> 群通知</li></a>
+                            <a href=""><li> 消息设置</li></a>
+                        </ul>
+                    </li>
+                    <li class="lia">
+                    <a href=""><span id="font-b" class="iconfont" style="margin-top: 15px;margin-left:20px;float:left;color: #686D77;font-size: 18px"></span></a>
+                        <ul class="ulul2">
+                            <a href="myMass"><li> 账号设置</li></a>
+                            <a href=""><li> 会员中心</li></a>
+                            <a href=""><li> V认证</li></a>
+                            <a href=""><li> 账号安全</li></a>
+                            <a href=""><li> 隐私设置</li></a>
+                            <a href=""><li> 屏蔽设置</li></a>
+                            <a href=""><li> 消息设置</li></a>
+                            <a href=""><li> 帮助中心</li></a>
+                            <a href="logout"><li> 退出</li></a>
+                        </ul>
+                    </li>
+                    <a href=""><span id="font-c" class="iconfont" style=" margin-top: 15px;margin-left:20px;float:left;color: #F96214;">&#xe669;</span></a>
+                </span>
+                        <li class="lli"><a href="#"><span class="iconfont">&#xe60d;</span> 首页</a></li>
+                        <li class="lli"><a href="#"><span class="iconfont">&#xe613;</span> 视频</a></li>
+                        <li class="lli"><a href="#"><span class="iconfont">&#xe501;</span> 发现</a></li>
+                        <li class="lli"><a href="#"><span class="iconfont">&#xe609;</span> 游戏</a></li>
+                        {{--登录的用户名--}}
+                        <li class="lli"><a href="{{url('home/personalCenter')}}"><span class="iconfont">&#xe667;</span> {{Auth::user()->name}} </a></li>
                     </ul>
-                    <form class="navbar-form navbar-right" style="margin-right: 80px">
-                        <div id="navlist">
-                            <li class="lia">
+                    <form class="navbar-form navbar-right" style="margin-right: 47px">
+                        <div id="navlist1">
+                            <li class="lia1">
                                 <input type="text" class="search-t"  placeholder="大家都在搜:人民的名义...">
                                 {{--搜索下拉框--}}
-                                <ul class="ulul1">
+                                <ul class="ulul3">
                                     <a href="" style="color: orangered"><li> 查看完整热搜榜>></li></a>
                                     <a href=""><li> 1</li></a>
                                     <a href=""><li> 2</li></a>
@@ -294,23 +429,26 @@
                                 </ul>
                             </li>
                             <input type="submit" class="form-control" value="搜索" style="height: 28px;line-height: 12px">
-
                         </div>
                     </form>
+
                 </div>
             </div>
         </nav>
+
         <div class="page_center">
             <div class="page_top">
                 <div class="page_top_info pull-left">
                     <div class="personal_icon">
-                        <img src="{{url('/home/image/icon.jpg')}}" alt="" class="img-circle" width="100px" height="100px">
+
+                        <img src="{{url(Auth::user()->avatar)}}" alt="" class="img-circle" width="100px" height="100px">
                     </div>
                     <div class="personal_name">
-                        <p><b>我yu世界只差一个妳</b><span class="iconfont">&#xe688;</span></p>
+                        <p><b>{{Auth::user()->name}}</b><span class="iconfont">&#xe688;</span></p>
                     </div>
                     <div class="personal_introduce">
-                        <p><b>我见过千万人 像你的发 像你的眼 却不像你的脸 任时光匆匆流去我只在乎你</b></p>
+                        {{--<p><b>{{$result->notice}}</b></p>--}}
+
                     </div>
                 </div>
                 <div class="page_top_nav pull-left">
@@ -335,20 +473,22 @@
             <div class="p-content-left">
                 <div class="content-nav">
                     <ul>
-                        <li class="fance">
-                            <p>195</p>
-                            <p>关注</p>
-                        </li>
-                        <li class="fance">|</li>
-                        <li class="fance">
-                            <p>256900</p>
-                            <p>粉丝</p>
-                        </li>
-                        <li class="fance">|</li>
-                        <li class="fance">
-                            <p>128</p>
-                            <p>微博</p>
-                        </li>
+
+                        <a href=""><li class="fance">
+                            <p style="">195</p>
+                            <p style="margin-top: -10px;">关注</p>
+                        </li></a>
+                        <li class="fance1"></li>
+                        <a href=""><li class="fance">
+                            <p style="">200</p>
+                            <p style="margin-top: -10px;">粉丝</p>
+                        </li></a>
+                        <li class="fance1"></li>
+                        <a href=""><li class="fance">
+                            <p style="">128</p>
+                            <p style="margin-top: -10px;">微博</p>
+                        </li></a>
+
                     </ul>
                 </div>
                 <div class="attest">
@@ -356,7 +496,7 @@
                         <ul>
                             <li class="put-attest"><b>申请认证</b></li>
                             <li class="put-attest">|</li>
-                            <li class="put-attest">14级 <span class="iconfont">&#xe688;</span> </li>
+                            <li class="put-attest">{{$data[0]->grade}}级 <span class="iconfont">&#xe688;</span> </li>
                         </ul>
                     </div>
                     <ul>
@@ -368,6 +508,10 @@
                         <li class="a-data"><a href="">编辑个人资料</a> <span>></span></li>
 
                     </ul>
+                </div>
+                <div style="width: 300px; height: 270px; background-color: #FFFFFF; margin-top: 20px;">
+                    {{--<b>百度地图接口</b>--}}
+                    <iframe class="iframe" src="{{url('home/baiduditu')}}" scrolling="no"></iframe>
                 </div>
                 <div class="images">
                     <div class="images-nav"><span class="iconfont">&#xe658;</span><b>相册</b></div>
@@ -395,7 +539,7 @@
                 <div class="content3"></div>
             </div>
         </div>
-@show()
+        @show()
 
 
         <div class="bottom-div">

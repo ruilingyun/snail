@@ -1,5 +1,5 @@
 @extends('layouts/admin/master')
-@section('title', '后台管理系统-新增用户')
+@section('title', '后台管理系统-新增新闻类别')
 <style>
     .power_title{
         width: 100%;

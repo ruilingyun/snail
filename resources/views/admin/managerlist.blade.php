@@ -80,9 +80,14 @@
                     <td>{{$user->email}}</td>
                     <td>{{$display_name}}</td>
                     <td>
-                        <a href="user-delete/{{$user->id}}" class="btn btn-danger">删除</a>
-                        <a href="user-update/{{$user->id}}" class="btn btn-default">修改</a>
-                        <a href="user-status/{{$user->id}}" class="btn btn-default">禁用</a>
+                        <a href="users-delete/{{$user->id}}" class="btn btn-danger">删除</a>
+                        {{--<a href="users-update/{{$user->id}}" class="btn btn-default">修改</a>--}}
+                        <a href="manager-detail/{{$user->id}}" class="btn btn-default">详情</a>
+                        @if($user->status == 2)
+                            <a href="start-users/{{$user->id}}" class="btn btn-danger">禁用</a>
+                        @elseif($user->status == 1)
+                            <a href="forbidden-users/{{$user->id}}" class="btn btn-default">启用</a>
+                        @endif
                     </td>
                 </tr>
             @endforeach

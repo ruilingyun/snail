@@ -54,7 +54,9 @@
         .right-1{width: 788px;height: 40px;line-height: 40px;border-bottom: 2px solid red;}
         .right-1 a{float: right}
         .span-0{margin-left: 10px}
-        .right-2 a{float: right;margin-right: 10px}
+
+        .right-2 i{float: right;margin-right: 10px;color: blue}
+
         .main-left a{text-decoration: none}
         .lia{width: 45px;height: 50px;position: relative; float: left }
         .ulul1 li{
@@ -77,7 +79,9 @@
         .ulul2 li{width: 90px;height: 30px;margin-left: -30px;line-height: 30px}
         .ulul2 a{text-decoration: none}
         /*搜索框*/
-        .search-t{width: 468px;height: 28px;outline-style: none}
+
+        .search-t{width: 400px;height: 28px;outline-style: none}
+
         .ulul3 li{
             width:468px;
             height: 30px;
@@ -144,17 +148,22 @@
                             <a href=""><li> 屏蔽设置</li></a>
                             <a href=""><li> 消息设置</li></a>
                             <a href=""><li> 帮助中心</li></a>
-                            <a href=""><li> 退出</li></a>
+                            <a href="logout"><li> 退出</li></a>
+
                         </ul>
                     </li>
                     <a href=""><span id="font-c" class="glyphicon glyphicon-edit" style=" margin-top: 15px;margin-left:20px;float:left;color: #F96214;font-size:20px"></span></a>
                 </span>
-                <li class="lli"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+
+                <li class="lli"><a href="login-index"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+
                 <li class="lli"><a href="#"><span class="glyphicon glyphicon-facetime-video"></span> 视频</a></li>
                 <li class="lli"><a href="#"><span class="glyphicon glyphicon-zoom-in"></span> 发现</a></li>
                 <li class="lli"><a href="#"><span class="glyphicon glyphicon-globe"></span> 游戏</a></li>
                 {{--登录的用户名--}}
-                <li class="lli"><a href="#"><span class="glyphicon glyphicon-user"></span> XXXX</a></li>
+
+                <li class="lli"><a href="personalCenter"><span class="glyphicon glyphicon-user"></span> {{Auth::user()->name}}</a></li>
+
             </ul>
             <form class="navbar-form navbar-right" style="margin-right: 47px">
                 <div id="navlist1">

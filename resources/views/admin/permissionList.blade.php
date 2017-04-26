@@ -65,8 +65,8 @@
                 <td>{{$permission->display_name}}</td>
                 <td>{{$permission->description}}</td>
                 <td>
-                    <a href="permission-update/{{$permission->id}}">修改</a>
-                    <a href="permission-delete/{{$permission->id}}">删除</a>
+                    <a href="permission-update/{{$permission->id}}" class="btn btn-default">修改</a>
+                    <a href="permission-delete/{{$permission->id}}" class="btn btn-danger">删除</a>
                 </td>
             </tr>
             @endforeach

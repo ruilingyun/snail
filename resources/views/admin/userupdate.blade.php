@@ -65,7 +65,7 @@
                     <td></td>
                     <td>
                         <input type="submit" class="btn btn-success" value="提交" style="width: 100px;">
-                        <a href="{{url('admin/user-List')}}" class="btn btn-primary">返回</a>
+                        <a href="{{url('admin/user-list')}}" class="btn btn-primary">返回</a>
                     </td>
                 </tr>
             </form>

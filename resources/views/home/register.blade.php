@@ -65,7 +65,7 @@
         </div>
         <div class="register-main">
             <div class="top">
-                <h2><b>个人注册</b></h2>
+                <h2><b>邮箱注册</b></h2>
             </div>
             <div class="bottom">
                 <form class="form-inline" action="{{url('/home/store')}}" method="post">
@@ -99,7 +99,8 @@
                         <input type="submit" class="btn btn-default zhuce" value="注册" style="background-color:#FFA00A;color: #FFFFFF; margin: 0 auto;width: 263px;margin-top: 20px;margin-bottom: 20px;">
                     </div>
                 </form>
-                <span style="margin-left: 265px;margin-top: 20px">已有账号 <a href="index#">直接登录</a></span>
+                <p style="margin-left: 405px;"><a href="{{url('home/phoneregister')}}">手机注册</a></p>
+                <p style="margin-left: 347px;"><a href="index#">已有账号,直接登录</a></p>
             </div>
         </div>
     </div>

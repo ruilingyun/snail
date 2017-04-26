@@ -83,17 +83,30 @@
 
 <div class="container">
 
+
     <form class="form-signin" action="{{url('admin/doLogin')}}" method="post">
+
         {{csrf_field()}}
         <h2 class="form-signin-heading">请登录...</h2>
+
+        @if(count($errors)> 0)
+            <div class="alert alert-danger input" style="width: 300px;margin-top: -10px;margin-left: 0px">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" name="name" class="form-control" placeholder="请输入用户名"  autofocus>
+        <input type="text" name="email" class="form-control" placeholder="请输入用户邮箱"  autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="请输入密码" >
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+        <button class="btn btn-lg btn-success btn-block" type="submit">登录</button>
     </form>
 
 </div> <!-- /container -->
+{!! $messages !!}
 
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
