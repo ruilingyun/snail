@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers\Home;
 
-<<<<<<< HEAD
-use App\Http\Requests;
-=======
 use App\Comment;
 use App\Follow;
 use App\Http\Requests;
 use App\Msg;
 use App\Reply;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 use App\User;
 
 use Illuminate\Http\Request;
@@ -24,10 +20,6 @@ class photoController extends Controller
     //上传相册
     public function photos(Request $request)
     {
-<<<<<<< HEAD
-=======
-
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         $iconname = md5(time()).'.jpg';
         $request->file('face')->move('home/photo',$iconname);
         $data = array_merge($request->only('name', 'desc', 'display'),['uid'=>Auth::user()->id],['time'=>date('Y-m-d')],['face'=>'home/photo'.'/'.$iconname]);
@@ -38,13 +30,6 @@ class photoController extends Controller
     //照片列表
     public function photolist($id)
     {
-<<<<<<< HEAD
-        $result = DB::select('select * from photolist where pid ='.$id);
-//         $result = DB::select('select * from photos');
-
-        return view('home/photoList',compact('result','id'));
-=======
-//        dd($id);
         $result1 = DB::select('select * from photolist where pid ='.$id);
         $aid = Auth::user()->id;
         $resu= DB::table('userxq')->where('uid',$aid)->orderBy('id','desc')->get()->first();
@@ -95,15 +80,10 @@ class photoController extends Controller
         }
 //         $result = DB::select('select * from photos');
         return view('home/photoList',compact('result1','id'))->with('resu',$resu)->with('data',$data)->with('msg',$msg)->with('count_fans',$count_fans)->with('count_fans1',$count_fans1)->with('count_weibo',$count_weibo)->with('comment',$comment)->with('result',$result);
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
 //    上传照片
     public function upphoto(Request $request)
     {
-<<<<<<< HEAD
-=======
-//dd($id);
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         $iconname = md5(time()).'.jpg';
         $request->file('pic')->move('home/photo',$iconname);
         $dat = 'home/photo'.'/'.$iconname;
@@ -118,8 +98,6 @@ class photoController extends Controller
         $result = DB::table('photolist')->insert($data);
         return redirect('home/photoList'.'/'.$pid);
     }
-<<<<<<< HEAD
-=======
     //删除相册
     public function delPhotos($id)
     {
@@ -146,6 +124,4 @@ class photoController extends Controller
         DB::table('photos')->update($data);
         return redirect('home/personalImages');
     }
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
-
 }

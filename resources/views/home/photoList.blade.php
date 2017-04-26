@@ -79,17 +79,10 @@
             </form>
         </ul>
     </div>
-
-<<<<<<< HEAD
-    @foreach($result as $rel)
-        <div class="poto">
-            <p style="margin-left: 10px;margin-top: 10px">{{($rel->created_at)}}</p>
-=======
     @foreach($result1 as $rel)
         <div class="poto">
             <p style="margin-left: 10px;margin-top: 10px">{{($rel->created_at)}}</p>
             <a href="{{url('home/delPhoto'.'/'.$rel->id)}}">X</a>
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
             <img  class="abc" src="{{url($rel->pic)}}" alt="" >
             {{--隐藏大图--}}
             {{--<div id="slogin">--}}

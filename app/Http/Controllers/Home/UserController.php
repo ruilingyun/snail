@@ -3,29 +3,21 @@ namespace App\Tool\SMS;
 namespace App\Http\Controllers\Home;
 
 use App\Comment;
-<<<<<<< HEAD
-=======
+
 use App\Follow;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 use App\Http\Requests\Home\DoPush;
 use App\Http\Requests\Home\UserCommentRequest;
 use App\Http\Requests\UserRegisterRequest;
 use App\Msg;
-<<<<<<< HEAD
 use App\Tool\SMS\SendTemplateSMS;
-=======
 use App\Reply;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-<<<<<<< HEAD
-=======
 use Illuminate\Support\Facades\DB;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\DB;
+
 
 
 
@@ -94,20 +86,6 @@ class UserController extends Controller
     // 发微博
     public function pushMsg()
     {
-<<<<<<< HEAD
-
-//        dd($new);
-
-        //根据模型将所以的数据查询出来
-        $msg =Msg::where('id','>','0')->orderBy('id','desc')->get();
-        $comment =  Comment::where('id','>','0')->orderBy('id','desc')->get();
-        $news= DB::table('new')->get();
-
-
-        while($msg){
-            return view('home/login-index',compact('msg', 'comment' ,'news'));
-//            return view('home.login-index', compact('msg'));
-=======
         $id = Auth::user()->id;
         //根据模型将所以的数据查询出来
         $users = User::where('id','>','0')->get();
@@ -160,10 +138,9 @@ class UserController extends Controller
         $count_weibo =count($users_id);
         $count_fans = count($follow);
         $count_fans1 = count($follows);
+        $news = DB::table('new')->where('is_hot',1)->get();
         while($msg){
-            return view('home.login-index',compact('msg','comment','reply','users','count_weibo','count_fans','count_fans1','count_zan','count_collect','collect_id','count_relay','a'));
-
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
+            return view('home.login-index',compact('msg','comment','reply','users','count_weibo','count_fans','count_fans1','count_zan','count_collect','collect_id','count_relay','a','news'));
         }
     }
 
@@ -184,21 +161,10 @@ class UserController extends Controller
         Msg::create(array_merge($request->all(),$data));
 //        账号等级
         $grade = DB::select('select grade from user_grade where user_id ='.$users_id);
-<<<<<<< HEAD
-//        $grade += 1;
-       $gra = $grade[0]->grade +=1;
-=======
         $gra = $grade[0]->grade +=1;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
-//       dd($gra);
         $grade=[
             'grade'=>$gra,
         ];
-<<<<<<< HEAD
-=======
-
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
-//        dd($data);
          DB::table('user_grade')->where('user_id',$users_id)->update($grade);
         return redirect('home/login-index');
     }
@@ -208,11 +174,7 @@ class UserController extends Controller
         // 获取微博模型
         $msg = Msg::find($id);
         $msg->delete();
-<<<<<<< HEAD
-        return redirect('home/login-index');
-=======
         return back();
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
 
     // 微博评论
@@ -230,16 +192,6 @@ class UserController extends Controller
         $users_id=$user;
         //插入数据到数据表中
         $say_id = $request->input('say_id');
-<<<<<<< HEAD
-        $data=[
-            'users_id'=>$users_id,
-            'commit_users_id'=>$users_id,
-            'say_id'=>$say_id,
-        ];
-        Comment::create(array_merge($request->all(),$data));
-
-        return redirect('home/login-index');
-=======
         $msg = Msg::where('id','=',$say_id)->get();
         $msgs_id = $msg->toArray();
         $says_uid = $msgs_id[0]['users_id'];
@@ -247,16 +199,9 @@ class UserController extends Controller
             'users_id'=>$says_uid,
             'commit_users_id'=>$users_id,
         ];
-//        $data=[
-//            'users_id'=>$users_id,
-//            'commit_users_id'=>$users_id,
-//            'say_id'=>$say_id,
-//        ];
         Comment::create(array_merge($request->all(),$data));
 
-//        return redirect('home/login-index');
         return back();
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
 
     // 删除微博
@@ -267,18 +212,6 @@ class UserController extends Controller
         $com->delete();
         return redirect('home/login-index');
     }
-
-<<<<<<< HEAD
-    //收藏微博 (取消收藏)
-    public function collect($id)
-    {
-        $result = DB::select('select * from collect where collect_id ='.$id);
-//        dd($result);
-        $collect_id = $id;
-        if (empty($result)){
-            $data=[
-                'user_id'=>Auth::user()->id,
-=======
 
     //收藏微博 (取消收藏)
     public function collect($id)
@@ -298,38 +231,21 @@ class UserController extends Controller
             $data=[
                 'user_id'=>Auth::user()->id,
                 'userby_id'=>$users_id,
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                 'collect_id'=>$id,
             ];
              DB::table('collect')->insert($data);
         }else{
-<<<<<<< HEAD
-             DB::delete('delete from collect where collect_id = ?',array($id));
-        }
-        return redirect('home/login-index');
-=======
 //             DB::delete('delete from collect where collect_id = ?',array($id));
              DB::table('collect')->where('collect_id',$collect_id)->where('user_id',$user_id)->delete();
 
         }
 //        dd($id);
         return back();
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
     //转发微博
     public function relay($id)
     {
 //        dd($id);
-<<<<<<< HEAD
-        //根据模型将所以的数据查询出来
-        $msg = Msg::where('id', '=', $id)->orderBy('id', 'desc')->get();
-//        $txt=$request->input('content'); //获取提交的数据
-//        $txt= htmlspecialchars(stripslashes($txt));
-        //   $txt=mysql_real_escape_string(strip_tags($txt),$link); //过滤HTML标签，并转义特殊字符
-//        if( mb_strlen($txt)<1 ||  mb_strlen($txt)>140){
-//            return back();
-//        }
-=======
         $user = Auth::user()->id;
         $result = DB::select('select * from msg where id =' . $id);
         $users_id = $user;
@@ -382,20 +298,11 @@ class UserController extends Controller
         if( mb_strlen($txt)<1 ||  mb_strlen($txt)>140){
             return  back();
         }
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         $users_id=$user;
         //插入数据到数据表中
         $data=[
             'users_id'=>$users_id,
         ];
-<<<<<<< HEAD
-        Msg::create(array_merge($request->all(),$data));
-//        dd($msg);
-        while ($msg) {
-            return view('home.login-index', compact('msg'));
-        }
-
-=======
 //        dd(array_merge($request->all(),$data));
         Reply::create(array_merge($request->all(),$data));
 
@@ -437,7 +344,6 @@ class UserController extends Controller
         $follow = Follow::where('users_id','=',$users_id)->where('usersby_id','=',$id);
         $follow->delete();
         return redirect('home/other_per'.'/'.$users_id);
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
 
 }

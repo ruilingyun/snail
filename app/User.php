@@ -4,17 +4,15 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
 use Illuminate\Support\Facades\Hash;
 
 
 class User extends Authenticatable
 {
     use Notifiable;
-<<<<<<< HEAD
-    use EntrustUserTrait;
-=======
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
+
+//    use EntrustUserTrait;
+
 
     /**
      * The attributes that are mass assignable.

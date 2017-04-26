@@ -2355,7 +2355,11 @@ output {
 }
 .form-control {
   display: block;
+<<<<<<< HEAD
+  width: 40%;
+=======
   width: 100%;
+>>>>>>> 4385f6cdb4796acac5f65d8add14507d75cd3e43
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;

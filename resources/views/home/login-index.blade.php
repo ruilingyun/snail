@@ -27,12 +27,8 @@
     }
     .ad2{
         width: 200px;
-<<<<<<< HEAD
-        margin-top: 15px;
-=======
         height: 250px;
         margin-top: 20px;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         background-color: #FFFFFF;
     }
     .ad3{
@@ -95,11 +91,7 @@
         height: 74px;
         margin-left: 20px;
         background-color: #FFFFFF;
-<<<<<<< HEAD
         border: #59D5F7 solid 1px;
-=======
-        border: black solid 1px;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
     .assortment-all{
         width: 600px;
@@ -145,22 +137,14 @@
         width: 40px;
         height: 60px;
         line-height: 60px;
-<<<<<<< HEAD
-        font-size: 20px;
-=======
         font-size: 15px;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         margin-right: 10px;
     }
     .list-middle{
         width: 598px;
         padding:10px;
         font-size: 15px;
-<<<<<<< HEAD
         border: 1px solid #59D5F7;
-=======
-        border: 1px solid black;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
     .list-bottom{
         /*height: 40px;*/
@@ -178,10 +162,6 @@
         width: 598px;
         /*height: 70px;*/
         background-color: #ccc;
-<<<<<<< HEAD
-        margin-top: 0px;
-=======
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         margin-left: -40px;
         display: none;
     }
@@ -220,10 +200,6 @@
     }
     .comment-middle-list{
         width: 598px;
-<<<<<<< HEAD
-        height: 50px;
-=======
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
     .comment-middle-list .comment-middle-list-avatar{
         margin-top: 10px;
@@ -235,10 +211,6 @@
         padding: 5px;
         margin-left: 5px;
         width: 530px;
-<<<<<<< HEAD
-        height: 50px;
-=======
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
     .comment-middle-list-nc{
         width: 530px;
@@ -250,15 +222,6 @@
         height: 15px;
         font-size: 10px;
         line-height:15px;
-<<<<<<< HEAD
-    }
-    .comment-middle-list-del a{
-        margin-left: 500px;
-    }
-    #shouc{font-size: 18px;color: #8c8c8c}
-    .new-content{width: 200px;  height: ;  margin-bottom: 15px; text-align: left;}
-
-=======
     }
     .comment-middle-list-del .comment-del{
         margin-left: 450px;
@@ -279,7 +242,6 @@
         /*background-color: red;*/
     }
     #shouc{font-size: 18px;color: #8c8c8c}
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
 </style>
 @section('content')
@@ -298,17 +260,10 @@
             <div class="assortment-nav">
                 <ul>
                     <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe502;</span>表情</a></li>
-<<<<<<< HEAD
-                    <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe658;</span>图片</a></li>
-                    <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe613;</span>视频</a></li>
-                    <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe618;</span>话题</a></li>
-                    <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe67c;</span>头条文章</a></li>
-=======
                     <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe618;</span>图片</a></li>
                     <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe613;</span>视频</a></li>
                     <li class="assortment"><a href="{{url('home/tianqi')}}" class="abc"><span class="iconfont">&#xe658;</span>天气</a></li>
                     <li class="assortment"><a href="{{url('home/xinwen')}}" class="abc"><span class="iconfont">&#xe67c;</span>每日头条</a></li>
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                 </ul>
                 <input type="submit" class="btn btn-info" id="ipt" value="发布">
             </div>
@@ -330,25 +285,10 @@
             <button type="submit" class="btn btn-default">搜索</button>
         </form>
     </div>
-<<<<<<< HEAD
-        @foreach($msg as $v)
-=======
     @foreach($msg as $v)
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
-
         <div class="content-all" id="txt">
             <div class="content-list">
                 <div class="list-top clearfix">
-<<<<<<< HEAD
-                    <div class="list-useravatar pull-left">
-                        <img src="{{url(Auth::user()->avatar)}}" width="50px" height="50px" class="img-circle">
-                    </div>
-                    <div class="list-name pull-left">
-                        <span>{{Auth::user()->name}}</span>
-                    </div>
-                    <div class="list-delete pull-right">
-                        <a href="{{url('home/delMsg'.'/'.$v->id)}}">删除</a>
-=======
                     @foreach($users as $value_name)
                         @if($value_name->id==$v->users_id)
                     <div class="list-useravatar pull-left">
@@ -366,7 +306,6 @@
                             @else
                                 <a href="{{url('home/delMsg'.'/'.$v->id)}}">屏蔽</a>
                         @endif
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                     </div>
                 </div>
                 {{--{{$new->collect_id}}--}}
@@ -375,21 +314,11 @@
                 </div>
                 <div class="list-bottom">
                     <ul class="clearfix">
-<<<<<<< HEAD
-                        <li class="pull-left"><a href="{{url('home/collect'.'/'.$v->id)}}" style="color: #888888;"><span class="glyphicon glyphicon-heart-empty" id="shouc"></span>收藏</a> </li>
-                        <li class="pull-left"><a href="{{url('home/relay'.'/'.$v->id)}}" style="color: #888888;"><span class="glyphicon glyphicon-share"></span></a> 20</li>
-                        <li class="pull-left"> <a href="" style="color: #888888;"><span class="glyphicon glyphicon-thumbs-up"></span></a> 20</li>
-                        <li class="pull-left cmt" style="cursor: pointer;">
-                            <span class="glyphicon glyphicon-edit"></span>4210
-=======
-
                         <li class="pull-left"><a href="{{url('home/collect'.'/'.$v->id)}}"><span class="glyphicon glyphicon-heart-empty"></span></a> {{$v->collectionNum}}</li>
                         <li class="pull-left"><a href="{{url('home/relay'.'/'.$v->id)}}"><span class="glyphicon glyphicon-share"></span></a> {{$v->relayNum}}</li>
                         <li class="pull-left"> <a href="{{url('home/zan'.'/'.$v->id)}}"><span class="glyphicon glyphicon-thumbs-up"></span></a> {{$v->zanNum}}</li>
-
                         <li class="pull-left cmt">
                             <span class="glyphicon glyphicon-edit"></span>评论
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                         </li>
                         <div class="list-comment">
                             <form action="{{url('home/comment')}}" method="post">
@@ -409,20 +338,6 @@
                                 </div>
                             </form>
                             @foreach($comment as $value)
-<<<<<<< HEAD
-                                @if($value->say_id==$v->id)
-                                    <div class="comment-middle-list clearfix">
-                                        <div class="comment-middle-list-avatar pull-left">
-                                            <img src="{{url(Auth::user()->avatar)}}" width="30px" height="30px" class="img-rounded">
-                                        </div>
-                                        <div class="comment-middle-list-ncd pull-left">
-                                            <div class="comment-middle-list-nc clearfix">
-                                                <div class="comment-middle-list-username pull-left">{{Auth::user()->name}}</div>
-                                                <div class="comment-middle-list-comment pull-left">: {{$value->commit_content}}</div>
-                                            </div>
-                                            <div class="comment-middle-list-del">
-                                                <a href="{{url('home/delCom'.'/'.$value->id)}}">删除</a>
-=======
                                 @if($value->say_id == $v->id)
                                     <div class="comment-middle-list clearfix">
                                         @foreach($users as $value_commit)
@@ -469,7 +384,6 @@
                                                     @endif
                                                     @endforeach
                                                 </div>
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                                             </div>
 
                                         </div>
@@ -493,13 +407,7 @@
             <p>{{Auth::user()->name}} <span class="iconfont">&#xe688;</span></p>
             <p>
                 <ul>
-<<<<<<< HEAD
-                    <li class="fancer"><p>66</p><p>关注</p></li>
-            <li class="fancer">|</li>
-            <li class="fancer"><p>1596</p><p>粉丝</p></li>
-            <li class="fancer">|</li>
-            <li class="fancer"><p>151</p><p>微博</p></li>
-=======
+
                     <a href="{{url('home/vip_follow')}}"><li class="fancer">
                 <p>
                     @if($count_fans)
@@ -531,7 +439,6 @@
                 </p>
                 <p>微博</p>
             </li></a>
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
             </ul>
             </p>
         </div>
@@ -630,8 +537,6 @@
                 });
             })
         })
-<<<<<<< HEAD
-=======
         $(function(){
             $('.glyphicon-thumbs-up').click(function(){
                 $(this).addClass('text-dange');
@@ -642,10 +547,7 @@
                 $(this).parent().next('div').slideToggle('slow',function () {
 
                 });
-            })
-        })
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
-
-
+            });
+        });
     </script>
 @endsection

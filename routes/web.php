@@ -36,7 +36,6 @@ Route::get('home/personalCenter', 'Home\IndexController@personalCenter');
 Route::get('home/personalImages', 'Home\IndexController@personalImages');
 //个人中心管理路由
 Route::get('home/personalManger', 'Home\IndexController@personalManger');
-<<<<<<< HEAD
 
 //轮播图
 Route::get('home/lunbotu', 'Home\IndexController@adv' );
@@ -66,7 +65,6 @@ Route::get('verify/{confirmed_code}', 'Home\UserController@emailConfirm');
 Route::get('home/phoneregister', 'Home\UserController@phoneregister');
 
 
-=======
 //上传照片
 Route::post('home/photolist','Home\PhotoController@upphotos');
 
@@ -103,7 +101,7 @@ Route::get('home/privacy','Home\accountController@privacy');
 Route::get('home/news','Home\accountController@news');
 //隐私设置
 Route::get('home/screen','Home\accountController@screen');
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
+
 
 // 前台个人中心
 Route::get('home/personalCenter', 'HOME\IndexController@personalCenter');
@@ -253,8 +251,6 @@ Route::any('admin/type-update/{id}', 'Admin\TypeController@typeupdate');
 Route::get('admin/type-delete/{id}', 'Admin\TypeController@typedelete');
 
 
-<<<<<<< HEAD
-
 
 
 
@@ -305,8 +301,7 @@ Route::any('admin/goodstype-delete/{id}', 'Admin\GoodstypeController@goodstypede
 
 
 
-=======
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
+
 //前台好友管理
 Route::get('home/myuser','Home\myuserController@myuser');
 //粉丝
@@ -315,7 +310,6 @@ Route::get('home/myfans','Home\myuserController@myfans');
 Route::get('home/collect/{id}','Home\UserController@collect');
 //转发微博
 Route::get('home/relay/{id}','Home\UserController@relay');
-<<<<<<< HEAD
 
 
 
@@ -402,7 +396,7 @@ Route::any('admin/icon-update/{id}', 'Admin\PersonalController@iconupdate');
 
 
 
-=======
+
 //点赞
 Route::get('home/zan/{id}','Home\myuserController@zan');
 //赞 转发 收藏 展示
@@ -423,4 +417,4 @@ Route::any('admin/link-update/{id}', 'Admin\LinkController@linkUpdate');
 Route::post('admin/doLink', 'Admin\LinkController@doUpdate');
 // 删除链接
 Route::get('admin/link-delete/{id}', 'Admin\LinkController@linkDelete');
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
+

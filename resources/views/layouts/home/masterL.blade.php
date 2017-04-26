@@ -64,13 +64,7 @@
     .ulul2 li{width: 90px;height: 30px;margin-left: -30px;line-height: 30px}
     .ulul2 a{text-decoration: none}
     /*搜索框*/
-<<<<<<< HEAD
     .search-t{width: 400px;height: 28px;outline-style: none}
-=======
-
-    .search-t{width: 440px;height: 28px;outline-style: none}
-
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     .ulul3 li{
         width:468px;
         height: 30px;

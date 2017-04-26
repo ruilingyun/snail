@@ -14,13 +14,8 @@
     <link href="{{url('home/css/bootstrap.min.css')}}" rel="stylesheet">
     <title>@yield('title', '个人中心界面')</title>
     <script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="css/iconfont/iconfont.css">
-    <link rel="stylesheet" href="home/fonts/glyphicons-halflings-regular.ttf">
-=======
     <link rel="stylesheet" href="{{url('css/iconfont/iconfont.css')}}">
     <link rel="stylesheet" href="{{url('home/fonts/glyphicons-halflings-regular.ttf')}}">
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     <link href="dashboard.css" rel="stylesheet">
 
 </head>

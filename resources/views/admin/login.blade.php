@@ -9,11 +9,9 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <link rel="shortcut icon"type="image/x-icon" href="{{url('admin/image/favicon.ico')}}"media="screen" />
-
-
     <title>新浪微博后台登录</title>
-
     <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{url('admin/css/iconfont/iconfont.css')}}">
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -35,7 +33,7 @@
         body {
             padding-top: 40px;
             padding-bottom: 40px;
-            background-image: url('image/tim3.jpg');
+            background-image: url("image/tim3.jpg");
             background-repeat: no-repeat;
         }
 
@@ -83,31 +81,14 @@
 
 <div class="container">
 
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     <form class="form-signin" action="{{url('admin/doLogin')}}" method="post">
 
         {{csrf_field()}}
         <h2 class="form-signin-heading">请登录...</h2>
-<<<<<<< HEAD
 
         @if(count($errors)> 0)
             <div class="alert alert-danger input" style="width: 300px;margin-top: -10px;margin-left: 0px">
-=======
-        @if(count($errors)> 0)
-            <div class="alert alert-danger input" style="width: 300px;margin-top: -25px;margin-left: 198px">
-=======
-
-    <form class="form-signin" action="{{url('/admin/doLogin')}}" method="post">
-        {{csrf_field()}}
-        <h2 class="form-signin-heading">请登录...</h2>
-        @if(count($errors)> 0)
-            <div class="alert alert-danger input" style="width: 264px;margin-top: -25px;margin-left: 198px">
->>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                 <ul>
                     @foreach($errors->all() as $error)
                         <li>{{$error}}</li>
@@ -116,15 +97,7 @@
             </div>
         @endif
         <label for="inputEmail" class="sr-only">Email address</label>
-<<<<<<< HEAD
         <input type="text" name="email" class="form-control" placeholder="请输入用户邮箱"  autofocus>
-=======
-<<<<<<< HEAD
-        <input type="text" name="email" class="form-control" placeholder="请输入用户邮箱"  autofocus>
-=======
-        <input type="email" name="email" class="form-control" placeholder="请输入用户邮箱"  autofocus>
->>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="请输入密码" >
         <button class="btn btn-lg btn-success btn-block" type="submit">登录</button>

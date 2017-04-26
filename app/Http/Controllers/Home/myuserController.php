@@ -4,11 +4,9 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-<<<<<<< HEAD
-=======
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
+
 
 class myuserController extends Controller
 {
@@ -22,8 +20,6 @@ class myuserController extends Controller
     {
         return view('home/myfans');
     }
-<<<<<<< HEAD
-=======
     //点赞
     public function zan($id)
     {
@@ -76,5 +72,4 @@ class myuserController extends Controller
     {
         return view('home/xinwen');
     }
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 }

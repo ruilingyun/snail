@@ -201,19 +201,7 @@
             width: 300px;;
             height: 150px;
             margin-top: 30px;
-<<<<<<< HEAD
             background-color: #FFFFFF;
-
-        /*.image{*/
-            /*width: 300px;;*/
-            /*height: 300px;*/
-            /*margin-top: 30px;*/
-            /*background-color: #FFFFFF;*/
-=======
-
-            background-color: #FFFFFF;
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
-
         }
         .images-nav{
             width: 300px;
@@ -331,11 +319,7 @@
         .ulul2 li{width: 90px;height: 30px;margin-left: 5px;line-height: 30px;}
         .ulul2 a{text-decoration: none}
         /*搜索框*/
-<<<<<<< HEAD
         .search-t{width: 400px;height: 28px;outline-style: none}
-=======
-        .search-t{width: 468px;height: 28px;outline-style: none}
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         .ulul3 li{
             width:468px;
             height: 30px;
@@ -358,13 +342,8 @@
             display:none;
             list-style: none;
         }
-<<<<<<< HEAD
         .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto; margin-top: px}
         .iframe{widht:230px; height: 300px; margin:0px; padding:0px; width:100%; height:100%; iframeborder:no;}
-
-
-=======
-   .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto;}
         .content-all{
             width: 600px;
             /*height: 800px;*/
@@ -499,7 +478,6 @@
             margin: 0 auto;
             /*background-color: red;*/
         }
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
     </style>
     <link rel="stylesheet" href="/home/css/personal.css">
@@ -591,12 +569,6 @@
                         <img src="{{url(Auth::user()->avatar)}}" alt="" class="img-circle" width="100px" height="100px">
                     </div>
                     <div class="personal_name">
-<<<<<<< HEAD
-                        <p><b>{{Auth::user()->name}}</b><span class="iconfont">&#xe688;</span></p>
-                    </div>
-                    <div class="personal_introduce">
-                        {{--<p><b>{{$result->notice}}</b></p>--}}
-=======
                         <p><b>{{Auth::user()->name}}</b>      @if($data->isEmpty())
                         @else
                             <span class="iconfont" style="background-color:orangered;"> {{$data[0]->grade}}级&#xe688;</span>
@@ -605,7 +577,6 @@
                     </div>
                     <div class="personal_introduce">
 {{--                        <p><b>{{$resu->notice}}</b></p>--}}
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
                     </div>
                 </div>
@@ -633,41 +604,29 @@
                     <ul>
 
                         <a href=""><li class="fance">
-<<<<<<< HEAD
-                            <p style="">195</p>
-=======
                             <p style="">@if($count_fans)
                                     {{$count_fans}}
                                 @else
                                     0
                                 @endif</p>
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                             <p style="margin-top: -10px;">关注</p>
                         </li></a>
                         <li class="fance1"></li>
                         <a href=""><li class="fance">
-<<<<<<< HEAD
-                            <p style="">200</p>
-=======
                             <p style="">@if($count_fans1)
                                     {{$count_fans1}}
                                 @else
                                     0
                                 @endif</p>
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                             <p style="margin-top: -10px;">粉丝</p>
                         </li></a>
                         <li class="fance1"></li>
                         <a href=""><li class="fance">
-<<<<<<< HEAD
-                            <p style="">128</p>
-=======
                             <p style="">@if($count_weibo)
                                     {{$count_weibo}}
                                 @else
                                     0
                                 @endif</p>
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                             <p style="margin-top: -10px;">微博</p>
                         </li></a>
 
@@ -678,14 +637,10 @@
                         <ul>
                             <li class="put-attest"><b>申请认证</b></li>
                             <li class="put-attest">|</li>
-<<<<<<< HEAD
-                            <li class="put-attest">{{$data[0]->grade}}级 <span class="iconfont">&#xe688;</span> </li>
-=======
                             @if($data->isEmpty())
                                 @else
                             <li class="put-attest" >{{$data[0]->grade}}级 <span class="iconfont">&#xe688;</span> </li>
                                 @endif
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                         </ul>
                     </div>
                     <ul>

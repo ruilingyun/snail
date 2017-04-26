@@ -11,7 +11,6 @@ class NewController extends Controller
     //新闻列表
     public function newlist()
     {
-<<<<<<< HEAD
         //验证是否登录
         if(empty(session()->get('adminName'))){
             $messages =  "<script>alert('请登录后浏览!')</script>";
@@ -103,21 +102,12 @@ class NewController extends Controller
         $result = DB::table('users')
             ->rightJoin('new' , 'users.id', 'new.user_id')
             ->paginate(3);
-=======
-//        dd(11);
-        $result = DB::table('users')
-            ->rightJoin('new' , 'users.id', 'new.user_id')
-            ->get();
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         foreach ($result as $v){
             $type_id = $v->type_id;
             $type = DB::table('type')
                 ->where('id',$type_id)
                 ->get();
-<<<<<<< HEAD
 //            dd($type);
-=======
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
             //根据类型id 查找类型名，并添加到对应的结果中
             foreach ($type as $value){
                 $typeval = $value->name;
@@ -125,26 +115,19 @@ class NewController extends Controller
 //            dd($typeval);
             $v->type = $typeval;
         }
-<<<<<<< HEAD
 //        dd($v->type);
-=======
-//        dd($result);
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         return view('admin/newlist', compact('result','type'));
 
     }
 
-<<<<<<< HEAD
 //    新闻详情
     public function newdetail($id)
     {
-       $result = DB::table('new')->where('id', $id)->get();
+        $result = DB::table('new')->where('id', $id)->get();
 //       dd($result);
         return view('admin/newdetail', compact('result'));
     }
 
-=======
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     //修改新闻类型
     public function newupdate(Request $request, $id)
     {
@@ -187,7 +170,6 @@ class NewController extends Controller
 //        dd(1);
 //        dd($request->article_content);
         if($request->isMethod('post')){
-<<<<<<< HEAD
 //        dd($request->all());
             $iconname = md5(time()) . '.jpg';
             $request->file('photos')->move('admin/photo', $iconname);
@@ -200,14 +182,6 @@ class NewController extends Controller
                 'photos' => $dat,
                 'content' => $request->content,
                 'user_id' => session()->get('adminUserId'),
-=======
-//            dd($request->type_id);
-            $data = [
-                'is_hot' => $request->is_hot,
-                'type_id' => $request->type_id[0],
-                'content' => $request->content,
-                'user_id' => '17'
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
             ];
 //            dd($data);
@@ -221,33 +195,6 @@ class NewController extends Controller
         return view('admin/newpublish',compact('types'));
     }
 
-<<<<<<< HEAD
-=======
-    //查看内容详情
-    public function newdetail($id)
-    {
-//        dd($id);
-        //查询对应新闻信息
-        $result = DB::table('new')
-            ->where('id',$id)
-            ->get();
-
-        //查找新闻类别id
-        foreach ($result as $v){
-            $type_id = $v->type_id;
-        }
-
-        $types = DB::table('type')
-            ->where('id',$type_id)
-            ->get();
-//        dd($result);
-        return view('admin/newsContent',compact('result','types'));
-    }
-
-
-
-
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
 //    新闻状态管理
 //  改为非热门

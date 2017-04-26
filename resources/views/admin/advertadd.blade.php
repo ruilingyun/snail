@@ -65,11 +65,7 @@
                     <td><b>状态</b>:   </td>
                     <td>
                         <label for=""><input type="radio" name="status" value="1">上架</label>
-<<<<<<< HEAD
                         <label for=""><input type="radio" name="status" value="2">下架</label>
-=======
-                        <label for=""><input type="radio" name="status" value="2">上架</label>
->>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                     </td>
                 </tr>
 
