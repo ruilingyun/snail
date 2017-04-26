@@ -36,6 +36,7 @@ class IndexController extends Controller
 //    后台登录
     public function doLogin(Request $request)
     {
+        $repass = $request->password;
         $rules = [
             'email' => 'required|exists:users',
             'password' => 'required',

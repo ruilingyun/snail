@@ -163,19 +163,26 @@ class IndexController extends Controller
     public function doLogin(UserLoginRequest $request)
     {
         $pass = $request->password;
-         $res = DB::table('users')->where('email',$request->email)->get();
+        $email = $request->email;
+        $res = DB::table('users')->where('email',$email)->get();
+        $resu = $res->toArray();
+        if(empty($resu)){
+            return back();
+        }
         foreach ($res as $v){
             $repass = $v->password;
         }
         if(Hash::check($pass,$repass)){
-        Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
-        //邮箱判断
-        $result = User::where('email',$request->input('email'))->get()->toArray();
-        if ($result[0]['confirmed'] == 0) {
-            return back();
+            Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
+            //邮箱判断
+            $result = User::where('email',$request->email)->get()->toArray();
+            if ($result[0]['confirmed'] == 0) {
+                return back();
+            }
+            return redirect('home/login-index');
         }
-        return redirect('home/login-index');
-        }
+        return redirect('home/index');
+
     }
     //用户注销
     public function logout()
