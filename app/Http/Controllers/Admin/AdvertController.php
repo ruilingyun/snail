@@ -12,6 +12,7 @@ class AdvertController extends Controller
 //    后台广告列表
     public function advertlist()
     {
+<<<<<<< HEAD
         //验证是否登录
         if(empty(session()->get('adminName'))){
             $messages =  "<script>alert('请登录后浏览!')</script>";
@@ -100,11 +101,14 @@ class AdvertController extends Controller
             return view('admin/index', compact('messages'));
         }
 
+=======
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         $result = DB::table('advert')->paginate(3);
 //        dd($result);
         return view('admin/advertlist', compact('result'));
     }
 
+<<<<<<< HEAD
 //    上架广告列表
     public function advertonline()
     {
@@ -199,10 +203,13 @@ class AdvertController extends Controller
         return view('admin/advertonline', compact('result'));
     }
 
+=======
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
 //    添加广告
     public function advertadd(Request $request)
     {
+<<<<<<< HEAD
         //验证是否登录
         if(empty(session()->get('adminName'))){
             $messages =  "<script>alert('请登录后浏览!')</script>";
@@ -290,6 +297,8 @@ class AdvertController extends Controller
             $messages =  "<script>alert('当前权限无法浏览添加广告页面!')</script>";
             return view('admin/index', compact('messages'));
         }
+=======
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 //        dd(1);
         if ($request->isMethod('post')) {
 //            dd($request->all());
@@ -313,6 +322,7 @@ class AdvertController extends Controller
 //    删除广告
     public function advertdelete($id)
     {
+<<<<<<< HEAD
         $result = DB::table('advert')->where('id', $id)->get();
         foreach($result as $v){
             $status = $v->status;
@@ -323,6 +333,8 @@ class AdvertController extends Controller
             return view('admin/index', compact('messages'));
         }
 
+=======
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         //        dd($id);
         DB::table('advert')
             ->where('id',$id)
@@ -356,6 +368,7 @@ class AdvertController extends Controller
             ->update($arr);
         return back();
     }
+<<<<<<< HEAD
 
 
 
@@ -377,4 +390,6 @@ class AdvertController extends Controller
         $result = DB::table('advert')->where('id', $id)->get();
         return view('admin/advertupdate',compact('result'));
     }
+=======
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 }

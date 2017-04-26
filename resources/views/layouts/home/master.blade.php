@@ -14,8 +14,13 @@
     <link href="{{url('home/css/bootstrap.min.css')}}" rel="stylesheet">
     <title>@yield('title', '个人中心界面')</title>
     <script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/iconfont/iconfont.css">
     <link rel="stylesheet" href="home/fonts/glyphicons-halflings-regular.ttf">
+=======
+    <link rel="stylesheet" href="{{url('css/iconfont/iconfont.css')}}">
+    <link rel="stylesheet" href="{{url('home/fonts/glyphicons-halflings-regular.ttf')}}">
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     <link href="dashboard.css" rel="stylesheet">
 
 </head>
@@ -30,7 +35,7 @@
     /*左侧导航栏css*/
     /*.container-fluid{margin-left: 200px}*/
     .main-div{height: 900px;width: 150px;position: fixed;left: 190px;margin-top: 50px}
-    .row ul{background-color: #A4AABF;height: 600px;}
+    .row ul{background-color: #A4AABF;height: 360px;}
     .row a{color: white;font-size: 18px}
     .row li{width: 150px;height: 32px;margin-top: 12px; background-color: #A6ACBC;font: 17px 宋体;text-align: center
     }
@@ -134,11 +139,6 @@
                             <li><a href="#">· 搞笑</a></li>
                             <li><a href="#">· 社会</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-facetime-video"></span> 视频</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-ok-circle"></span> 头条 <span style="background-color:orangered;margin-right: -35px">HOT</span></a></li>
-                            <li><a href="#">· 情感</a></li>
-                            <li><a href="#">· 时尚</a></li>
-                            <li><a href="#">· 军事</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-star"></span> 榜单 <span style="background-color:lightblue;margin-right: -35px">NEW</span></a></li>
                         </ul>
             </div>
         </div>

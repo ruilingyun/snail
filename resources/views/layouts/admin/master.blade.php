@@ -10,9 +10,10 @@
         }
         #navlist ul ul li{
             cursor:pointer;
-            background-color: #888888;
+
+            background-color: #035D1A;
             height: 80px;;
-            text-align: center;
+
         }
 
         .font_size{
@@ -45,7 +46,12 @@
     {{--</header>--}}
     <section class="user">
         <div class="profile-img">
+<<<<<<< HEAD
             <p><img src="{{url('/home/image/icon.jpg')}}" alt="" class="img-circle" width="50px" height="50px">     Welcome back <b>{{session('adminName')}}</b>
+=======
+
+            <p><img src="{{url('/home/image/icon.jpg')}}" alt="" class="img-circle" width="50px" height="50px">     Welcome back 我yu世界只差一个妳</p>
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
         </div>
         <div class="buttons">
@@ -79,20 +85,39 @@
 
         <li><h4 class="font_size"><span class="iconfont">&#xe6d3;</span>用户管理</h4></li>
         <ul>
-            <li><a href="{{url('admin/users-list')}}"><span class="iconfont">&#xe667;</span>普通用户</a></li>
-            <li><a href="{{url('admin/vip-list')}}"><span class="iconfont">&#xe65b;</span>vip用户</a></li>
-            <li><a href="{{url('admin/manager-list')}}"><span class="iconfont">&#xe602;</span>管理员</a></li>
-            <li><a href="{{url('admin/super-list')}}"><span class="iconfont">&#xe602;</span>超级管理员</a></li>
+            <li><a href="image"><span class="iconfont">&#xe667;</span> 个人用户 <span class="pip">23</span></a></li>
+            <li><a href="comment"><span class="iconfont">&#xe6d3;</span> 企业用户 <span class="pip">12</span></a></li>
+            <li><a href="status"><span class="iconfont">&#xe665;</span> 用户状态 </a></li>
         </ul>
+<<<<<<< HEAD
+=======
+        <li><h4 class="font_size"><span class="iconfont">&#xe66c;</span>文章管理</h4></li>
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
         <li><h4 class="font_size"><span class="iconfont">&#xe66c;</span>新闻管理</h4></li>
         <ul>
+<<<<<<< HEAD
             <li><a href="{{url('admin/new-list')}}"><span class="iconfont">&#xe614;</span>新闻列表</a></li>
             <li><a href="{{url('admin/type-list')}}"><span class="iconfont">&#xe617;</span>新闻类别</a></li>
+=======
+            <li><a href=""><span class="iconfont"></span>添加文章</a></li>
+            <li><a href=""><span class="iconfont"></span>修改文章</a></li>
+
+            <li><a href=""><span class="iconfont"></span>删除文章</a></li>
+        </ul>
+        <li><h4 class="font_size"><span class="iconfont">&#xe614;</span>新闻管理</h4></li>
+        <ul>
+
+            <li><a href=""><span class="iconfont"></span>添加新闻</a></li>
+
+            <li><a href=""><span class="iconfont"></span>删除新闻</a></li>
+            <li><a href=""><span class="iconfont"></span>修改新闻</a></li>
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         </ul>
 
         <li><h4 class="font_size"><span class="iconfont">&#xe624;</span>广告管理</h4></li>
         <ul>
+<<<<<<< HEAD
             <li><a href="{{url('admin/advert-list')}}"><span class="iconfont">&#xe617;</span>广告列表</a></li>
             <li><a href="{{url('admin/advert-add')}}"><span class="iconfont">&#xe61a;</span>添加广告</a></li>
             <li><a href="{{url('admin/advert-online')}}"><span class="iconfont">&#xe67c;</span>上架广告</a></li>
@@ -102,6 +127,17 @@
         <ul>
             <li><a href="{{url('admin/goods-list')}}"><span class="iconfont">&#xe615;</span>商品列表</a></li>
             <li><a href="{{url('admin/goodstype-list')}}"><span class="iconfont">&#xe617;</span>商品分类</a></li>
+=======
+
+            <li><a href=""><span class="iconfont"></span>添加广告</a></li>
+
+            <li><a href=""><span class="iconfont"></span>修改广告</a></li>
+            <li><a href=""><span class="iconfont"></span>删除广告</a></li>
+        </ul>
+        <li><h4 class="font_size"><span class="iconfont">&#xe603;</span>友情链接</h4></li>
+        <ul>
+            <li><a href="{{url('admin/link-list')}}"><span class="iconfont">&#9881;</span>链接管理</a></li>
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         </ul>
 
         <li><h4 class="font_size"><span class="iconfont">&#xe637;</span>个人中心</h4></li>

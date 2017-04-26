@@ -83,7 +83,11 @@
                         @if($v->status == 1)
                         <a href="down-status/{{$v->id}}" class="btn btn-default">上架</a>
                         @elseif($v->status == 2)
+<<<<<<< HEAD
                         <a href="up-status/{{$v->id}}" class="btn btn-danger">下架</a>
+=======
+                        <a href="up-status/{{$v->id}}" class="btn btn-default">下架</a>
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                         @endif
                     </td>
                     <td>

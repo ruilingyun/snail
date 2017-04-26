@@ -34,7 +34,7 @@ class UserLoginRequest extends FormRequest
     {
         return [
             'email.required'=> '邮箱不能为空',
-            'password.required' => '邮箱不能为空'
+            'password.required' => '密码不能为空'
         ];
 
     }

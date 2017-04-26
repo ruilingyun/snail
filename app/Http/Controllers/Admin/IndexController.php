@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Validator;
 class IndexController extends Controller
 {
 
+<<<<<<< HEAD
 //    后台首页
     public function index()
     {
@@ -27,6 +28,18 @@ class IndexController extends Controller
         $messages = "";
 
         return view('admin/index', compact('messages'));
+=======
+    //    后台首页
+    public function index()
+    {
+        return view('admin/index');
+    }
+
+    //
+    public function showLogin()
+    {
+        return view('admin/index');
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
 
 //     进入登录页面
@@ -39,6 +52,10 @@ class IndexController extends Controller
 //    后台登录
     public function doLogin(Request $request)
     {
+<<<<<<< HEAD
+=======
+        $repass = $request->password;
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         $rules = [
             'email' => 'required|exists:users',
             'password' => 'required',
@@ -86,6 +103,7 @@ class IndexController extends Controller
         }
 //        dd($user_id);
         if (!in_array($user_id, $arr)) {
+<<<<<<< HEAD
             $messages = "<script>alert('后台重地,闲人免进!')</script>";
             return view('admin/login', compact('messages'));
         }
@@ -104,14 +122,32 @@ class IndexController extends Controller
              $messages =  "<script>alert('密码错误!')</script>";
             return view('admin/login',compact('messages'));
         }
+=======
+            $messages = '用户不是管理员或超级管理员';
+//            $err = 1;
+//            dd($messages);
+            return view('admin/login', compact('messages'));
+        }
+
+        if (Hash::check($pass, $repass)) {
+            Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
+            return redirect('admin/index');
+        }
+        return redirect('admin/login');
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     }
 
     public function outLogin()
     {
         //验证是否登录
         if(empty(session()->get('adminName'))){
+<<<<<<< HEAD
             $messages = "<script>alert('先登录 行?')</script>";
             return view('admin/login', compact('messages'));
+=======
+            $err = 2;
+            return view('admin/login', compact('err'));
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         }
 
         session()->forget('adminName');

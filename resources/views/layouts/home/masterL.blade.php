@@ -11,8 +11,8 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     {{--css--}}
-    <link rel="stylesheet" href="/home/css/personal.css">
-    <link rel="stylesheet" href="/home/css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="{{url('/home/css/personal.css')}}">
+    <link rel="stylesheet" href="{{url('/home/css/iconfont/iconfont.css')}}">
     <title>@yield('title', '个人中心界面')</title>
     <script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
 
@@ -64,7 +64,13 @@
     .ulul2 li{width: 90px;height: 30px;margin-left: -30px;line-height: 30px}
     .ulul2 a{text-decoration: none}
     /*搜索框*/
+<<<<<<< HEAD
     .search-t{width: 400px;height: 28px;outline-style: none}
+=======
+
+    .search-t{width: 440px;height: 28px;outline-style: none}
+
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     .ulul3 li{
         width:468px;
         height: 30px;
@@ -155,7 +161,7 @@
                         <ul style="width:130px;margin-left: -100px;" class="ulul1">
                             <a href=""><li> @我的</li></a>
                             <a href=""><li> 评论</li></a>
-                            <a href=""><li> 赞</li></a>
+                            <a href="{{url('home/show')}}"><li> 赞</li></a>
                             <a href=""><li> 私信</li></a>
                             <a href=""><li> 未关注人私信</li></a>
                             <a href=""><li> 群通知</li></a>

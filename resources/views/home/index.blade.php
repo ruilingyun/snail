@@ -1,5 +1,7 @@
 {{--首页--}}
 @extends('layouts.home.master')
+<script src="{{url('/js/jquery-1.8.3.min.js')}}"></script>
+
 @section('title','微博-随时随地发现新鲜事')
 <style>
     .new-title{width: 570px;  }
@@ -65,11 +67,12 @@
                 <input type="submit" value="登录" class="f-submit">
             </form>
             <div style="border-bottom: 1px solid black;margin-top: 10px">
-            <p style="font-size: 12px;color: #808080;margin-left: 10px">还没有微博?<a href="register" style="color: #EB7350">立即注册!</a></p>
+            <p style="font-size: 12px;color: #808080;margin-left: 10px">还没有微博?<a href="{{url('home/register')}}" style="color: #EB7350">立即注册!</a></p>
             </div>
             <p style="margin-top: 10px;font-size: 12px;color: #808080;margin-left: 10px">其他登录:XXX</p>
         </div>
     </div>
+
     {{--热门微博--}}
     {{--<div class="show-advert" id="advert"><a href=""><span class="iconfont">&#xe624;</span><b>广告</b></a></div>--}}
     <div class="advert">
@@ -77,6 +80,7 @@
         <iframe class="iframe" src="{{url('home/lunbotu')}}" scrolling="no"></iframe>
     </div>
     {{--微博找人--}}
+<<<<<<< HEAD
     <div style="margin-top: 15px;"><a href=""><img src="{{url('home/image/new-title.jpg')}}" alt=""></a></div>
     <div class="fond-r">
         <div style="background-color: #FFFFFF;">
@@ -86,6 +90,15 @@
         @endforeach
         </div>
         <p style="margin-top: 10px;"><img src="{{url('home/image/title-r1.png')}}" alt=""></p>
+=======
+    <div class="fond-r" style="background-color: greenyellow;">
+        <p style="border-bottom: 1px solid #808080;text-align: center"><b>友情链接</b></p>
+        @foreach($link as $value)
+            <div style="width: 230px;height: 50px;text-align: center;line-height: 50px;font-size: 20px">
+                <a href="http://{{$value->link_address}}">{{$value->links_name}}</a>
+            </div>
+        @endforeach
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
     </div>
 </div>
 
@@ -99,3 +112,5 @@
         {{--})--}}
     {{--</script>--}}
 @endsection
+
+

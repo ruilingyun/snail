@@ -199,8 +199,9 @@
         }
         .images{
             width: 300px;;
-            height: 350px;
+            height: 150px;
             margin-top: 30px;
+<<<<<<< HEAD
             background-color: #FFFFFF;
 
         /*.image{*/
@@ -208,6 +209,10 @@
             /*height: 300px;*/
             /*margin-top: 30px;*/
             /*background-color: #FFFFFF;*/
+=======
+
+            background-color: #FFFFFF;
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
         }
         .images-nav{
@@ -326,7 +331,11 @@
         .ulul2 li{width: 90px;height: 30px;margin-left: 5px;line-height: 30px;}
         .ulul2 a{text-decoration: none}
         /*搜索框*/
+<<<<<<< HEAD
         .search-t{width: 400px;height: 28px;outline-style: none}
+=======
+        .search-t{width: 468px;height: 28px;outline-style: none}
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
         .ulul3 li{
             width:468px;
             height: 30px;
@@ -349,10 +358,148 @@
             display:none;
             list-style: none;
         }
+<<<<<<< HEAD
         .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto; margin-top: px}
         .iframe{widht:230px; height: 300px; margin:0px; padding:0px; width:100%; height:100%; iframeborder:no;}
 
 
+=======
+   .bottom-div{background-color:#FAFAFA;width: 970px;margin:0 auto;}
+        .content-all{
+            width: 600px;
+            /*height: 800px;*/
+            margin-top: 20px;
+            background-color: #FFFFFF;
+        }
+        .content-list{
+            width: 598px;
+            /*height: 250px;*/
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        .list-top{
+            width: 598px;
+            height: 60px;
+        }
+        .list-top .list-useravatar{
+            width: 60px;
+            height: 60px;
+            padding: 5px
+        }
+        .list-name{
+            height: 60px;
+            padding: 3px;
+            line-height: 60px;
+            font-size: 20px;
+        }
+        .list-top .list-delete{
+            width: 40px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        .list-middle{
+            width: 598px;
+            padding:10px;
+            font-size: 15px;
+            border: 1px solid black;
+        }
+        .list-bottom{
+            /*height: 40px;*/
+            /*margin-top: 10px;*/
+            /*border-top: 1px solid black;*/
+        }
+        .list-bottom li{
+            width: 147.5px;
+            /*height: 40px;*/
+            text-align: center;
+            font-size: 15px;
+            line-height: 40px;
+        }
+        .list-comment{
+            width: 598px;
+            /*height: 70px;*/
+            background-color: #ccc;
+            display: none;
+        }
+        .list-comment .comment-top{
+            width: 598px;
+            height: 50px;
+        }
+        .comment-avatar{
+            width: 30px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        .comment-input{
+            margin-left: 5px;
+            margin-top: 10px;
+            width: 520px;
+            height: 30px;
+        }
+        .comment-input textarea{
+            width: 500px;
+            height: 30px;
+            line-height: 25px;
+            /*padding: 3px;*/
+        }
+        .btn-comment{
+            width: 60px;
+            height: 30px;
+            line-height: 25px;
+            margin: 0px 10px 2px 520px;
+            background-color: orange;
+            padding: 0;
+        }
+        .comment-middle{
+            width: 598px;
+        }
+        .comment-middle-list{
+            width: 598px;
+        }
+        .comment-middle-list .comment-middle-list-avatar{
+            margin-top: 10px;
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+        }
+        .comment-middle-list-ncd{
+            padding: 5px;
+            margin-left: 5px;
+            width: 530px;
+        }
+        .comment-middle-list-nc{
+            width: 530px;
+            height: 25px;
+            line-height: 25px;
+        }
+        .comment-middle-list-del{
+            width: 530px;
+            height: 15px;
+            font-size: 10px;
+            line-height:15px;
+        }
+        .comment-middle-list-del .comment-del{
+            margin-left: 450px;
+        }
+        .comment-middle-list-del .onclick-reply{
+            margin-left: 10px;
+        }
+        .comment-reply{
+            width: 598px;
+            background-color: #c0c0c0;
+            margin-left: -50px;
+            display: none;
+        }
+        .reply-content{
+            width: 548px;
+            height: 50px;
+            margin: 0 auto;
+            /*background-color: red;*/
+        }
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
     </style>
     <link rel="stylesheet" href="/home/css/personal.css">
@@ -372,7 +519,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="" class="img-a"><img src="image/logo.jpg" alt=""></a>
+                    <a href="{{url('home/login-index')}}" class="img-a"><img src="{{url('home/image/logo.jpg')}}" alt=""></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right" id="ulul">
@@ -444,10 +591,21 @@
                         <img src="{{url(Auth::user()->avatar)}}" alt="" class="img-circle" width="100px" height="100px">
                     </div>
                     <div class="personal_name">
+<<<<<<< HEAD
                         <p><b>{{Auth::user()->name}}</b><span class="iconfont">&#xe688;</span></p>
                     </div>
                     <div class="personal_introduce">
                         {{--<p><b>{{$result->notice}}</b></p>--}}
+=======
+                        <p><b>{{Auth::user()->name}}</b>      @if($data->isEmpty())
+                        @else
+                            <span class="iconfont" style="background-color:orangered;"> {{$data[0]->grade}}级&#xe688;</span>
+                            @endif</p>
+
+                    </div>
+                    <div class="personal_introduce">
+{{--                        <p><b>{{$resu->notice}}</b></p>--}}
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
 
                     </div>
                 </div>
@@ -475,17 +633,41 @@
                     <ul>
 
                         <a href=""><li class="fance">
+<<<<<<< HEAD
                             <p style="">195</p>
+=======
+                            <p style="">@if($count_fans)
+                                    {{$count_fans}}
+                                @else
+                                    0
+                                @endif</p>
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                             <p style="margin-top: -10px;">关注</p>
                         </li></a>
                         <li class="fance1"></li>
                         <a href=""><li class="fance">
+<<<<<<< HEAD
                             <p style="">200</p>
+=======
+                            <p style="">@if($count_fans1)
+                                    {{$count_fans1}}
+                                @else
+                                    0
+                                @endif</p>
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                             <p style="margin-top: -10px;">粉丝</p>
                         </li></a>
                         <li class="fance1"></li>
                         <a href=""><li class="fance">
+<<<<<<< HEAD
                             <p style="">128</p>
+=======
+                            <p style="">@if($count_weibo)
+                                    {{$count_weibo}}
+                                @else
+                                    0
+                                @endif</p>
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                             <p style="margin-top: -10px;">微博</p>
                         </li></a>
 
@@ -496,15 +678,22 @@
                         <ul>
                             <li class="put-attest"><b>申请认证</b></li>
                             <li class="put-attest">|</li>
+<<<<<<< HEAD
                             <li class="put-attest">{{$data[0]->grade}}级 <span class="iconfont">&#xe688;</span> </li>
+=======
+                            @if($data->isEmpty())
+                                @else
+                            <li class="put-attest" >{{$data[0]->grade}}级 <span class="iconfont">&#xe688;</span> </li>
+                                @endif
+>>>>>>> 67b5669068c6150229d07afd759cb163e7c3f8e4
                         </ul>
                     </div>
                     <ul>
                         <li class="a-data"><span class="iconfont">&#xe60d;</span>   安徽芜湖</li>
                         <li class="a-data"><span class="iconfont">&#xe61b;</span>毕业于   芜湖联合大学</li>
                         <li class="a-data"><span class="iconfont">&#xe67c;</span>1995年10月28日</li>
-                        <li class="a-data"><span class="iconfont">&#xe5e6;</span>简介:    任时光匆匆流去我只在乎你</li>
-                        <li class="a-data-email"><span class="iconfont">&#xe60c;</span>1357119039@qq.com</li>
+                        {{--<li class="a-data"><span class="iconfont">&#xe5e6;</span>简介:    {{$resu->notice}}</li>--}}
+                        <li class="a-data-email"><span class="iconfont">&#xe60c;</span>邮箱:  {{Auth::user()->email}}</li>
                         <li class="a-data"><a href="">编辑个人资料</a> <span>></span></li>
 
                     </ul>
@@ -514,8 +703,16 @@
                     <iframe class="iframe" src="{{url('home/baiduditu')}}" scrolling="no"></iframe>
                 </div>
                 <div class="images">
-                    <div class="images-nav"><span class="iconfont">&#xe658;</span><b>相册</b></div>
+                    <div style="font: 20px black   新宋体;text-align: center; width: 300px;height: 30px;">
+                        <a href="{{url('home/tianqi')}}" target='abc' id="alink">天气预报</a>
+                    </div>
+                        <iframe src="" name='abc' frameborder="0" scrolling="no" style="height: 120px;width: 300px;"></iframe>
+                    </div>
+                    <script>
+                        document.getElementById("alink").click();
+                    </script>
                 </div>
+
             </div>
 
             <div class="p-content-right">
@@ -534,9 +731,110 @@
                         </div>
                     </div>
                 </div>
-                <div class="content1"></div>
-                <div class="content2"></div>
-                <div class="content3"></div>
+                @foreach($msg as $v)
+                    <div class="content-all" id="txt">
+                        <div class="content-list">
+                            <div class="list-top clearfix">
+                                <div class="list-useravatar pull-left">
+                                    <img src="{{url(Auth::user()->avatar)}}" width="50px" height="50px" class="img-circle">
+                                </div>
+                                <div class="list-name pull-left">
+                                    <span>{{Auth::user()->name}}</span>
+                                </div>
+                                <div class="list-delete pull-right">
+                                    <a href="{{url('home/delMsg'.'/'.$v->id)}}">删除</a>
+                                </div>
+                            </div>
+                            <div class="list-middle">
+                                <span>{{$v->content}}</span>
+                            </div>
+                            <div class="list-bottom">
+                                <ul class="clearfix">
+                                    <li class="pull-left"><a href="{{url('home/collect'.'/'.$v->id)}}"><span class="glyphicon glyphicon-heart-empty" id="shouc"></span></a>{{$v->collectionNum}}</li>
+                                    <li class="pull-left"><a href="{{url('home/relay'.'/'.$v->id)}}"><span class="glyphicon glyphicon-share"></span></a> {{$v->relayNum}}</li>
+                                    <li class="pull-left"> <a href="{{url('home/zan'.'/'.$v->id)}}"><span class="glyphicon glyphicon-thumbs-up"></span></a>{{$v->zanNum}}</li>
+                                    <li class="pull-left cmt">
+                                        <span class="glyphicon glyphicon-edit"></span>评论
+                                    </li>
+                                    <div class="list-comment">
+                                        <form action="{{url('home/comment')}}" method="post">
+                                            {{csrf_field()}}
+                                            <div class="comment-top clearfix">
+                                                <div class="comment-avatar pull-left">
+                                                    <img src="{{url(Auth::user()->avatar)}}" width="30px" height="30px" class="img-rounded">
+                                                </div>
+                                                <div class="comment-input pull-left">
+                                                    <textarea class="comment-info" name="commit_content" rows="1" id="comment" resize="no"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="comment-middle">
+                                                <input type="hidden" value="{{date('Y-m-d H:i:s',time())}}" name="commit_time">
+                                                <input type="hidden" value="{{$v->id}}" name="say_id">
+                                                <input class="btn-comment" type="submit" value="评论">
+                                            </div>
+                                        </form>
+                                        @foreach($comment as $value)
+                                            @if($value->say_id==$v->id)
+                                                <div class="comment-middle-list clearfix">
+                                                    @foreach($users as $value_commit)
+                                                        @if($value_commit->id == $value->commit_users_id)
+                                                    <div class="comment-middle-list-avatar pull-left">
+                                                        <img src="{{url($value_commit->avatar)}}" width="30px" height="30px" class="img-rounded">
+                                                    </div>
+                                                    <div class="comment-middle-list-ncd pull-left">
+                                                        <div class="comment-middle-list-nc clearfix">
+                                                            <div class="comment-middle-list-username pull-left">{{$value_commit->name}}</div>
+                                                     @else
+                                                     @endif
+                                                     @endforeach
+                                                            <div class="comment-middle-list-comment pull-left">: {{$value->commit_content}}</div>
+                                                        </div>
+                                                        <div class="comment-middle-list-del clearfix">
+                                                            <a href="{{url('home/delCom'.'/'.$value->id)}}" class="comment-del pull-left">删除
+                                                            </a>
+                                                            <span class="onclick-reply pull-left reply">回复</span>
+                                                        </div>
+                                                        <div class="comment-reply">
+                                                            <div class="reply-content">
+                                                                <div class="content clearfix">
+                                                                    <form action="{{url('home/reply')}}" method="post">
+                                                                        {{csrf_field()}}
+                                                                        <textarea class="comment-info pull-left" name="reply_content" rows="1" id="reply" resize="no" style="width: 450px;height: 30px;margin-left: 10px;margin-top: 10px;"></textarea>
+                                                                        <input type="hidden" value="{{date('Y-m-d H:i:s',time())}}" name="addtime">
+                                                                        <input id="zid" type="hidden" value="{{$v->id}}" name="say_id">
+                                                                        <input id="zid" type="hidden" value="{{$value->id}}" name="commit_id">
+                                                                        <input class="btn-reply pull-left" type="submit" value="回复" style="margin-top: 10px; margin-left: 20px;height: 30px;">
+                                                                    </form>
+                                                                </div>
+                                                                @foreach($reply as $items)
+                                                                    @if($items->commit_id==$value->id)
+                                                                        <div class="reply-list clearfix" style="margin-top: 10px;">
+                                                                            <div class="reply-avatar pull-left" style="margin-left: 10px;">
+                                                                                <img src="{{url(Auth::user()->avatar)}}" width="30px" height="30px" class="img-rounded">
+                                                                            </div>
+                                                                            <div class="reply-content-list pull-left" style="width: 488px;height: 30px;margin-left: 20px;font-size: 10px">
+                                                                                <span>{{$items->reply_content}}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    @else
+                                                                    @endif
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            @else
+                                            @endif
+                                        @endforeach
+                                    </div>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
         @show()
@@ -630,4 +928,18 @@
             this.style.backgroundColor = "";
         }
     }
+    $(function(){
+        $('.cmt').click(function(){
+            $(this).next('div').slideToggle('slow',function () {
+
+            });
+        })
+    })
+    $(function(){
+        $('.reply').click(function(){
+            $(this).parent().next('div').slideToggle('slow',function () {
+
+            });
+        })
+    })
 </script>
