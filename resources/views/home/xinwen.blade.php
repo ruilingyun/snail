@@ -35,8 +35,13 @@ $result = file_get_contents($url);
 $results = json_decode($result);
 //dd($result);
 $new=$results->showapi_res_body->showapi_res_body;
+echo "<h1 style='text-align: center'>今日头条</h1>";
+echo "<br>";
+echo "<a href='javascript:history.back()' style='margin-left: 1250px'>返回</a>";
 foreach($new->list as $v)
 {
-    echo "<div id='a'><p>".$v->title."</p><p>".$v->day."</p><p>".$v->long."</p></div><hr>";
+    echo "<div id='a'><p>".$v->title."</p><p>".$v->day."</p></div><hr>";
+
 }
+
 ?>

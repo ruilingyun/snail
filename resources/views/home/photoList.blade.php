@@ -80,7 +80,7 @@
         </ul>
     </div>
 
-    @foreach($result as $rel)
+    @foreach($result1 as $rel)
         <div class="poto">
             <p style="margin-left: 10px;margin-top: 10px">{{($rel->created_at)}}</p>
             <a href="{{url('home/delPhoto'.'/'.$rel->id)}}">X</a>

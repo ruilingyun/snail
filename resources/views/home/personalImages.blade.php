@@ -86,7 +86,7 @@
                 <span>添加相册</span>
             </div>
         </div>
-        @foreach($result as $rel)
+        @foreach($result1 as $rel)
             <div class="poto">
                 <div class="xc-xc">
                     <a href="{{url('home/photoList'.'/'.$rel->id)}}"><span class="xc-fm"><img class="xc-fm1" src="{{url($rel->face)}}" alt=""></span></a>
@@ -126,7 +126,7 @@
 <div id="slogin1">
 
     <span href="" id="tuichu1">X</span>
-@if($result->isEmpty())
+@if($result1->isEmpty())
     @else
     <form action="{{url('/home/upphotos'.'/'.$rel->id)}}" method="post" style="width: 230px;height: 350px;margin: auto;" enctype="multipart/form-data">
         @endif

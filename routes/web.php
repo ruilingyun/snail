@@ -20,7 +20,7 @@ Route::get('home/index','Home\IndexController@index');
 // 前台登录
 Route::get('home/showLogin', 'Home\IndexController@showLogin');
 Route::post('home/doLogin', 'Home\IndexController@doLogin');
-//退出登录
+//
 Route::get('/home/logout', 'Home\IndexController@logout');
 
 // 前台注册

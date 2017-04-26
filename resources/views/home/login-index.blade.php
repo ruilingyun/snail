@@ -261,10 +261,10 @@
             <div class="assortment-nav">
                 <ul>
                     <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe502;</span>表情</a></li>
-                    <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe658;</span>图片</a></li>
+                    <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe618;</span>图片</a></li>
                     <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe613;</span>视频</a></li>
-                    <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe618;</span>话题</a></li>
-                    <li class="assortment"><a href="" class="abc"><span class="iconfont">&#xe67c;</span>头条文章</a></li>
+                    <li class="assortment"><a href="{{url('home/tianqi')}}" class="abc"><span class="iconfont">&#xe658;</span>天气</a></li>
+                    <li class="assortment"><a href="{{url('home/xinwen')}}" class="abc"><span class="iconfont">&#xe67c;</span>每日头条</a></li>
                 </ul>
                 <input type="submit" class="btn btn-info" id="ipt" value="发布">
             </div>
@@ -316,22 +316,11 @@
                 </div>
                 <div class="list-bottom">
                     <ul class="clearfix">
-<<<<<<< HEAD
 
-                        <li class="pull-left"><a href="{{url('home/collect'.'/'.$v->id)}}"><span class="glyphicon glyphicon-heart-empty" id="shouc"></span></a>
-                            @if('{{$v->id}} == {{$collect_id}}')
-                                {{$v->collectionNum}}
-                            @else
-                                22
-                            @endif
-                        </li>
+                        <li class="pull-left"><a href="{{url('home/collect'.'/'.$v->id)}}"><span class="glyphicon glyphicon-heart-empty"></span></a> {{$v->collectionNum}}</li>
                         <li class="pull-left"><a href="{{url('home/relay'.'/'.$v->id)}}"><span class="glyphicon glyphicon-share"></span></a> {{$v->relayNum}}</li>
-                        <li class="pull-left"> <a href="{{url('home/zan'.'/'.$v->id)}}"><span class="glyphicon glyphicon-thumbs-up"></span></a>{{$v->zanNum}}</li>
-=======
-                        <li class="pull-left"><span class="glyphicon glyphicon-heart-empty"></span>收藏</li>
-                        <li class="pull-left"><span class="glyphicon glyphicon-share "></span>1120</li>
-                        <li class="pull-left"><span class="glyphicon glyphicon-thumbs-up"></span>11001</li>
->>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
+                        <li class="pull-left"> <a href="{{url('home/zan'.'/'.$v->id)}}"><span class="glyphicon glyphicon-thumbs-up"></span></a> {{$v->zanNum}}</li>
+
                         <li class="pull-left cmt">
                             <span class="glyphicon glyphicon-edit"></span>评论
                         </li>
@@ -357,6 +346,7 @@
                                     <div class="comment-middle-list clearfix">
                                         @foreach($users as $value_commit)
                                             @if($value_commit->id == $value->commit_users_id)
+
                                         <div class="comment-middle-list-avatar pull-left">
                                             <img src="{{url($value_commit->avatar)}}" width="30px" height="30px" class="img-rounded">
                                         </div>

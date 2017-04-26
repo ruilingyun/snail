@@ -199,7 +199,7 @@
         }
         .images{
             width: 300px;;
-            height: 350px;
+            height: 150px;
             margin-top: 30px;
 
             background-color: #FFFFFF;
@@ -570,7 +570,11 @@
                         <img src="{{url(Auth::user()->avatar)}}" alt="" class="img-circle" width="100px" height="100px">
                     </div>
                     <div class="personal_name">
-                        <p><b>{{Auth::user()->name}}</b><span class="iconfont">&#xe688;</span></p>
+                        <p><b>{{Auth::user()->name}}</b>      @if($data->isEmpty())
+                        @else
+                            <span class="iconfont" style="background-color:orangered;"> {{$data[0]->grade}}级&#xe688;</span>
+                            @endif</p>
+
                     </div>
                     <div class="personal_introduce">
 {{--                        <p><b>{{$resu->notice}}</b></p>--}}
@@ -636,7 +640,7 @@
                             <li class="put-attest">|</li>
                             @if($data->isEmpty())
                                 @else
-                            <li class="put-attest">{{$data[0]->grade}}级 <span class="iconfont">&#xe688;</span> </li>
+                            <li class="put-attest" >{{$data[0]->grade}}级 <span class="iconfont">&#xe688;</span> </li>
                                 @endif
                         </ul>
                     </div>
@@ -651,8 +655,16 @@
                     </ul>
                 </div>
                 <div class="images">
-                    <div class="images-nav"><span class="iconfont">&#xe658;</span><b>相册</b></div>
+                    <div style="font: 20px black   新宋体;text-align: center; width: 300px;height: 30px;">
+                        <a href="{{url('home/tianqi')}}" target='abc' id="alink">天气预报</a>
+                    </div>
+                        <iframe src="" name='abc' frameborder="0" scrolling="no" style="height: 120px;width: 300px;"></iframe>
+                    </div>
+                    <script>
+                        document.getElementById("alink").click();
+                    </script>
                 </div>
+
             </div>
 
             <div class="p-content-right">
@@ -690,9 +702,9 @@
                             </div>
                             <div class="list-bottom">
                                 <ul class="clearfix">
-                                    <li class="pull-left"><span class="glyphicon glyphicon-heart-empty"></span>收藏</li>
-                                    <li class="pull-left"><span class="glyphicon glyphicon-share "></span>1120</li>
-                                    <li class="pull-left"><span class="glyphicon glyphicon-thumbs-up"></span>11001</li>
+                                    <li class="pull-left"><a href="{{url('home/collect'.'/'.$v->id)}}"><span class="glyphicon glyphicon-heart-empty" id="shouc"></span></a>{{$v->collectionNum}}</li>
+                                    <li class="pull-left"><a href="{{url('home/relay'.'/'.$v->id)}}"><span class="glyphicon glyphicon-share"></span></a> {{$v->relayNum}}</li>
+                                    <li class="pull-left"> <a href="{{url('home/zan'.'/'.$v->id)}}"><span class="glyphicon glyphicon-thumbs-up"></span></a>{{$v->zanNum}}</li>
                                     <li class="pull-left cmt">
                                         <span class="glyphicon glyphicon-edit"></span>评论
                                     </li>

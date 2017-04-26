@@ -25,22 +25,26 @@ class myuserController extends Controller
 //        dd($id);
         $zan_id = $id;
         $zanuser_id = Auth::user()->id;
+//        dd($zanuser_id);
 //        $zan=Zan::where('zanuser_id','=',$zanuser_id)->where('zan_id','=',$zan_id)->where()->get();
 //        $zan = DB::table('zan')->where('zanuser_id',$zanuser_id)->where('zan_id',$zan)->select($grade);
 //        dd($zan);
-//
-        $result = DB::select('select * from zan where zan_id ='.$zan_id );
+        $result = DB::table('zan')->where('zanuser_id',$zanuser_id)->where('zan_id',$zan_id)->get();
+
+//        $result = DB::select('select * from zan where zan_id ='.$zan_id )->where('zanuser_id','=',$zanuser_id);
 //        dd($result);
-        if (empty($result)){
+        if (empty($result[0])){
             $data=[
                 'zan_id'=>$zan_id,
                 'zanuser_id'=>$zanuser_id,
             ];
             DB::table('zan')->insert($data);
         }else{
-            DB::delete('delete from zan where zan_id = ?',array($zan_id));
+//            DB::delete('delete from zan where zan_id = ?',array($zan_id));
+            DB::table('zan')->where('zan_id',$zan_id)->where('zanuser_id',$zanuser_id)->delete();
+
         }
-        return redirect('home/login-index');
+        return back();
     }
 //    //展示赞 转发 微博
 //    public function show()

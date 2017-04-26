@@ -21,12 +21,12 @@ class IndexController extends Controller
     public function personalCenter()
     {
         $id = Auth::user()->id;
-
         $resu= DB::table('userxq')->where('uid',$id)->orderBy('id','desc')->get()->first();
         $data = DB::table('user_grade')->where('user_id',$id)->get();
         $zan = DB::table('zan')->where('zanuser_id',$id)->orderBy('id','desc')->get();
         $count_zan =count($zan);
         $result = DB::select('select * from user_grade where user_id ='.$id );
+
         if (empty($result)){
             $data=[
                 'user_id'=>$id,
@@ -35,26 +35,51 @@ class IndexController extends Controller
 //            dd($data);
             DB::table('user_grade')->insert($data);
         }
-//        dd($count_zan);
-        return view('home/personalCenter')->with('resu',$resu)->with('data',$data)->with('count_zan',$count_zan);
 
         $users = User::where('id','>','0')->get();
         $user_id = Auth::user()->id;
         $msg =Msg::where('users_id','=',$user_id)->orderBy('id','desc')->get();
+
         $comment =Comment::where('id','>','0')->orderBy('id','desc')->get();
-//        while($msg){
-//            return view('home.login-index',compact('msg','comment'));
-//        }
+
         $follow = Follow::where('usersby_id','=',$id)->get();
         $follows = Follow::where('users_id','=',$id)->get();
         $users_id = DB::select('select * from msg where users_id = '.$id);
-        $result= DB::table('userxq')->where('uid','24')->orderBy('id','desc')->get()->first();
+        $result= DB::table('userxq')->where('uid',$user_id)->orderBy('id','desc')->get()->first();
         $reply=Reply::where('id','>','0')->orderBy('id','desc')->get();
         $count_weibo = count($users_id);
         $count_fans = count($follow);
         $count_fans1 = count($follows);
+//
+        foreach ($msg as $v){
+//            dd($v->id);
+            $say_id = $v->id;
+            $a =  DB::table('collect')
+                ->where('collect_id',$say_id)
+                ->get();
+            $v->collectionNum = count($a);
 
-        return view('home/personalCenter')->with('result',$result)->with('msg',$msg)->with('comment',$comment)->with('reply', $reply)->with('users',$users)->with('count_weibo', $count_weibo)->with('count_fans',$count_fans)->with('count_fans1',$count_fans1);
+        }
+        foreach ($msg as $v){
+            $say_id = $v->id;
+//            dd($say_id);
+
+            $b =  DB::table('zan')
+                ->where('zan_id',$say_id)
+                ->get();
+            $v->is_zan = $b;
+            $v->zanNum = count($b);
+        }
+        foreach ($msg as $v){
+            $say_id = $v->id;
+
+            $c =  DB::table('relay')
+                ->where('msg_id',$say_id)
+                ->get();
+            $v->is_relay = $c;
+            $v->relayNum = count($c);
+        }
+        return view('home/personalCenter')->with('result',$result)->with('msg',$msg)->with('comment',$comment)->with('reply', $reply)->with('users',$users)->with('count_weibo', $count_weibo)->with('count_fans',$count_fans)->with('count_fans1',$count_fans1)->with('resu',$resu)->with('data',$data)->with('count_zan',$count_zan);
     }
 
 
@@ -62,12 +87,57 @@ class IndexController extends Controller
     public function personalImages()
     {
         $id = Auth::user()->id;
-        $result= DB::table('photos')->where('uid','=',$id)->get();
+        $result1= DB::table('photos')->where('uid','=',$id)->get();
         $data = DB::table('user_grade')->where('user_id',$id)->get();
         $resu= DB::table('userxq')->where('uid',$id)->orderBy('id','desc')->get()->first();
 
+//        --------
+
+        $users = User::where('id','>','0')->get();
+        $user_id = Auth::user()->id;
+        $msg =Msg::where('users_id','=',$user_id)->orderBy('id','desc')->get();
+
+        $comment =Comment::where('id','>','0')->orderBy('id','desc')->get();
+
+        $follow = Follow::where('usersby_id','=',$id)->get();
+        $follows = Follow::where('users_id','=',$id)->get();
+        $users_id = DB::select('select * from msg where users_id = '.$id);
+        $result= DB::table('userxq')->where('uid',$user_id)->orderBy('id','desc')->get()->first();
+        $reply=Reply::where('id','>','0')->orderBy('id','desc')->get();
+        $count_weibo = count($users_id);
+        $count_fans = count($follow);
+        $count_fans1 = count($follows);
+//
+        foreach ($msg as $v){
+//            dd($v->id);
+            $say_id = $v->id;
+            $a =  DB::table('collect')
+                ->where('collect_id',$say_id)
+                ->get();
+            $v->collectionNum = count($a);
+
+        }
+        foreach ($msg as $v){
+            $say_id = $v->id;
+//            dd($say_id);
+
+            $b =  DB::table('zan')
+                ->where('zan_id',$say_id)
+                ->get();
+            $v->is_zan = $b;
+            $v->zanNum = count($b);
+        }
+        foreach ($msg as $v){
+            $say_id = $v->id;
+
+            $c =  DB::table('relay')
+                ->where('msg_id',$say_id)
+                ->get();
+            $v->is_relay = $c;
+            $v->relayNum = count($c);
+        }
 //        dd($result);
-        return view('home/personalImages')->with('result',$result)->with('data',$data)->with('resu',$resu);
+        return view('home/personalImages')->with('result1',$result1)->with('data',$data)->with('resu',$resu)->with('msg',$msg)->with('count_fans',$count_fans)->with('count_fans1',$count_fans1)->with('count_weibo',$count_weibo)->with('comment',$comment)->with('result',$result);
 
     }
 

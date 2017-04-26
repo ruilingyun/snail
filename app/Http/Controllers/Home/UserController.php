@@ -15,7 +15,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\DB;
+
 
 
 class UserController extends Controller
@@ -70,7 +70,7 @@ class UserController extends Controller
         //根据模型将所以的数据查询出来
         $users = User::where('id','>','0')->get();
         $msg =Msg::where('id','>','0')->orderBy('id','desc')->get();
-<<<<<<< HEAD
+
         $comment = Comment::where('id','>','0')->orderBy('id','desc')->get();
         $collect = DB::select('select * from collect');
         $collect_id = ($collect[0]->collect_id);
@@ -87,15 +87,18 @@ class UserController extends Controller
                 ->where('collect_id',$say_id)
                 ->get();
             $v->collectionNum = count($a);
+
         }
         foreach ($msg as $v){
             $say_id = $v->id;
+//            dd($say_id);
 
             $b =  DB::table('zan')
                 ->where('zan_id',$say_id)
                 ->get();
             $v->is_zan = $b;
             $v->zanNum = count($b);
+
         }
         foreach ($msg as $v){
             $say_id = $v->id;
@@ -107,14 +110,6 @@ class UserController extends Controller
             $v->relayNum = count($c);
         }
 
-
-
-
-//        dd($count_zan);
-        while($msg){
-            return view('home.login-index',compact('msg','comment','count_zan','count_collect','collect_id','count_relay','a'));
-//            return view('home.login-index', compact('msg'));
-=======
         $follow = Follow::where('usersby_id','=',$id)->get();
         $follows = Follow::where('users_id','=',$id)->get();
         $comment =Comment::where('id','>','0')->orderBy('id','desc')->get();
@@ -124,8 +119,8 @@ class UserController extends Controller
         $count_fans = count($follow);
         $count_fans1 = count($follows);
         while($msg){
-            return view('home.login-index',compact('msg','comment','reply','users','count_weibo','count_fans','count_fans1'));
->>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
+            return view('home.login-index',compact('msg','comment','reply','users','count_weibo','count_fans','count_fans1','count_zan','count_collect','collect_id','count_relay','a'));
+
         }
     }
 
@@ -162,7 +157,7 @@ class UserController extends Controller
         // 获取微博模型
         $msg = Msg::find($id);
         $msg->delete();
-        return redirect('home/login-index');
+        return back();
     }
 
     // 微博评论
@@ -207,19 +202,22 @@ class UserController extends Controller
         return redirect('home/login-index');
     }
 
-<<<<<<< HEAD
+
     //收藏微博 (取消收藏)
     public function collect($id)
     {
 //        dd($id);
         $user_id = Auth::user()->id;
-        $result = DB::select('select * from collect where collect_id ='.$id);
+//        $result = DB::select('select * from collect where collect_id ='.$id);
         $says = Msg::where('id','=',$id)->get();
         $users = $says->toArray();
         $users_id = $users[0]['users_id'];
 //        dd($users_id);
         $collect_id = $id;
-        if (empty($result)){
+
+//        dd($users_id);
+        $result = DB::table('collect')->where('collect_id',$collect_id)->where('user_id',$user_id)->get();
+        if (empty($result[0])){
             $data=[
                 'user_id'=>Auth::user()->id,
                 'userby_id'=>$users_id,
@@ -227,49 +225,59 @@ class UserController extends Controller
             ];
              DB::table('collect')->insert($data);
         }else{
-             DB::delete('delete from collect where collect_id = ?',array($id));
+//             DB::delete('delete from collect where collect_id = ?',array($id));
+             DB::table('collect')->where('collect_id',$collect_id)->where('user_id',$user_id)->delete();
+
         }
 //        dd($id);
-        return redirect('home/login-index');
+        return back();
     }
     //转发微博
     public function relay($id)
     {
 //        dd($id);
         $user = Auth::user()->id;
-        $result = DB::select('select * from msg where id ='.$id );
+        $result = DB::select('select * from msg where id =' . $id);
         $users_id = $user;
         $content = $result[0]->content;
-        $data=[
-            'users_id'=>$users_id,
-            'content'=>$content,
-            'type_id'=>1,
-            'is_hot'=>1,
+        $data = [
+            'users_id' => $users_id,
+            'content' => $content,
+            'type_id' => 1,
+            'is_hot' => 1,
         ];
 
-         DB::table('msg')->insert($data);
+        DB::table('msg')->insert($data);
 
-        $data1=[
-            'user_id'=>$users_id,
-            'msg_id'=>$id,
+        $data1 = [
+            'user_id' => $users_id,
+            'msg_id' => $id,
         ];
         DB::table('relay')->insert($data1);
 
         //        账号等级
-        $grade = DB::select('select grade from user_grade where user_id ='.$users_id);
+        $grade = DB::select('select grade from user_grade where user_id =' . $users_id);
+//        dd($grade);
 
-        $gra = $grade[0]->grade +=1;
+        $uid = Auth::user()->id;
+        if (empty($grade[0])){
+            $data4=[
+                'user_id'=>$uid,
+                'grade'=>1,
+            ];
+            DB::table('user_grade')->insert($data4);
+        }
+        $gra = $grade[0]->grade += 1;
 //       dd($gra);
-        $grade=[
-            'grade'=>$gra,
+        $grade = [
+            'grade' => $gra,
         ];
 
 //        dd($data);
-        DB::table('user_grade')->where('user_id',$users_id)->update($grade);
+        DB::table('user_grade')->where('user_id', $users_id)->update($grade);
 
-        return redirect('home/login-index');
-
-=======
+        return back();
+    }
     // 回复
     public function doReply(Request $request)
     {
@@ -326,7 +334,6 @@ class UserController extends Controller
         $follow = Follow::where('users_id','=',$users_id)->where('usersby_id','=',$id);
         $follow->delete();
         return redirect('home/other_per'.'/'.$users_id);
->>>>>>> 1221022da6f5879db6cf48e6083eaf7407927a92
     }
 
 }

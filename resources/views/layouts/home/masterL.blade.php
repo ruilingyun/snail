@@ -11,8 +11,8 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     {{--css--}}
-    <link rel="stylesheet" href="/home/css/personal.css">
-    <link rel="stylesheet" href="/home/css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="{{url('/home/css/personal.css')}}">
+    <link rel="stylesheet" href="{{url('/home/css/iconfont/iconfont.css')}}">
     <title>@yield('title', '个人中心界面')</title>
     <script src='{{url('home/js/jquery-1.8.3.min.js')}}'></script>
 
